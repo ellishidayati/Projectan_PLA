@@ -94,7 +94,7 @@ tr:nth-child(even){background-color: #f2f2f2}
         <div class="main-inner">
             <div class="container">
                 <div class="widget">
-                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
+                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Inventory - Sistem Inventory Data Teknis Transport</h3>
                     </div>
                         <div style="overflow-x:auto"> <!-- /widget-header -->
                         <div class="widget-content"  style="overflow-x:auto">
