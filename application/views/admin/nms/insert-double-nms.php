@@ -123,14 +123,14 @@
           
           <div class="widget-content">    
             <div class="tab-content">
-                <div class="x_content">
+                <div class="x_content" >
                 <fieldset>
                      <form method="post" action="<?php echo site_url('Excel/nms')?>" enctype="multipart/form-data">
                     <input type="file" name="userfile" ><br><br>
                     <input type="submit" name="submit" value="Upload" class="btn btn-primary">
                    </form>
 
-                       <a href="<?php echo site_url('Home/table_nms')?>"><button type="submit" class="btn btn-primary">Cancel</button></a></fieldset>
+                       <a href="<?php echo site_url('Home/table_nms')?>"><button type="submit" class="btn btn-danger" style="margin-top:-46px; margin-left: 80px; position: absolute;">Cancel</button></a></fieldset>
                     <br />
                     <br />
                     <br />

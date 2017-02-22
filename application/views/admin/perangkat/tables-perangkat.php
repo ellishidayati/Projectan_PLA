@@ -95,10 +95,64 @@ tr:nth-child(even){background-color: #f2f2f2}
         <div class="main-inner">
             <div class="container">
 
-             <div class="widget" >
-                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
-                    </div>
-                      <div class="widget-content"  style="overflow-x:auto">
+              <!-- /row -->
+  
+        <div class="row">
+          
+          <div class="span6">
+            
+            <div class="widget">
+            
+          <div class="widget-header">
+            <i class="icon-star"></i>
+            <h3>Some Stats</h3>
+          </div> <!-- /widget-header -->
+          
+          <div class="widget-content">
+
+                       <form class="form-horizontal form-label-left" <?php echo form_open_multipart('Link/insert_jalur'); ?>                             <input class="form-control" name="jalur" placeholder="Masukan Jalur">
+                              </input>
+                      </form>
+          <!--   <canvas id="pie-chart" class="chart-holder"></canvas> -->
+          </div> <!-- /widget-content -->
+            
+        </div> <!-- /widget -->
+        
+            
+            
+            
+        </div> <!-- /span6 -->
+          
+          
+          <div class="span6">
+            
+            <div class="widget" >
+              
+          <div class="widget-header">
+            <i class="icon-list-alt"></i>
+            <h3>Another Chart</h3>
+          </div> <!-- /widget-header -->
+          
+          <div class="widget-content" >
+        
+              <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary">Insert Multiple Data</button></a>
+              <br>
+
+           
+           <!--  <canvas id="bar-chart" class="chart-holder"></canvas> -->
+          </div> <!-- /widget-content -->
+        
+        </div> <!-- /widget -->
+                  
+          </div> <!-- /span6 -->
+          
+        </div> <!-- /row -->
+        
+
+            
+                    <!-- <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
+                    </div> -->
+                     <!--  <div class="widget-content"  style="overflow-x:auto">
                   
                        <form class="form-horizontal form-label-left" <?php echo form_open_multipart('Link/insert_jalur'); ?> 
                         <label for="name">Masukan Jalur</label>
@@ -106,18 +160,22 @@ tr:nth-child(even){background-color: #f2f2f2}
                               <input class="form-control" name="jalur" placeholder="Jalur">
                               </input>
                       </form>
+
+
+                       <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary" style="margin-top:-45px; margin-left: 300px; position: absolute;">Insert Multiple Data</button></a>
+                   
                   
-                   </div>
+                   </div> -->
            
-               <div class="widget" >
+               <!-- <div class="widget" >
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
                     </div>
                       <div class="widget-content"  >
                        <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary">Insert Multiple Data</button></a>
                      </div>
-                     </div>
+                     </div> -->
                   
-              </div>
+          
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
                     </div>
