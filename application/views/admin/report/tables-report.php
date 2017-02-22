@@ -91,21 +91,41 @@
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Report - Sistem Inventory Data Teknis Transport</h3>
                     </div>
 					
+
+
 					<div style="overflow-x:auto"> <!-- /widget-header -->
                     <div class="widget-content"  style="overflow-x:auto">
 					
-					<br>
-					<div class="title_right">
-						<div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
-							<div class="input-group">
-								<form action="<?php print site_url();?>/report/cari" method=POST>
-								<input type=text name=cari>				
-								<a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">search</button></a>
-								</form>	
-							</div>
-						</div>
-					</div>
 					
+					<div class="title_right">
+                       <div class="control-group">                                         
+                                            <label class="control-label" for="radiobtns">Download Report</label>
+                                            
+                                            <div class="controls">
+                                              <div class="btn-group" style="margin-top:3px; margin-left: 0px; position: absolute;">
+                                              <a class="btn btn-primary" href="#"><i class="icon-download icon-white"></i> Download File</a>
+                                              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                                              <ul class="dropdown-menu">
+                                                <li><a href="<?php echo site_url('Report/exportcsv');?>"><i class="icon-file"></i>CSV</a></li>
+                                                <li><a href="<?php echo base_url('Download/download_excel.php')?>"><i class="icon-file"></i>Excel</a></li>
+                                                <li><a href="<?php echo base_url('Downloadpdf/pdf.php');?>"><i class="icon-file"></i>PDF</a></li>
+                                               <!--  <li class="divider"></li>
+                                                <li><a href="#"><i class="i"></i> Make admin</a></li> -->
+                                              </ul>
+                                            </div>
+                                              </div>
+                                                  <!-- /controls -->          
+                        <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
+                            <div class="input-group">
+                                <form action="<?php print site_url();?>/report/cari" method=POST>
+                                <input type=text name=cari>             
+                                <a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">search</button></a>
+                                </form> 
+                            </div>
+                        </div>
+                    </div>
+                                        </div> <!-- /control-group -->
+                    
 					<div class="table-responsive">
 					<div class="x_content">
 						<table id="datatable-buttons" class="table table-striped table-bordered" border="1">
@@ -167,11 +187,11 @@
 					  </div>
 					  </div>
 						
-						<td>
+						<!-- <td>
 						   <a href="<?php echo site_url('Report/exportcsv');?>"><button type="submit" class="btn btn-primary">Download Report (.csv)</button></a>
 						   <a href="<?php echo base_url('Download/download_excel.php')?>"><button type="submit" class="btn btn-success">Download Report (.xls)</button></a>
 						   <a href="<?php echo base_url('Downloadpdf/pdf.php');?>"><button type="submit" class="btn btn-primary">Download Report (.pdf)</button></a>
-						</td>
+						</td> -->
 						
 					</div>
 					</div>
