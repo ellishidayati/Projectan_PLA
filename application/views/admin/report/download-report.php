@@ -90,8 +90,39 @@
 					
 					<div style="overflow-x:auto"> <!-- /widget-header -->
                     <div class="widget-content"  style="overflow-x:auto">
+
+                    <?php   
+                        $x="";
+                        if(isset($_SESSION['x'])){
+                            //echo $_SESSION['x'];
+                            $x = $_SESSION['x'];
+                        }
+                        ?>
 					
-					<br>
+                    <div class="title_right">
+                       <div class="control-group">                                         
+                                            <label class="control-label" for="radiobtns">Download Report Sesuai Pencarian</label>
+                                            
+                                            <div class="controls">
+                                              <div class="btn-group" style="margin-top:3px; margin-left: 0px; position: absolute;">
+
+                                             <a class="btn btn-primary" href="<?php echo base_url('Download/download_excel.php?x=').$x;?>"><i class="icon-download icon-white"></i> Download File</a>
+                                              </ul>
+                                            </div>
+                                              </div>
+                                                  <!-- /controls -->          
+                        <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
+                            <div class="input-group">
+                                <form action="<?php print site_url();?>/report/cari" method=POST>
+                                <input type=text name=cari>             
+                                <a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">search</button></a>
+                                </form> 
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /control-group -->
+
+					<!-- <br>
 					<div class="title_right">
 						<div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
 							<div class="input-group">
@@ -101,7 +132,7 @@
 								</form>	
 							</div>
 						</div>
-					</div>
+					</div> -->
 					
 					<div class="table-responsive">
 					<div class="x_content">
@@ -159,19 +190,19 @@
 						</div>
 						</div>
 					 
-						<?php 	
+						<!-- <?php 	
 						$x="";
 						if(isset($_SESSION['x'])){
 							//echo $_SESSION['x'];
 							$x = $_SESSION['x'];
 						}
-						?>
+						?> -->
 						
-						<td>
+						<!-- <td>
 							<a href="<?php echo base_url('Download/download_excel.php?x=').$x;?>"><button type="submit" class="btn btn-primary">Download Report berdasarkan pencarian </button></a>
 							<a href="<?php echo site_url('Report');?>"><button type="submit" class="btn btn-danger">Back</button></a>
 						</td>
-						
+						 -->
 					</div>
 					</div>
 				</div>

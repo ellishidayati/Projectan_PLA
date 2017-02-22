@@ -124,7 +124,7 @@
                             </div>
                         </div>
                     </div>
-                                        </div> <!-- /control-group -->
+                </div> <!-- /control-group -->
                     
 					<div class="table-responsive">
 					<div class="x_content">
