@@ -154,10 +154,17 @@
 							<?php 
 							$no = 0;
 							foreach($link_statis as $link){
-							$no++;
 							?>
 								<tr>
-									<td><?php echo $no?></td>
+									<td>
+									 <?php	if($link->host_a=="-" || $link->host_a==""){
+												$no=$no+0;
+											}else{
+												$no++;
+												echo $no;
+											}
+									?>
+									</td>
 									<td><?php echo $link->host_a?></td>
 									<td><?php echo $link->host_b?></td>
 									<td><?php echo $link->fa_a?></td>
