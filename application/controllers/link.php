@@ -96,7 +96,7 @@ class Link extends CI_Controller {
     }
 
     public function insert_double_perangkat(){
-        $this->load->view('admin/perangkat/insert_double_perangkat');
+        $this->load->view('admin/perangkat/insert-double-perangkat');
     }
 
 	public function ne(){

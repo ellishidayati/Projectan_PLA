@@ -139,18 +139,27 @@
           
           <div class="widget-content">    
             <div class="tab-content">
-                <div class="x_content">
-                <fieldset>
-                     <form method="post" action="<?php echo site_url('Excel/nms')?>" enctype="multipart/form-data">
-                    <input type="file" name="userfile" ><br><br>
-                    <input type="submit" name="submit" value="Upload" class="btn btn-primary">
-                   </form>
-
-                       <a href="<?php echo site_url('Home/table_nms')?>"><button type="submit" class="btn btn-primary">Cancel</button></a></fieldset>
-                    <br />
-                    <br />
-                    <br />
-                  </div>
+              <div>
+                <form id="edit-profile" class="form-horizontal"  action="<?php echo site_url('Home/importcsv')?>" 
+                  <fieldset>
+                   <input type="file" name="userfile" ><br><br>
+                     <div class="form-actions" >
+                      <div class="control-group" style="margin-top:-5px; margin-left: -150px; position: absolute;">
+                    <input type="submit" name="submit" value="Upload" class="btn btn-primary"> 
+                      </div>
+                    </br>                     
+                    </div>                
+                    <!-- <div class="form-actions">
+                      <button type="submit" class="btn btn-primary">Save</button> 
+                      <button class="btn">Cancel</button>
+                    </div> <!-- /form-actions --> 
+                  </fieldset>
+                </form>
+                 <div class="control-group" style="margin-top:-63px; margin-left: 90px; position: absolute;">
+                      <div class="controls">
+                          <a href="<?php echo site_url('Home/table_nms');?>"><button type="submit" class="btn">Cancel</button></a>
+                      </div>
+                    </div>
                 </div>
                 
                 

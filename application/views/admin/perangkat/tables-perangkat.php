@@ -112,28 +112,24 @@ tr:nth-child(even){background-color: #f2f2f2}
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
                     </div>
                       <div class="widget-content"  style="overflow-x:auto">
+                  
                        <form class="form-horizontal form-label-left" <?php echo form_open_multipart('Link/insert_jalur'); ?> 
-                      
-
-                        <label for="name">Masukan Jalur <span class="required">*</span>
-                        </label>
-                      <div class="item form-group">
-              
-
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label for="name">Masukan Jalur</label>
+                    
                               <input class="form-control" name="jalur" placeholder="Jalur">
                               </input>
-                        </div>
-                   
-             
-                      </div>
-                   </form>
-           
-            
-                       <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary">Insert Multiple Data</button></a>
-                     
+                      </form>
                   
-                      </div>
+                   </div>
+           
+               <div class="widget" >
+                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
+                    </div>
+                      <div class="widget-content"  >
+                       <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary">Insert Multiple Data</button></a>
+                     </div>
+                     </div>
+                  
               </div>
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
