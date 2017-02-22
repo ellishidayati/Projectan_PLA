@@ -45,7 +45,7 @@ class Excel extends CI_Controller {
             $data = array('upload_data' => $this->upload->data());
             $upload_data = $this->upload->data(); //Mengambil detail data yang di upload
             $filename = $upload_data['file_name'];//Nama File
-            $this->phpexcel_model->upload_data($filename);
+            $this->phpexcel_model->upload_data_link($filename);
             unlink('./uploads/'.$filename);
             redirect('Link','refresh');
         }
