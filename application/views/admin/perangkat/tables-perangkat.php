@@ -109,9 +109,14 @@ tr:nth-child(even){background-color: #f2f2f2}
           
           <div class="widget-content">
 
-                       <form class="form-horizontal form-label-left" <?php echo form_open_multipart('Link/insert_jalur'); ?>                             <input class="form-control" name="jalur" placeholder="Masukan Jalur">
+                       <form class="form-horizontal form-label-left" <?php echo form_open_multipart('Link/insert_jalur'); ?> 
+                      
+                    
+                              <input class="form-control" name="jalur" placeholder="Masukan Jalur">
                               </input>
                       </form>
+
+
           <!--   <canvas id="pie-chart" class="chart-holder"></canvas> -->
           </div> <!-- /widget-content -->
             
@@ -125,19 +130,18 @@ tr:nth-child(even){background-color: #f2f2f2}
           
           <div class="span6">
             
-            <div class="widget" >
+            <div class="widget">
               
           <div class="widget-header">
             <i class="icon-bookmark"></i>
             <h3>Insert Multiple Data Link</h3>
           </div> <!-- /widget-header -->
           
-          <div class="widget-content" >
+          <div class="widget-content">
         
               <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary">Insert Multiple Data</button></a>
               <br>
-
-           
+              <br>
            <!--  <canvas id="bar-chart" class="chart-holder"></canvas> -->
           </div> <!-- /widget-content -->
         
@@ -148,7 +152,7 @@ tr:nth-child(even){background-color: #f2f2f2}
         </div> <!-- /row -->
         
 
-            
+          <!--    <div class="widget" > -->
                     <!-- <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
                     </div> -->
                      <!--  <div class="widget-content"  style="overflow-x:auto">
@@ -174,7 +178,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                      </div>
                      </div> -->
                   
-          
+            <!--   </div> -->
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Data Link - Sistem Inventory Data Teknis Transport</h3>
                     </div>
