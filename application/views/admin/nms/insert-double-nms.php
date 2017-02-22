@@ -39,7 +39,7 @@
         <span class="icon-bar"></span>
       </a>
       
-      <a class="brand" href="<?php echo site_url('Home');?>">SINDANISTRA</a>    
+      <a class="brand" href="<?php echo site_url('Home/sukses');?>">SINDANISTRA</a>    
       
       <div class="nav-collapse">
         <ul class="nav pull-right">
@@ -94,8 +94,8 @@
 
       <ul class="mainnav">
       
-        <li><a href="index.html"><i class="icon-dashboard"></i><span>Dashboard</span></a></li>
-        <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>NMS</span> </a> </li>
+        <li><a href="<?php echo site_url('Home/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span></a></li>
+        <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
             <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
             <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-long-arrow-down"></i><span>Drops</span><b class="caret"></b></a>  
@@ -134,7 +134,7 @@
               
               <div class="widget-header">
                 <i class="icon-user"></i>
-                <h3>Insert Double Data</h3>
+                <h3>Insert Multiple Data</h3>
             </div> <!-- /widget-header -->
           
           <div class="widget-content">    

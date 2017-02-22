@@ -29,9 +29,9 @@ class Report extends CI_Controller {
 			$this->load->view('admin/report/tables-report', $data);
 		}
 		
-		/*public function download_report(){
-			$this->load->view('admin/report/download_report');
-		}*/
+		public function download_report(){
+			$this->load->view('admin/report/download-report');
+		}
 	
 		//DOWNLOAD CSV REPORT
 		public function exportcsv() {
@@ -61,7 +61,7 @@ class Report extends CI_Controller {
 				$this->load->database();
 				$jumlah_data = $this->report_model->jumlah_data();
 				$this->load->library('pagination');
-				$config['base_url'] = base_url().'index.php/report/table_report';
+				$config['base_url'] = base_url().'index.php/report/table-report';
 				$config['total_rows'] = $jumlah_data;
 				$config['per_page'] = 10;
 				$from = $this->uri->segment(3);
@@ -71,7 +71,7 @@ class Report extends CI_Controller {
 				$this->session->set_userdata('x',$c);
 				
 				$data2['link_statis'] = $this->report_model->data($config['per_page'],$from);
-				$this->load->view('admin/report/tables_report',$data);
+				$this->load->view('admin/report/download-report',$data);
 			}
 		}
 	

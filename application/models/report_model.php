@@ -12,13 +12,6 @@ class report_model extends CI_Model {
 			$this->db->from('link_statis');
 			return $this->db->get();
 		}
-
-		/*function get_link_by_host($host_a){
-			$this->db->select('*');
-			$this->db->from('link_statis');
-			$this->db->where('host_a',$host_a);
-			return $this->db->get();
-		}*/
 	
 		//FUNGSI PAGINATION REPORT
 		function data($number,$offset){
@@ -45,11 +38,6 @@ class report_model extends CI_Model {
 			$query = $this->db->get('link_statis');
 			return $query->result(); 	
 		}
-		
-		/*function report($host_a, $data){
-			$this->db->where('host_a', $host_a);
-			$this->db->select('link_statis', $data);
-		}*/
 		
 }
 

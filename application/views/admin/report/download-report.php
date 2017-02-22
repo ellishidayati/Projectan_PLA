@@ -48,8 +48,6 @@
                             </ul>
                         </li>
                     </ul>
-                    
-					
                 </div>
                 <!--/.nav-collapse -->
             </div>
@@ -85,14 +83,13 @@
         <!-- /subnavbar-inner -->
     </div>
 
-    </div>
-    <br>
-    <br>
-    <br>
-	 
-    </br>
-    </br>
-    </br>
+     </div>
+     <br>
+     <br>
+     <br>
+     </br>
+     </br>
+     </br>
     <!-- /subnavbar -->
 	
 	<div class="main">
@@ -170,18 +167,20 @@
 							<?php }?>  
 						</tbody>
 						</table>
-						
-						<br />
-							<?php echo $this->pagination->create_links(); ?>
-						<br />
-						<br />
-					  </div>
-					  </div>
+						</div>
+						</div>
+					 
+						<?php 	
+						$x="";
+						if(isset($_SESSION['x'])){
+							//echo $_SESSION['x'];
+							$x = $_SESSION['x'];
+						}
+						?>
 						
 						<td>
-						   <a href="<?php echo site_url('Report/exportcsv');?>"><button type="submit" class="btn btn-primary">Download Report (.csv)</button></a>
-						   <a href="<?php echo base_url('Download/download_excel.php')?>"><button type="submit" class="btn btn-success">Download Report (.xls)</button></a>
-						   <a href="<?php echo base_url('Downloadpdf/pdf.php');?>"><button type="submit" class="btn btn-primary">Download Report (.pdf)</button></a>
+							<a href="<?php echo base_url('Download/download_excel.php?x=').$x;?>"><button type="submit" class="btn btn-primary">Download Report berdasarkan pencarian </button></a>
+							<a href="<?php echo site_url('Report');?>"><button type="submit" class="btn btn-success">Back</button></a>
 						</td>
 						
 					</div>
@@ -190,7 +189,6 @@
 			</div>
 		</div>
 	</div>
-	
 	
 	<div class="extra">
         <div class="extra-inner">
