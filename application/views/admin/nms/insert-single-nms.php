@@ -118,7 +118,7 @@
 	      		<div class="widget ">
 	      			
 	      			<div class="widget-header">
-	      				<i class="icon-user"></i>
+	      				<i class="icon-bookmark"></i>
 	      				<h3>Insert Single Data</h3>
 	  				</div> <!-- /widget-header -->
 					
