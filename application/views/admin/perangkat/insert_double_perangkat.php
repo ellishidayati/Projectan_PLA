@@ -217,7 +217,7 @@
                       
                     <br />
                     <div class="form-group" style="margin-top:-58px; margin-left: 80px; position: absolute;">
-                      <a href="<?php echo site_url('link')?>"> <button id="send" type="submit" class="btn btn-success">Cancel</button></a>
+                      <a href="<?php echo site_url('link')?>"> <button id="send" type="submit" class="btn btn-success">Cancaaaaaaaaaaaael</button></a>
                       </div>
                     <br />
                     <br />

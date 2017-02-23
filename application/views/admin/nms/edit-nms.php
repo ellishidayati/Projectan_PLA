@@ -145,7 +145,12 @@
 										<div class="control-group">											
 											<label class="control-label" for="firstname">Lokasi</label>
 												<div class="controls">
+<<<<<<< HEAD
+													<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama_nms" value="<?php echo $port->nama_lokasi; ?>" type="text" required="required">
+													
+=======
 													<input  name="nama_lokasi" value="<?php echo $port->nama_lokasi; ?>" type="text" class="col-md-6 col-sm-6 col-xs-12" id="firstname" required="required">
+>>>>>>> origin/master
 												</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 										

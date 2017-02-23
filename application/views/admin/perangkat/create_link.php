@@ -1,293 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>SINDANISTRA</title>
-
-     <!-- Bootstrap -->
-    <link href="<?php echo base_url('asset/admin/vendors/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="<?php echo base_url('asset/admin/vendors/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="<?php echo base_url('asset/admin/vendors/nprogress/nprogress.css'); ?>" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="<?php echo base_url('asset/admin/vendors/iCheck/skins/flat/green.css'); ?>" rel="stylesheet">
-    <!-- bootstrap-progressbar -->
-    <link href="<?php echo base_url('asset/admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css'); ?>" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="<?php echo base_url('asset/admin/vendors/jqvmap/dist/jqvmap.min.css'); ?>" rel="stylesheet"/>
-    <!-- bootstrap-daterangepicker -->
-    <link href="<?php echo base_url('asset/admin/vendors/bootstrap-daterangepicker/daterangepicker.css'); ?>" rel="stylesheet">
-
-    <!-- Custom Theme Style -->
-    <link href="<?php echo base_url('asset/admin/build/css/custom.min.css'); ?>" rel="stylesheet">
-    <!--search-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" type="text/javascript"></script>
-
-
-    <script type="text/javascript">
-            function ajaxjalur(str) {
-    if (str.length == 0) { 
-        document.getElementById("tambahdd").innerHTML = "";
-        return;
-    } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("tambahdd").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET", "../../ajax/coba.php?q=" + str, true);
-        xmlhttp.send();
-    }
-}
-</script>
-  </head>
-
-  <body class="nav-md">
   
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="<?php echo site_url('Home/index');?>" class="site_title"><i class="fa fa-paw"></i> <span>SINDANISTRA</span></a>
-            </div>
+ <head>
+    <meta charset="utf-8">
+    <title>SINDANISTRA</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-            <div class="clearfix"></div>
+    <link href="<?php echo base_url('asset/admin2/css/bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('asset/admin2/css/bootstrap-responsive.min.css');?>" rel="stylesheet">
+    
+    <link href="<?php echo base_url('asset/admin2/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600');?>" rel="stylesheet">
+    <link href="<?php echo base_url('asset/admin2/css/font-awesome.css');?>" rel="stylesheet">
+    
+    <link href="<?php echo base_url('asset/admin2/css/style.css');?>" rel="stylesheet">
+    
+    <link href="<?php echo base_url('asset/admin2/css/pages/reports.css');?>" rel="stylesheet">
 
-            <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="asset/admin/production/images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
-
-            <br />
-
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <ul class="nav side-menu">
-                <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="fa fa-table"></i> NMS </a>
-                <li><a href="<?php echo site_url('link');?>"><i class="fa fa-table"></i> Transport Users </a></li>
-                <li><a href="<?php echo site_url('Report');?>"><i class="fa fa-table"></i> Report </a></li>
-        </li>
-                </ul>
-              </div>
-
-            </div>
-            <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
-          </div>
-        </div>
-
-        <!-- top navigation -->
-        <div class="top_nav">
-          <div class="nav_menu">
-            <nav>
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
-
-              <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="<?php echo site_url('Home/index');?>" alt="">John Doe
-                    <span class=" fa fa-angle-down"></span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                  </ul>
-                </li>
-
-                <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <!-- /top navigation -->
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>Sistem Inventory Data Teknis Transport</h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="clearfix"></div>
-             <div class="col-md-12 col-sm-12 col-xs-12">
-           
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Create data link</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+  
+  </head>
+  
+  <body>
+    <div class="navbar navbar-fixed-top" style="position: fixed;">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </a><a class="brand" href="<?php echo site_url('Home/sukses');?>">SINDANISTRA</a>
+                <div class="nav-collapse">
+                    <ul class="nav pull-right">
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-cog"></i> Account <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:;">Settings</a></li>
+                                <li><a href="javascript:;">Help</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-user"></i> EGrappler.com <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:;">Profile</a></li>
+                                <li><a href="javascript:;">Logout</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
+                    
+          
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /navbar-inner -->
+   
+    <!-- /navbar -->
+    <div class="subnavbar">
+        <div class="subnavbar-inner">
+            <div class="container">
+                <ul class="mainnav">
+                    <li><a href="<?php echo site_url('Home/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a>
+                    </li>
+                    <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
+                    <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
+                    <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+                 </ul>      
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /subnavbar-inner -->
+    </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+   
+    </br>
+    </br>
+    </br>
+    <!-- /subnavbar -->
+  
+  <div class="main">
+        <div class="main-inner">
+            <div class="container">
+                <div class="widget">
+                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Report - Sistem Inventory Data Teknis Transport</h3>
+                    </div>
+          
 
 
-                  
-                    <form class="form-horizontal form-label-left" <?php echo form_open_multipart('Link/create_link'); ?> 
-                       <input name="jalur" type="text" value="<?php echo $jumlah_jalur; ?>" hidden/>
-
-                        <label for="name">Perangkat <span class="required">*</span>
-                        </label>
-                      <div class="item form-group">
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <select class="form-control" name="nama_lokasi">
-                          <option>METRO</option>
-                          <option>TERA</option>
-                          <option>TELKOMSEL</option>
-                          <option>ISC</option>
-                          <option>BCA</option>
-                          <option>OTHERS</option>
-                        </select>
-                      </div>
-                      </br> </br> 
-                      </br>
-
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                              <input class="form-control" name="host_a" placeholder="Node A">
-                          
-                              </input>
-                        </div>
-                          <div class="col-md-3 col-sm-6 col-xs-12">
-                              <input class="form-control" name="host_b" placeholder="Node B">
-                          
-                              </input>
-                        </div>
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                              <input class="form-control" name="fa_a" placeholder="Interface A">
-                          
-                              </input>
-                        </div>
-                          <div class="col-md-3 col-sm-6 col-xs-12">
-                              <input class="form-control" name="fa_b" placeholder="Interface B">
-                          
-                              </input>
-                        </div>
-                      </div>
-
-                      
+          <div style="overflow-x:auto"> <!-- /widget-header -->
+                    <div class="widget-content"  style="overflow-x:auto">
+          
+          
+          <div class="title_right">
                    
-                   
-                      <!-- NODE A -->
+                </div> <!-- /control-group -->
+                    
+   
+            
+             <!-- NODE A -->
                       <?php 
                       $a=1;
                       for ($i=0; $i < $jumlah_jalur; $i++) { 
@@ -466,6 +279,9 @@
                   </script>
                         <label >Jalur <?php echo $a;?> <span class="required">*</span>
                         </label>
+                        <table>
+                        <thead>
+                        <tr><th>
                       <div class="item form-group">
                       <div class="col-md-6 col-sm-12 col-xs-12">
                         <select class="form-control" name="nama_nms<?php echo $a;?>" id="nama_nms<?php echo $a;?>" onchange="ajaxnms<?php echo $a;?>(this.value)"> 
@@ -475,14 +291,14 @@
                                 <?php } ?>
                         </select>
                       </div>
-                      </div>
+                      </div></th><th>
                       <div class="item form-group">
                         <div class="col-md-3 col-sm-3 col-xs-12" id="nama_lokasi">
                         <select class="form-control" name="nama_lokasi<?php echo $a;?>" id="nama_lokasi<?php echo $a;?>" onchange="ajaxlokasi<?php echo $a;?>(<?php echo $a; ?>)">
                                  <option value="">Lokasi</option>
                                
                         </select>
-                        </div>
+                        </div></th><th>
                         <div class="col-md-3 col-sm-3 col-xs-12">
                             
                               <?php echo form_error('ne'); ?>
@@ -491,7 +307,7 @@
                                 <option value="">NE</option>
                               </select>
                           
-                        </div>
+                        </div></th><th>
                               <div class="col-md-3 col-sm-3 col-xs-12">
                             
                               <?php echo form_error('board'); ?>
@@ -500,7 +316,7 @@
                                 <option value="">Board</option>
                               </select>
                           
-                        </div>
+                        </div></th></tr></th></thead><tbody><tr><th>
                         <div class="col-md-2 col-sm-3 col-xs-12">
                             
                              <?php echo form_error('shelf'); ?> 
@@ -512,7 +328,7 @@
                         </div>
                    
                            
-                      </div>
+                      </div></th><th>
                       <div class="item form-group">
                              <div class="col-md-3 col-sm-3 col-xs-12">
                             
@@ -522,7 +338,7 @@
                                 <option value="">Slot</option>
                               </select>
                           
-                        </div>
+                        </div></th><th>
                     
                         <div class="col-md-3 col-sm-3 col-xs-12">
                             
@@ -533,13 +349,13 @@
                               </select>
                           
                         </div>
-                        </div>
+                        </div></th></tr></tbody></table>
                         <?php $a++;} ?>
                  
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                         <input name="id_port" type="text" hidden/>
+                      
                          <div class="form-group" style="margin-top:11px; margin-left: -100px; position: absolute;">
                           <button id="send" type="submit" class="btn btn-success">Submit</button>
                           </div>
@@ -554,227 +370,137 @@
                 </div>
               </div>
               </div>
-
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-           
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Transport Users</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content"><table id="datatable-buttons" class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>No</th>                        
-                          <th>Node A</th>
-                          <th>Node B</th>
-                          <th>Client A</th>
-                          <th>Client B</th>
-                          <th>NMS</th>
-                          <th>NE A</th>
-                          <th>Board A</th>
-                          <th>Shelf A</th>
-                          <th>Slot A</th>
-                          <th>Port A</th>
-                          <th>NE B</th>
-                          <th>Board B</th>
-                          <th>Shelf B</th>
-                          <th>Slot B</th>
-                          <th>Port B</th>
-                          <th>Aksi</th>
-                        </tr>
-                      </thead>
-
-
-                      <tbody>
-            <?php 
-            $no = 0;
-            foreach($link_statis as $link){
-
-              ?>
-                        <tr>
-
-                          <td><?php 
-                           if($link->host_a=="-" || $link->host_a==""){
-                              $no=$no+0;
-                            }else{
-                                $no++;
-                                echo $no; }
-                                 ?></td>
-                        
-                          <td><?php echo $link->host_a?></td>
-                          <td><?php echo $link->host_b?></td>
-                          <td><?php echo $link->fa_a?></td>
-                          <td><?php echo $link->fa_b?></td>
-                          <td><?php echo $link->nms?></td>
-                          <td><?php echo $link->ne_a?></td>
-                          <td><?php echo $link->board_a?></td>
-                          <td><?php echo $link->shelf_a?></td>
-                          <td><?php echo $link->slot_a?></td>
-                          <td><?php echo $link->port_a?></td>
-
-                          <td><?php echo $link->ne_b?></td>
-                          <td><?php echo $link->board_b?></td>
-                          <td><?php echo $link->shelf_b?></td>
-                          <td><?php echo $link->slot_b?></td>
-                          <td><?php echo $link->port_b?></td>
-                          <td>
-                                 <a href="<?php echo site_url('Link/edit_link/'.$link->id_link);?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit <?php echo $link->id_link?></a>
-                          <a href="<?php echo site_url('Link/delete_link/'.$link->id_link);?>" class="btn btn-danger btn-xs" onclick="return doconfirm();"><i class="fa fa-trash-o"></i> Delete </a>
-                  </td>
-                        </tr>
-                <?php }?>  
-                      </tbody>
-                    </table>
-                        <br />
-               
-          <br />
-          <br />
-                  </div>
-                    
-                </div>
-              </div>
-
-
-        <!-- /page content -->
-     
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            
           </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+  
+  
+  <div class="extra">
+        <div class="extra-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span3">
+                        <h4>
+                            About Free Admin Template</h4>
+                        <ul>
+                            <li><a href="javascript:;">EGrappler.com</a></li>
+                            <li><a href="javascript:;">Web Development Resources</a></li>
+                            <li><a href="javascript:;">Responsive HTML5 Portfolio Templates</a></li>
+                            <li><a href="javascript:;">Free Resources and Scripts</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Support</h4>
+                        <ul>
+                            <li><a href="javascript:;">Frequently Asked Questions</a></li>
+                            <li><a href="javascript:;">Ask a Question</a></li>
+                            <li><a href="javascript:;">Video Tutorial</a></li>
+                            <li><a href="javascript:;">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Something Legal</h4>
+                        <ul>
+                            <li><a href="javascript:;">Read License</a></li>
+                            <li><a href="javascript:;">Terms of Use</a></li>
+                            <li><a href="javascript:;">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Open Source jQuery Plugins</h4>
+                        <ul>
+                            <li><a href="http://www.egrappler.com">Open Source jQuery Plugins</a></li>
+                            <li><a href="http://www.egrappler.com;">HTML5 Responsive Tempaltes</a></li>
+                            <li><a href="http://www.egrappler.com;">Free Contact Form Plugin</a></li>
+                            <li><a href="http://www.egrappler.com;">Flat UI PSD</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /extra-inner -->
+    </div>
+    <!-- /extra -->
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        &copy; 2013 <a href="http://www.egrappler.com/">Bootstrap Responsive Admin Template</a>.
+                    </div>
+                    <!-- /span12 -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /footer-inner -->
+    </div>
+    <!-- /footer -->
 
-      <!-- jQuery -->
-    <script src="<?php echo base_url('asset/admin/vendors/jquery/dist/jquery.min.js'); ?>"></script>
-    <!-- Bootstrap -->
-    <script src="<?php echo base_url('asset/admin/vendors/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
-    <!-- FastClick -->
-    <script src="<?php echo base_url('asset/admin/vendors/fastclick/lib/fastclick.js'); ?>"></script>
-    <!-- NProgress -->
-    <script src="<?php echo base_url('asset/admin/vendors/nprogress/nprogress.js'); ?>"></script>
-    <!-- Chart.js -->
-    <script src="<?php echo base_url('asset/admin/vendors/Chart.js/dist/Chart.min.js'); ?>"></script>
-    <!-- gauge.js -->
-    <script src="<?php echo base_url('asset/admin/vendors/gauge.js/dist/gauge.min.js'); ?>"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="<?php echo base_url('asset/admin/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js'); ?>"></script>
-    <!-- iCheck -->
-    <script src="<?php echo base_url('asset/admin/vendors/iCheck/icheck.min.js'); ?>"></script>
-    <!-- Skycons -->
-    <script src="<?php echo base_url('asset/admin/vendors/skycons/skycons.js'); ?>"></script>
-    <!-- Flot -->
-    <script src="<?php echo base_url('asset/admin/vendors/Flot/jquery.flot.js'); ?>"></script>
-    <script src="<?php echo base_url('asset/admin/vendors/Flot/jquery.flot.pie.js'); ?>"></script>
-    <script src="<?php echo base_url('asset/admin/vendors/Flot/jquery.flot.time.js'); ?>"></script>
-    <script src="<?php echo base_url('asset/admin/vendors/Flot/jquery.flot.stack.js'); ?>"></script>
-    <script src="<?php echo base_url('asset/admin/vendors/Flot/jquery.flot.resize.js'); ?>"></script>
-    <!-- Flot plugins -->
-    <script src="<?php echo base_url('asset/admin/vendors/flot.orderbars/js/jquery.flot.orderBars.js'); ?>"></script>
-    <script src="<?php echo base_url('asset/admin/vendors/flot-spline/js/jquery.flot.spline.min.js'); ?>"></script>
-    <script src="<?php echo base_url('asset/admin/vendors/flot.curvedlines/curvedLines.js'); ?>"></script>
-    <!-- DateJS -->
-    <script src="<?php echo base_url('asset/admin/vendors/DateJS/build/date.js'); ?>"></script>
-    <!-- JQVMap -->
-    <script src="<?php echo base_url('asset/admin/vendors/jqvmap/dist/jquery.vmap.js'); ?>"></script>
-    <script src="<?php echo base_url('asset/admin/vendors/jqvmap/dist/maps/jquery.vmap.world.js'); ?>"></script>
-    <script src="<?php echo base_url('asset/admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js'); ?>"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="<?php echo base_url('asset/admin/vendors/moment/min/moment.min.js'); ?>"></script>
-    <script src="<?php echo base_url('asset/admin/vendors/bootstrap-daterangepicker/daterangepicker.js'); ?>"></script>
+<script src="<?php echo base_url('asset/admin2/js/jquery-1.7.2.min.js');?>"></script>
+<script src="<?php echo base_url('asset/admin2/js/excanvas.min.js');?>"></script>
+<script src="<?php echo base_url('asset/admin2/js/chart.min.js');?>" type="text/javascript"></script>
+<script src="<?php echo base_url('asset/admin2/js/bootstrap.js');?>"></script>
+<script src="<?php echo base_url('asset/admin2/js/base.js');?>"></script>
+<script>
 
-    <!-- Custom Theme Scripts -->
-    <script src="<?php echo base_url('asset/admin/build/js/custom.min.js'); ?>"></script>
+    var pieData = [
+        {
+            value: 30,
+            color: "#F38630"
+        },
+        {
+            value: 50,
+            color: "#E0E4CC"
+        },
+        {
+            value: 100,
+            color: "#69D2E7"
+        }
 
-    <!-- Datatables -->
+      ];
+
+    var myPie = new Chart(document.getElementById("pie-chart").getContext("2d")).Pie(pieData);
+
+    var barChartData = {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+        {
+            fillColor: "rgba(220,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,1)",
+            data: [65, 59, 90, 81, 56, 55, 40]
+        },
+        {
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 96, 27, 100]
+        }
+      ]
+
+    }
+
+    var myLine = new Chart(document.getElementById("bar-chart").getContext("2d")).Bar(barChartData);
+  var myLine = new Chart(document.getElementById("bar-chart1").getContext("2d")).Bar(barChartData);
+  var myLine = new Chart(document.getElementById("bar-chart2").getContext("2d")).Bar(barChartData);
+  var myLine = new Chart(document.getElementById("bar-chart3").getContext("2d")).Bar(barChartData);
+  
+  </script>
 
 
-    <script>
-      $(document).ready(function() {
-        var handleDataTableButtons = function() {
-          if ($("#datatable-buttons").length) {
-            $("#datatable-buttons").DataTable({
-              dom: "Bfrtip",
-              buttons: [
-                {
-                  extend: "copy",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "csv",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "excel",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "pdfHtml5",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "print",
-                  className: "btn-sm"
-                },
-              ],
-              responsive: true
-            });
-          }
-        };
-
-        TableManageButtons = function() {
-          "use strict";
-          return {
-            init: function() {
-              handleDataTableButtons();
-            }
-          };
-        }();
-
-        $('#datatable').dataTable();
-
-        $('#datatable-keytable').DataTable({
-          keys: true
-        });
-
-        $('#datatable-responsive').DataTable();
-
-        $('#datatable-scroller').DataTable({
-          ajax: "js/datatables/json/scroller-demo.json",
-          deferRender: true,
-          scrollY: 380,
-          scrollCollapse: true,
-          scroller: true
-        });
-
-        $('#datatable-fixed-header').DataTable({
-          fixedHeader: true
-        });
-
-        var $datatable = $('#datatable-checkbox');
-
-        $datatable.dataTable({
-          'order': [[ 1, 'asc' ]],
-          'columnDefs': [
-            { orderable: false, targets: [0] }
-          ]
-        });
-        $datatable.on('draw.dt', function() {
-          $('input').iCheck({
-            checkboxClass: 'icheckbox_flat-green'
-          });
-        });
-
-        TableManageButtons.init();
-      });
-    </script>
-    <!-- /Datatables -->
   </body>
+
 </html>

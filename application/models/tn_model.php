@@ -106,6 +106,16 @@ class tn_model extends CI_Model {
 	function insert_port($data){
 			$this->db->insert('port', $data);
 	}
+
+	function remove_checked() {
+		
+			$delete = $this->input->post('del');
+			for ($i=0; $i < count($delete) ; $i++) { 
+				$this->db->where('id_port', intval($delete[$i]));
+				$this->db->delete('port');
+			}
+		
+	}
 }
 
 /* End of file employee.php */

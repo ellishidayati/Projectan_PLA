@@ -2,20 +2,13 @@
 <html lang="en">
 <head>
 <style>
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
-}
 
-th, td {
-    border: none;
-    text-align: left;
-    padding: 8px;
+#myDIV {
+    
+    height: 335px;
+   /* width: 400px;*/
+  /*  width.table-layout: 500px;*/
 }
-
-tr:nth-child(even){background-color: #f2f2f2}
 </style>
     <meta charset="utf-8">
     <title>SINDANISTRA</title>
@@ -95,27 +88,34 @@ tr:nth-child(even){background-color: #f2f2f2}
             <div class="container">
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Inventory - Sistem Inventory Data Teknis Transport</h3>
-                    </div>
-                        <div style="overflow-x:auto"> <!-- /widget-header -->
-                        <div class="widget-content"  style="overflow-x:auto">
-                     <td >
-                       <a href="<?php echo site_url('Home/insert_single_nms');?>"><button type="submit" class="btn btn-primary">Insert Single Data</button></a>
-                    </td>   
-                     <br>
-                     <div class="form-group" style="margin-top:-28px; margin-left: 150px; position: absolute;">
+                   <!--    <form action="<?php echo site_url('Home/delete_multiple'); ?>" method="post">
+                      <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete" style="margin-top:10px; margin-left: 780px;"> -->
+                     <div class="form-group" style="margin-top:-40px; margin-left: 880px;">
                       <div class="col-md-6 col-md-offset-3">
-                      
-                   
+                     <td>
+                       <a href="<?php echo site_url('Home/insert_single_nms');?>"><button type="submit" class="btn btn-primary">Insert Single Data</button></a>
+                    </td>
+                    </div>
+                    </div>  
+                     
+                     <div class="form-group" style="margin-top:-40px; margin-left: 1018px;">
+                      <div class="col-md-6 col-md-offset-3">
                      <td>
                        <a href="<?php echo site_url('Home/insert_double_nms');?>"><button type="submit" class="btn btn-danger">Insert Multiple Data</button></a>
                       </td>
                       </div>
                     </div>
                     </br>
-                     <div class="table-responsive">
+                    </div>
+                       <!-- /widget-header -->
+                        <div class="widget-content"  style="overflow-y:auto">
+                     <div class="table-responsive" id="myDIV">
+                 <form action="<?php echo site_url('Home/delete_multiple'); ?>" method="post">
+
                         <table class="table table-striped table-bordered">
                  <thead>
                         <tr>
+                          <th><input type="checkbox" class="cek-all"></th>
                           <th>No</th>
                           <th>NMS</th>
                           <th>Lokasi</th>
@@ -126,6 +126,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                           <th>Slot</th>
                           <th>Port</th>
                           <th>Board</th>
+                          <th>Kapasitas</th>
                           <th>Frekuensi</th>
                           <th>User</th>
                           <th>Deskripsi</th>
@@ -140,21 +141,10 @@ tr:nth-child(even){background-color: #f2f2f2}
             foreach($port as $portt){
               $no++;
               $i=$portt->id_merk;
-                if($portt->board=="11LTX" || $portt->board=="15LTX" || $portt->board=="52TQX" || $portt->board=="55TQX" || $portt->board=="55TQX(STND)" || $portt->board=="96LTX" || $portt->board=="TQX" || $portt->board=="V2T210"){
-                  $kap = "10gb";
-                }elseif($portt->board=="12LSC"){
-                  $kap = "100gb";
-                }elseif($portt->board=="12TDX") {
-                  $kap = "2x100gb";
-                }elseif($portt->board=="52TOM" || $portt->board=="TOM") {
-                  $kap = "1gb";
-                }elseif($portt->board=="55TTX"){
-                  $kap = "10x10gb";
-                }elseif ($portt->board=="96LSC" || $portt->board=="V1T410") {
-                  $kap = "100gb";
-                }
+                
               ?>
                         <tr>
+                          <td><input type="checkbox" name="del[]" class="cekmultipel" value="<?php echo $portt->id_port;?>"></td>
                           <td><?php echo $no?></td>
                           <td><?php echo $portt->nama_nms?></td>
                           <td><?php echo $portt->nama_lokasi?></td>
@@ -165,6 +155,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                           <td><?php echo $portt->slot?></td>
                           <td><?php echo $portt->port?></td>
                           <td><?php echo $portt->board?></td>
+                          <td><?php echo $portt->kapasitas?></td>
           <!--                 <td><?php echo $kap?></td> -->
                           <td><?php echo $portt->frekuensi?></td>
                           <td><?php echo $portt->user?></td>
@@ -173,22 +164,31 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 
                           <td>
-                          <a href="<?php echo site_url('Home/edit_nms/'.$portt->id_port);?>" class="btn btn-info btn-xs"><i class="btn-icon-only icon-pencil"></i></a><a href="<?php echo site_url('Home/delete_nms/'.$portt->id_port);?>" class="btn btn-danger btn-xs" onclick="return doconfirm();"><i class="btn-icon-only icon-trash"></i></a>
+                          <a href="<?php echo site_url('Home/edit_nms/'.$portt->id_port);?>" class="btn btn-info btn-xs"><i class="btn-icon-only icon-pencil"></i></a>
+                          </td>
+                         <!--  <td>
+                          <a href="<?php echo site_url('Home/delete_nms/'.$portt->id_port);?>" class="btn btn-danger btn-xs" onclick="return doconfirm();"><i class="btn-icon-only icon-trash"></i></a>
+                          </td> -->
                           <!-- Trigger the modal with a button -->
                          <!--  <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Details<?php echo $portt->id_port?></button> -->
                           <!-- Modal -->
                         
                      
-                         </td>
+                      
                         </tr>
                 <?php }?>  
                       </tbody>
+                  
+                      <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete">
+                      <br>
+                      <br>
+                     
               </table>
               </div>
               </div>
-       <!--  <ul class="pagination">
+      <ul class="pagination"  style="margin-top:10px; margin-left: 970px;">
                           <li ><?php echo $this->pagination->create_links(); ?></li>
-                    </ul>  -->
+                    </ul>
 
                                 <!-- /bar-chart -->
                             </div>
@@ -279,123 +279,30 @@ tr:nth-child(even){background-color: #f2f2f2}
     <script src="<?php echo base_url('asset/admin2/js/chart.min.js');?>" type="text/javascript"></script>
     <script src="<?php echo base_url('asset/admin2/js/bootstrap.js');?>"></script>
     <script src="<?php echo base_url('asset/admin2/js/base.js');?>"></script>
+
     <script>
-        var doughnutData = [
-        {
-            value: 30,
-            color: "#F7464A"
-        },
-        {
-            value: 50,
-            color: "#46BFBD"
-        },
-        {
-            value: 100,
-            color: "#FDB45C"
-        },
-        {
-            value: 40,
-            color: "#949FB1"
-        },
-        {
-            value: 120,
-            color: "#4D5360"
-        }
+    
+    function myFunction() {
+        document.getElementById("myDIV").style.overflowY = "scroll";
+    }
+    
+    </script>
 
-      ];
+    <script>
 
-        var myDoughnut = new Chart(document.getElementById("donut-chart").getContext("2d")).Doughnut(doughnutData);
+    $(function(){
+        $('.cek-all').click(function(){
 
+          var cek = $(this).attr('checked')=='checked' ? true : false;
 
-        var lineChartData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [
-        {
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            data: [65, 59, 90, 81, 56, 55, 40]
-        },
-        {
-            fillColor: "rgba(151,187,205,0.5)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            data: [28, 48, 40, 19, 96, 27, 100]
-        }
-      ]
+            $('.cekmultipel').attr('checked', cek);
 
-        }
+        })
 
-        var myLine = new Chart(document.getElementById("area-chart").getContext("2d")).Line(lineChartData);
+    })
 
-
-        var barChartData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [
-        {
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,1)",
-            data: [65, 59, 90, 81, 56, 55, 40]
-        },
-        {
-            fillColor: "rgba(151,187,205,0.5)",
-            strokeColor: "rgba(151,187,205,1)",
-            data: [28, 48, 40, 19, 96, 27, 100]
-        }
-      ]
-
-        }
-
-var myLine = new Chart(document.getElementById("bar-chart").getContext("2d")).Bar(barChartData);
-
-var pieData = [
-        {
-            value: 30,
-            color: "#F38630"
-        },
-        {
-            value: 50,
-            color: "#E0E4CC"
-        },
-        {
-            value: 100,
-            color: "#69D2E7"
-        }
-
-      ];
-
-        var myPie = new Chart(document.getElementById("pie-chart").getContext("2d")).Pie(pieData);
-
-        var chartData = [
-      {
-          value: Math.random(),
-          color: "#D97041"
-      },
-      {
-          value: Math.random(),
-          color: "#C7604C"
-      },
-      {
-          value: Math.random(),
-          color: "#21323D"
-      },
-      {
-          value: Math.random(),
-          color: "#9D9B7F"
-      },
-      {
-          value: Math.random(),
-          color: "#7D4F6D"
-      },
-      {
-          value: Math.random(),
-          color: "#584A5E"
-      }
-    ];
-        var myPolarArea = new Chart(document.getElementById("line-chart").getContext("2d")).PolarArea(chartData);
-  </script>
+</script>
+    
 </body>
 </html>
 

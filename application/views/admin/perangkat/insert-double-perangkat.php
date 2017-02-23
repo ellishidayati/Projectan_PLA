@@ -131,7 +131,7 @@
                     <input type="submit" name="submit" value="Upload" class="btn btn-primary">
                    </form>
 
-                       <a href="<?php echo site_url('Link')?>"><button type="submit" class="btn btn-primary">Cancel</button></a></fieldset>
+                       <a href="<?php echo site_url('Link')?>"><button type="submit" class="btn btn-danger" style="margin-top:-47px; margin-left: 75px; position: absolute;">Cancel</button></a></fieldset>
                     <br />
                     <br />
                     <br />

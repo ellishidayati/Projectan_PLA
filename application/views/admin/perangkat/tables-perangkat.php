@@ -2,20 +2,12 @@
 <html lang="en">
 <head>
 <style>
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
-}
 
-th, td {
-    border: none;
-    text-align: left;
-    padding: 8px;
+#myDIV {
+  
+  /*  width.table-layout: 500px;*/
+    height: 335px;
 }
-
-tr:nth-child(even){background-color: #f2f2f2}
 </style>
     <meta charset="utf-8">
     <title>SINDANISTRA</title>
@@ -180,15 +172,23 @@ tr:nth-child(even){background-color: #f2f2f2}
             <!--   </div> -->
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Data Link - Sistem Inventory Data Teknis Transport</h3>
+
+                     <!-- <form action="<?php echo site_url('Home/delete_multiple'); ?>" method="post">
+                     <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete" style="margin-top:-80px; margin-left: 1070px;"> -->
                     </div>
+
+
                         <div style="overflow-x:auto"> <!-- /widget-header -->
                         <div class="widget-content"  style="overflow-x:auto">
                    
-                    </br>
-                     <div class="table-responsive">
+                   
+                    <div style="overflow-y:auto">
+                     <div class="table-responsive" id="myDIV">
+                      <form action="<?php echo site_url('link/delete_multiple'); ?>" method="post">
                         <table class="table table-striped table-bordered">
                   <thead>
                         <tr>
+                         <th><input type="checkbox" class="cek-all"></th>
                           <th>No</th>                        
                           <th>Node A</th>
                           <th>Node B</th>
@@ -205,7 +205,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                           <th>Shelf B</th>
                           <th>Slot B</th>
                           <th>Port B</th>
-                          <th colspan="2">Aksi</th>
+                          <th>Aksi</th>
                         </tr>
                       </thead>
 
@@ -217,6 +217,8 @@ tr:nth-child(even){background-color: #f2f2f2}
 
               ?>
                         <tr>
+                         <tr>
+                          <td><input type="checkbox" name="del[]" class="cekmultipel" value="<?php echo $link->id_link;?>"></td>
 
                           <td><?php 
                            if($link->host_a=="-" || $link->host_a==""){
@@ -243,12 +245,15 @@ tr:nth-child(even){background-color: #f2f2f2}
                           <td><?php echo $link->slot_b?></td>
                           <td><?php echo $link->port_b?></td>
                           <td> <a href="<?php echo site_url('Link/edit_link/'.$link->id_link);?>" class="btn btn-info btn-xs"><i class="btn-icon-only icon-pencil"></i></a></td>
-                          <td>
+                         <!--  <td>
                           <a href="<?php echo site_url('Link/delete_link/'.$link->id_link);?>" class="btn btn-danger btn-xs" onclick="return doconfirm();"><i class="btn-icon-only icon-trash"></i></a>
-                          </td>
+                          </td> -->
                         </tr>
                 <?php }?>  
                       </tbody>
+                        <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete">
+                        <br>
+                        <br>
               </table>
               </div>
               </div>
@@ -291,6 +296,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     <script src="<?php echo base_url('asset/admin2/js/chart.min.js');?>" type="text/javascript"></script>
     <script src="<?php echo base_url('asset/admin2/js/bootstrap.js');?>"></script>
     <script src="<?php echo base_url('asset/admin2/js/base.js');?>"></script>
+<<<<<<< HEAD
     <script>
         var doughnutData = [
         {
@@ -337,76 +343,30 @@ tr:nth-child(even){background-color: #f2f2f2}
             data: [28, 48, 40, 19, 96, 27, 100]
         }
       ]
+=======
+	<script>
+function myFunction() {
+    document.getElementById("myDIV").style.overflowY = "scroll";
+}
+</script>
+>>>>>>> origin/master
 
-        }
+  <script>
 
-        var myLine = new Chart(document.getElementById("area-chart").getContext("2d")).Line(lineChartData);
+    $(function(){
+        $('.cek-all').click(function(){
+
+          var cek = $(this).attr('checked')=='checked' ? true : false;
+
+            $('.cekmultipel').attr('checked', cek);
+
+        })
+
+    })
+
+</script>
 
 
-        var barChartData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [
-        {
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,1)",
-            data: [65, 59, 90, 81, 56, 55, 40]
-        },
-        {
-            fillColor: "rgba(151,187,205,0.5)",
-            strokeColor: "rgba(151,187,205,1)",
-            data: [28, 48, 40, 19, 96, 27, 100]
-        }
-      ]
 
-        }
-
-var myLine = new Chart(document.getElementById("bar-chart").getContext("2d")).Bar(barChartData);
-
-var pieData = [
-        {
-            value: 30,
-            color: "#F38630"
-        },
-        {
-            value: 50,
-            color: "#E0E4CC"
-        },
-        {
-            value: 100,
-            color: "#69D2E7"
-        }
-
-      ];
-
-        var myPie = new Chart(document.getElementById("pie-chart").getContext("2d")).Pie(pieData);
-
-        var chartData = [
-      {
-          value: Math.random(),
-          color: "#D97041"
-      },
-      {
-          value: Math.random(),
-          color: "#C7604C"
-      },
-      {
-          value: Math.random(),
-          color: "#21323D"
-      },
-      {
-          value: Math.random(),
-          color: "#9D9B7F"
-      },
-      {
-          value: Math.random(),
-          color: "#7D4F6D"
-      },
-      {
-          value: Math.random(),
-          color: "#584A5E"
-      }
-    ];
-        var myPolarArea = new Chart(document.getElementById("line-chart").getContext("2d")).PolarArea(chartData);
-  </script>
 </body>
 </html>
