@@ -356,17 +356,14 @@
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
                       
-                         <div class="form-group" style="margin-top:11px; margin-left: -100px; position: absolute;">
+                         <div class="form-group">
                           <button id="send" type="submit" class="btn btn-success">Submit</button>
                           </div>
                         </div>
                       </div>
                     </form>
 
-                     <td>
-                       <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary">Insert Multiple Data</button></a></td></hidden>
-                      </td>
-                  
+                   
                 </div>
               </div>
               </div>

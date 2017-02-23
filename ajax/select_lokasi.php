@@ -17,6 +17,7 @@ if (!empty($_GET['ne'])){
 	// if (ctype_digit($_GET['ne'])) {
 		$query = mysqli_query($conn,"SELECT * FROM port where nama_lokasi='$lok' and nama_nms='$nms' group by nama_ne"); 
 		echo"<option>Pilih Nama NE</option>";
+		//echo"<option>".$_GET['ne']."</option>";
 		while($d = mysqli_fetch_array($query,MYSQLI_BOTH)){
 			echo "<option value=".$d['nama_ne'].">".$d['nama_ne']."</option>";
 			// echo $d['nama_ne'];
