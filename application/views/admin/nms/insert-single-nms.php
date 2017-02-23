@@ -142,9 +142,9 @@
 										
 										
 										<div class="control-group">											
-											<label class="control-label" for="firstname">Lokasi</label>
+											<label class="control-label" for="name">Lokasi</label>
 												<div class="controls">
-													<input  name="nama_lokasi" type="text" class="span6" id="firstname" required="required">
+													<input  name="nama_lokasi" type="text" class="col-md-3 col-sm-3 col-xs-12" id="firstname" required="required">
 												</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 										
