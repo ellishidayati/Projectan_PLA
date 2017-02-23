@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
+<style>
+
+#myDIV {
+    
+    height: 335px;
+   /* width: 400px;*/
+  /*  width.table-layout: 500px;*/
+}
+</style>
+
  <head>
     <meta charset="utf-8">
     <title>SINDANISTRA</title>
@@ -102,7 +112,7 @@
                                             <label class="control-label" for="radiobtns">Download Report</label>
                                             
                                             <div class="controls">
-                                              <div class="btn-group" style="margin-top:3px; margin-left: 0px; position: absolute;">
+                                              <div class="btn-group">
                                               <a class="btn btn-primary" href="#"><i class="icon-download icon-white"></i> Download File</a>
                                               <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                                               <ul class="dropdown-menu">
@@ -113,9 +123,7 @@
                                                 <li><a href="#"><i class="i"></i> Make admin</a></li> -->
                                               </ul>
                                             </div>
-                                              </div>
-                                                  <!-- /controls -->          
-                        <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
+                        <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search" >
                             <div class="input-group">
                                 <form action="<?php print site_url();?>/report/cari" method=POST>
                                 <input type=text name=cari>             
@@ -123,11 +131,13 @@
                                 </form> 
                             </div>
                         </div>
+                                              </div>
+                                                  <!-- /controls -->          
                     </div>
                 </div> <!-- /control-group -->
                     
 					<div class="table-responsive">
-					<div class="x_content">
+					<div class="x_content" id="myDIV">
 						<table id="datatable-buttons" class="table table-striped table-bordered" border="1">
 							<thead>
 								<tr>
@@ -187,12 +197,10 @@
 						</tbody>
 						</table>
 						
-						<br />
-							<?php echo $this->pagination->create_links(); ?>
-						<br />
-						<br />
-					  </div>
-					  </div>
+						
+                      </div>
+							<!-- <?php echo $this->pagination->create_links(); ?> -->
+                      </div>
 						
 						<!-- <td>
 						   <a href="<?php echo site_url('Report/exportcsv');?>"><button type="submit" class="btn btn-primary">Download Report (.csv)</button></a>
@@ -286,48 +294,12 @@
 <script src="<?php echo base_url('asset/admin2/js/bootstrap.js');?>"></script>
 <script src="<?php echo base_url('asset/admin2/js/base.js');?>"></script>
 <script>
-
-    var pieData = [
-				{
-				    value: 30,
-				    color: "#F38630"
-				},
-				{
-				    value: 50,
-				    color: "#E0E4CC"
-				},
-				{
-				    value: 100,
-				    color: "#69D2E7"
-				}
-
-			];
-
-    var myPie = new Chart(document.getElementById("pie-chart").getContext("2d")).Pie(pieData);
-
-    var barChartData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [
-				{
-				    fillColor: "rgba(220,220,220,0.5)",
-				    strokeColor: "rgba(220,220,220,1)",
-				    data: [65, 59, 90, 81, 56, 55, 40]
-				},
-				{
-				    fillColor: "rgba(151,187,205,0.5)",
-				    strokeColor: "rgba(151,187,205,1)",
-				    data: [28, 48, 40, 19, 96, 27, 100]
-				}
-			]
-
+    
+    function myFunction() {
+        document.getElementById("myDIV").style.overflowY = "scroll";
     }
-
-    var myLine = new Chart(document.getElementById("bar-chart").getContext("2d")).Bar(barChartData);
-	var myLine = new Chart(document.getElementById("bar-chart1").getContext("2d")).Bar(barChartData);
-	var myLine = new Chart(document.getElementById("bar-chart2").getContext("2d")).Bar(barChartData);
-	var myLine = new Chart(document.getElementById("bar-chart3").getContext("2d")).Bar(barChartData);
-	
-	</script>
+    
+    </script>
 
 
   </body>

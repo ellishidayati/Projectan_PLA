@@ -155,11 +155,11 @@
                     </div>
 
 
-                        <div style="overflow-x:auto"> <!-- /widget-header -->
-                        <div class="widget-content"  style="overflow-x:auto">
+                        <!-- /widget-header -->
+                       
                    
                    
-                    <div style="overflow-y:auto">
+                    <div class="widget-content" style="overflow-y:auto">
                      <div class="table-responsive" id="myDIV">
                       <form action="<?php echo site_url('link/delete_multiple'); ?>" method="post">
                         <table class="table table-striped table-bordered">
