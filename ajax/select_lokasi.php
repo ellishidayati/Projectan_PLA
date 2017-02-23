@@ -6,7 +6,7 @@ if (!empty($_GET['nms'])){
 		$query = mysqli_query($conn,"SELECT * FROM port where nama_nms='$nms' group by nama_lokasi"); 
 		echo"<option>Pilih Nama NE</option>";
 		while($d = mysqli_fetch_array($query,MYSQLI_BOTH)){
-			echo "<option value=".$d['nama_lokasi'].">".$d['nama_lokasi']."</option>";
+			echo "<option value='".$d['nama_lokasi']."'>".$d['nama_lokasi']."</option>";
 			// echo $d['nama_ne'];
 		}
 	// }
@@ -19,7 +19,7 @@ if (!empty($_GET['ne'])){
 		echo"<option>Pilih Nama NE</option>";
 		//echo"<option>".$_GET['ne']."</option>";
 		while($d = mysqli_fetch_array($query,MYSQLI_BOTH)){
-			echo "<option value=".$d['nama_ne'].">".$d['nama_ne']."</option>";
+			echo "<option value='".$d['nama_ne']."'>".$d['nama_ne']."</option>";
 			// echo $d['nama_ne'];
 		}
 	// }
