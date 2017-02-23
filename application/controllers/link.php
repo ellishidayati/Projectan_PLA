@@ -216,12 +216,12 @@ class Link extends CI_Controller {
 
             $this->load->database();
             $this->link_model->remove_checked();
-            // redirect('Home/tables_nms');
+          
 
             $data['lokasi'] = $this->link_model->get_lokasi()->result();
             $data['link_statis'] = $this->link_model->get_link_statis()->result();
             $this->load->view('admin/perangkat/tables-perangkat', $data);
-            // $this->load->view('admin/nms/tables-nms');
+           
 
 
         }
