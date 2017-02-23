@@ -13,10 +13,9 @@ class Home extends CI_Controller {
 	public function index(){
 		$data['port'] = $this->tn_model->get_port()->result();
 		$data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
-		$this->load->view('admin/loginn',$data);	
+		$this->load->view('admin/login',$data);	
 	}
 
-    // memeriksa keberadaan akun username
     public function login(){
         $username = $this->input->post('username', 'true');
         $password = $this->input->post('password', 'true');
@@ -28,7 +27,7 @@ class Home extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required');
         
         if ($this->form_validation->run() == FALSE){
-            $this->load->view('admin/loginn');
+            $this->load->view('admin/login');
         }else{
             if ($num_account > 0){
                 // kalau ada set session
@@ -46,7 +45,16 @@ class Home extends CI_Controller {
             }   
         }
     }
-    
+	
+	//logout
+	public function logout(){
+		$this->session->sess_destroy(); //untuk mencatat akan dihapus
+		redirect(site_url('home'));
+    }
+	
+	public function login_sa(){
+		$this->load->view('admin/login_super_admin');	
+	}
     public function sukses(){
         $data['port'] = $this->tn_model->get_port()->result();
         $data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();

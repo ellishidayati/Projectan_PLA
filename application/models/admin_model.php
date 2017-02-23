@@ -20,4 +20,8 @@ class admin_model extends CI_Model {
        
         return $this->db->get();
     }
+	
+	/*function nama_admin(){
+		return $this->db->get('admin');
+	}*/
 }

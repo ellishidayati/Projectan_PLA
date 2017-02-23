@@ -50,10 +50,10 @@ tr:nth-child(even){background-color: #f2f2f2}
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-user"></i> EGrappler.com <b class="caret"></b></a>
+                            class="icon-user"></i> <?php echo $this->session->userdata('username');?>  <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:;">Profile</a></li>
-                                <li><a href="javascript:;">Logout</a></li>
+                                <li><a href="javascript:;">Profile</a></li
+                                <li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -62,8 +62,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
             <!-- /container -->
         </div>
-        <!-- /navbar-inner -->
-   
+        <!-- /navbar-inner -->   
     <!-- /navbar -->
     <div class="subnavbar">
         <div class="subnavbar-inner">
@@ -292,7 +291,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     <script src="<?php echo base_url('asset/admin2/js/chart.min.js');?>" type="text/javascript"></script>
     <script src="<?php echo base_url('asset/admin2/js/bootstrap.js');?>"></script>
     <script src="<?php echo base_url('asset/admin2/js/base.js');?>"></script>
-	<script>
+    <script>
         var doughnutData = [
         {
             value: 30,
@@ -411,6 +410,3 @@ var pieData = [
   </script>
 </body>
 </html>
-
-<!-- style="position: fixed;
- -->

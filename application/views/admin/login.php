@@ -41,19 +41,12 @@
 				<ul class="nav pull-right">
 					
 					<li class="">						
-						<a href="signup.html" class="">
+						<a href="<?php echo site_url('Home/login_sa');?>" class="">
 							Don't have an account?
 						</a>
 						
 					</li>
-					
-					<li class="">						
-						<a href="index.html" class="">
-							<i class="icon-chevron-left"></i>
-							Back to Homepage
-						</a>
-						
-					</li>
+			
 				</ul>
 				
 			</div><!--/.nav-collapse -->	
@@ -113,12 +106,6 @@
 	</div> <!-- /content -->
 	
 </div> <!-- /account-container -->
-
-
-
-<div class="login-extra">
-	<a href="#">Reset Password</a>
-</div> <!-- /login-extra -->
 
 
 <script src="<?php echo base_url('asset/admin2/js/jquery-1.7.2.min.js');?>"></script>
