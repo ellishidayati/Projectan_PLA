@@ -357,7 +357,9 @@
                         <div class="col-md-6 col-md-offset-3">
                       
                          <div class="form-group">
-                          <button id="send" type="submit" class="btn btn-success">Submit</button>
+                         <table><th>
+                          <button id="send" type="submit" class="btn btn-success">Submit</button></th><th>
+                            <a href="<?php echo site_url('Link')?>"><button type="submit" class="btn btn-danger" >Cancel</button></a></th></table>
                           </div>
                         </div>
                       </div>

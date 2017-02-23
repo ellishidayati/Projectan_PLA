@@ -104,7 +104,8 @@
                       
                     
                               <input class="form-control" name="jalur" placeholder="Masukan Jalur">
-                              </input>
+                              </input><br><br>
+                               <input type="submit" name="submit" class="btn btn-primary">
                       </form>
 
 
@@ -130,9 +131,13 @@
           
           <div class="widget-content">
         
-              <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary">Insert Multiple Data</button></a>
-              <br>
-              <br>
+            <div class="x_content">
+                <fieldset>
+                     <form method="post" action="<?php echo site_url('Excel/link')?>" enctype="multipart/form-data">
+                    <input type="file" name="userfile" ><br><br>
+                    <input type="submit" name="submit" value="Upload" class="btn btn-primary">
+                   </form>
+                  </div>
            <!--  <canvas id="bar-chart" class="chart-holder"></canvas> -->
           </div> <!-- /widget-content -->
         
@@ -141,35 +146,7 @@
           </div> <!-- /span6 -->
           
         </div> <!-- /row -->
-        
-
-          <!--    <div class="widget" > -->
-                    <!-- <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
-                    </div> -->
-                     <!--  <div class="widget-content"  style="overflow-x:auto">
-                  
-                       <form class="form-horizontal form-label-left" <?php echo form_open_multipart('Link/insert_jalur'); ?> 
-                        <label for="name">Masukan Jalur</label>
-                    
-                              <input class="form-control" name="jalur" placeholder="Jalur">
-                              </input>
-                      </form>
-
-
-                       <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary" style="margin-top:-45px; margin-left: 300px; position: absolute;">Insert Multiple Data</button></a>
-                   
-                  
-                   </div> -->
-           
-               <!-- <div class="widget" >
-                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
-                    </div>
-                      <div class="widget-content"  >
-                       <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary">Insert Multiple Data</button></a>
-                     </div>
-                     </div> -->
-                  
-            <!--   </div> -->
+      
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Data Link - Sistem Inventory Data Teknis Transport</h3>
 
