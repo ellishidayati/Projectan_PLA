@@ -91,7 +91,7 @@ class Home extends CI_Controller {
             }else{
                 // kalau ga ada diredirect lagi ke halaman login
                 $this->session->set_flashdata('notification', 'Peringatan : username dan password salah');
-                redirect(site_url('home/login_sa'));
+                redirect(site_url('home/setakun'));
             }   
         }
     }
