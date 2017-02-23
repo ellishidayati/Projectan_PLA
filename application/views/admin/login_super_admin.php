@@ -64,9 +64,9 @@
 	
 	<div class="content clearfix">
 		
-		<?php echo form_open('Home/login')?>
+		<?php echo form_open('Home/login_saaa')?>
 		
-			<h1>Login</h1>		
+			<h1>Super Admin</h1>		
 			
 			<div class="login-fields">
 				
@@ -87,6 +87,9 @@
 					<input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field" value="<?php echo set_value('password')?>" />
 				</div> <!-- /password -->
 				
+				<div class="field">
+				<input type="hidden" id="status" name="status" value="super admin" class="login password-field" value="<?php echo set_value('status')?>" />
+				</div>
 			</div> <!-- /login-fields -->
 			
 			<div class="login-actions">

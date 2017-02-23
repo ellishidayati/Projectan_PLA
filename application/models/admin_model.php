@@ -4,11 +4,21 @@ class admin_model extends CI_Model {
          parent::__construct();
      }
     // cek keberadaan user di sistem
-    function check_admin_account($username, $password){
+	function check_admin_account1($username, $password){
         $this->db->select('*');
         $this->db->from('admin');
         $this->db->where('username', $username);
         $this->db->where('password', $password);
+       
+        return $this->db->get();
+    }
+	
+    function check_admin_account($username, $password, $status){
+        $this->db->select('*');
+        $this->db->from('admin');
+        $this->db->where('username', $username);
+        $this->db->where('password', $password);
+        $this->db->where('status', $status);
        
         return $this->db->get();
     }
@@ -20,8 +30,4 @@ class admin_model extends CI_Model {
        
         return $this->db->get();
     }
-	
-	/*function nama_admin(){
-		return $this->db->get('admin');
-	}*/
 }

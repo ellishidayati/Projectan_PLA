@@ -19,7 +19,7 @@ class Home extends CI_Controller {
     public function login(){
         $username = $this->input->post('username', 'true');
         $password = $this->input->post('password', 'true');
-        $temp_account = $this->admin_model->check_admin_account($username, $password)->row();
+        $temp_account = $this->admin_model->check_admin_account1($username, $password)->row();
 
         // check account
         $num_account = count($temp_account);
@@ -55,6 +55,40 @@ class Home extends CI_Controller {
 	public function login_sa(){
 		$this->load->view('admin/login_super_admin');	
 	}
+	
+	public function login_saaa(){
+        $username = $this->input->post('username', 'true');
+        $password = $this->input->post('password', 'true');
+        $status = $this->input->post('status', 'true');
+        $temp_account = $this->admin_model->check_admin_account($username, $password, $status)->row();
+
+        // check account
+        $num_account = count($temp_account);
+        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('status', 'Status', 'required');
+        
+        if ($this->form_validation->run() == FALSE){
+            $this->load->view('admin/login_super_admin');
+        }else{
+            if ($num_account > 0){
+                // kalau ada set session
+                $array_items = array(
+                    'id_admin' => $temp_account->id_admin,
+                    'username' => $temp_account->username,
+                    'status' => $temp_account->status,
+                    'logged_in' => true
+                );
+                $this->session->set_userdata($array_items);
+                redirect(site_url('Home/sukses'));
+            }else{
+                // kalau ga ada diredirect lagi ke halaman login
+                $this->session->set_flashdata('notification', 'Peringatan : username dan password salah');
+                redirect(site_url('home/login_sa'));
+            }   
+        }
+    }
+	
     public function sukses(){
         $data['port'] = $this->tn_model->get_port()->result();
         $data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
