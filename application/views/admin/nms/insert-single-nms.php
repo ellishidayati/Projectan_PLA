@@ -142,9 +142,13 @@
 										
 										
 										<div class="control-group">											
-											<label class="control-label" for="firstname">Lokasi</label>
+											<label class="control-label" for="name">Lokasi</label>
 												<div class="controls">
+<<<<<<< HEAD
 													<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama_lokasi" type="text" required="required">
+=======
+													<input  name="nama_lokasi" type="text" class="col-md-3 col-sm-3 col-xs-12" id="firstname" required="required">
+>>>>>>> origin/master
 												</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 										

@@ -69,10 +69,6 @@
 						</ul>						
 					</li>
 				</ul>
-			
-				<form class="navbar-search pull-right">
-					<input type="text" class="search-query" placeholder="Search">
-				</form>
 				
 			</div><!--/.nav-collapse -->	
 	
@@ -94,21 +90,11 @@
 
 			<ul class="mainnav">
 			
-				<li><a href="index.html"><i class="icon-dashboard"></i><span>Dashboard</span></a></li>
+				<li><a href="<?php echo site_url('Home/sukses');?>"></i><span>Dashboard</span></a></li>
 				<li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>NMS</span> </a> </li>
 	        	<li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
        			<li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-				<li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-long-arrow-down"></i><span>Drops</span><b class="caret"></b></a>	
-				
-					<ul class="dropdown-menu">
-                        <li><a href="icons.html">Icons</a></li>
-						<li><a href="faq.html">FAQ</a></li>
-                        <li><a href="pricing.html">Pricing Plans</a></li>
-                        <li><a href="login.html">Login</a></li>
-						<li><a href="signup.html">Signup</a></li>
-						<li><a href="error.html">404</a></li>
-                    </ul>    				
-				</li>
+		
 			
 			</ul>
 
@@ -134,7 +120,7 @@
 	      			
 	      			<div class="widget-header">
 	      				<i class="icon-user"></i>
-	      				<h3>Edit Data NMS</h3>
+	      				<h3>Edit Data Inventory</h3>
 	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">		
@@ -159,8 +145,12 @@
 										<div class="control-group">											
 											<label class="control-label" for="firstname">Lokasi</label>
 												<div class="controls">
+<<<<<<< HEAD
 													<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama_nms" value="<?php echo $port->nama_lokasi; ?>" type="text" required="required">
 													
+=======
+													<input  name="nama_lokasi" value="<?php echo $port->nama_lokasi; ?>" type="text" class="col-md-6 col-sm-6 col-xs-12" id="firstname" required="required">
+>>>>>>> origin/master
 												</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 										
