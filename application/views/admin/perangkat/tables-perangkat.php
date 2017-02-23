@@ -173,17 +173,23 @@
             <!--   </div> -->
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Data Link - Sistem Inventory Data Teknis Transport</h3>
+
+                     <!-- <form action="<?php echo site_url('Home/delete_multiple'); ?>" method="post">
+                     <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete" style="margin-top:-80px; margin-left: 1070px;"> -->
                     </div>
+
+
                         <div style="overflow-x:auto"> <!-- /widget-header -->
                         <div class="widget-content"  style="overflow-x:auto">
                    
                    
                     <div style="overflow-y:auto">
                      <div class="table-responsive" id="myDIV">
-             
+                      <form action="<?php echo site_url('link/delete_multiple'); ?>" method="post">
                         <table class="table table-striped table-bordered">
                   <thead>
                         <tr>
+                         <th><input type="checkbox" class="cek-all"></th>
                           <th>No</th>                        
                           <th>Node A</th>
                           <th>Node B</th>
@@ -200,7 +206,7 @@
                           <th>Shelf B</th>
                           <th>Slot B</th>
                           <th>Port B</th>
-                          <th colspan="2">Aksi</th>
+                          <th>Aksi</th>
                         </tr>
                       </thead>
 
@@ -212,6 +218,8 @@
 
               ?>
                         <tr>
+                         <tr>
+                          <td><input type="checkbox" name="del[]" class="cekmultipel" value="<?php echo $link->id_link;?>"></td>
 
                           <td><?php 
                            if($link->host_a=="-" || $link->host_a==""){
@@ -238,12 +246,15 @@
                           <td><?php echo $link->slot_b?></td>
                           <td><?php echo $link->port_b?></td>
                           <td> <a href="<?php echo site_url('Link/edit_link/'.$link->id_link);?>" class="btn btn-info btn-xs"><i class="btn-icon-only icon-pencil"></i></a></td>
-                          <td>
+                         <!--  <td>
                           <a href="<?php echo site_url('Link/delete_link/'.$link->id_link);?>" class="btn btn-danger btn-xs" onclick="return doconfirm();"><i class="btn-icon-only icon-trash"></i></a>
-                          </td>
+                          </td> -->
                         </tr>
                 <?php }?>  
                       </tbody>
+                        <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete">
+                        <br>
+                        <br>
               </table>
               </div>
               </div>
@@ -291,6 +302,23 @@ function myFunction() {
     document.getElementById("myDIV").style.overflowY = "scroll";
 }
 </script>
+
+  <script>
+
+    $(function(){
+        $('.cek-all').click(function(){
+
+          var cek = $(this).attr('checked')=='checked' ? true : false;
+
+            $('.cekmultipel').attr('checked', cek);
+
+        })
+
+    })
+
+</script>
+
+
 
 </body>
 </html>

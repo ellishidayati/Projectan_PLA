@@ -4,9 +4,10 @@
 <style>
 
 #myDIV {
-  
-  /*  width.table-layout: 500px;*/
+    
     height: 335px;
+   /* width: 400px;*/
+  /*  width.table-layout: 500px;*/
 }
 </style>
     <meta charset="utf-8">
@@ -87,6 +88,8 @@
             <div class="container">
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Inventory - Sistem Inventory Data Teknis Transport</h3>
+                   <!--    <form action="<?php echo site_url('Home/delete_multiple'); ?>" method="post">
+                      <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete" style="margin-top:10px; margin-left: 780px;"> -->
                      <div class="form-group" style="margin-top:-40px; margin-left: 880px;">
                       <div class="col-md-6 col-md-offset-3">
                      <td>
@@ -107,10 +110,12 @@
                        <!-- /widget-header -->
                         <div class="widget-content"  style="overflow-y:auto">
                      <div class="table-responsive" id="myDIV">
-                  
+                 <form action="<?php echo site_url('Home/delete_multiple'); ?>" method="post">
+
                         <table class="table table-striped table-bordered">
                  <thead>
                         <tr>
+                          <th><input type="checkbox" class="cek-all"></th>
                           <th>No</th>
                           <th>NMS</th>
                           <th>Lokasi</th>
@@ -121,12 +126,13 @@
                           <th>Slot</th>
                           <th>Port</th>
                           <th>Board</th>
+                          <th>Kapasitas</th>
                           <th>Frekuensi</th>
                           <th>User</th>
                           <th>Deskripsi</th>
                          
                         <!--   <th>Deskripsi</th> -->
-                          <th colspan="2">Edit data</th>
+                          <th>Edit data</th>
                         </tr>
                       </thead>
                 <tbody>
@@ -135,21 +141,10 @@
             foreach($port as $portt){
               $no++;
               $i=$portt->id_merk;
-                if($portt->board=="11LTX" || $portt->board=="15LTX" || $portt->board=="52TQX" || $portt->board=="55TQX" || $portt->board=="55TQX(STND)" || $portt->board=="96LTX" || $portt->board=="TQX" || $portt->board=="V2T210"){
-                  $kap = "10gb";
-                }elseif($portt->board=="12LSC"){
-                  $kap = "100gb";
-                }elseif($portt->board=="12TDX") {
-                  $kap = "2x100gb";
-                }elseif($portt->board=="52TOM" || $portt->board=="TOM") {
-                  $kap = "1gb";
-                }elseif($portt->board=="55TTX"){
-                  $kap = "10x10gb";
-                }elseif ($portt->board=="96LSC" || $portt->board=="V1T410") {
-                  $kap = "100gb";
-                }
+                
               ?>
                         <tr>
+                          <td><input type="checkbox" name="del[]" class="cekmultipel" value="<?php echo $portt->id_port;?>"></td>
                           <td><?php echo $no?></td>
                           <td><?php echo $portt->nama_nms?></td>
                           <td><?php echo $portt->nama_lokasi?></td>
@@ -160,6 +155,7 @@
                           <td><?php echo $portt->slot?></td>
                           <td><?php echo $portt->port?></td>
                           <td><?php echo $portt->board?></td>
+                          <td><?php echo $portt->kapasitas?></td>
           <!--                 <td><?php echo $kap?></td> -->
                           <td><?php echo $portt->frekuensi?></td>
                           <td><?php echo $portt->user?></td>
@@ -170,9 +166,9 @@
                           <td>
                           <a href="<?php echo site_url('Home/edit_nms/'.$portt->id_port);?>" class="btn btn-info btn-xs"><i class="btn-icon-only icon-pencil"></i></a>
                           </td>
-                          <td>
+                         <!--  <td>
                           <a href="<?php echo site_url('Home/delete_nms/'.$portt->id_port);?>" class="btn btn-danger btn-xs" onclick="return doconfirm();"><i class="btn-icon-only icon-trash"></i></a>
-                          </td>
+                          </td> -->
                           <!-- Trigger the modal with a button -->
                          <!--  <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Details<?php echo $portt->id_port?></button> -->
                           <!-- Modal -->
@@ -182,10 +178,15 @@
                         </tr>
                 <?php }?>  
                       </tbody>
+                  
+                      <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete">
+                      <br>
+                      <br>
+                     
               </table>
               </div>
               </div>
-      <ul class="pagination">
+      <ul class="pagination"  style="margin-top:10px; margin-left: 970px;">
                           <li ><?php echo $this->pagination->create_links(); ?></li>
                     </ul>
 
@@ -280,9 +281,26 @@
     <script src="<?php echo base_url('asset/admin2/js/base.js');?>"></script>
 
     <script>
-function myFunction() {
-    document.getElementById("myDIV").style.overflowY = "scroll";
-}
+    
+    function myFunction() {
+        document.getElementById("myDIV").style.overflowY = "scroll";
+    }
+    
+    </script>
+
+    <script>
+
+    $(function(){
+        $('.cek-all').click(function(){
+
+          var cek = $(this).attr('checked')=='checked' ? true : false;
+
+            $('.cekmultipel').attr('checked', cek);
+
+        })
+
+    })
+
 </script>
     
 </body>

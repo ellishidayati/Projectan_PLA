@@ -170,6 +170,29 @@ class Home extends CI_Controller {
 	
 	}
 
+    function delete_multiple() {
+
+            $this->load->database();
+            $this->tn_model->remove_checked();
+            // redirect('Home/tables_nms');
+
+        $jumlah_data = $this->tn_model->jumlah_data();
+        $this->load->library('pagination');
+        $config['base_url'] = base_url().'index.php/home/table_nms';
+        $config['total_rows'] = $jumlah_data;
+        $config['per_page'] = 100;
+        $from = $this->uri->segment(3);
+        $this->pagination->initialize($config);
+
+        $data['port'] = $this->tn_model->data($config['per_page'],$from);
+        $data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
+        $this->load->view('admin/nms/tables-nms', $data);
+
+            // $this->load->view('admin/nms/tables-nms');
+
+
+        }
+
 	public function insert_single_perangkat(){
 		$this->load->view('admin/perangkat/insert_single_perangkat');
 	}

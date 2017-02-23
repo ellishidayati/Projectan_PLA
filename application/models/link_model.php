@@ -67,6 +67,16 @@ class link_model extends CI_Model {
 			return FALSE;
 		}
 
+		function remove_checked() {
+		
+			$delete = $this->input->post('del');
+			for ($i=0; $i < count($delete) ; $i++) { 
+				$this->db->where('id_link', intval($delete[$i]));
+				$this->db->delete('link_statis');
+			}
+		
+	}
+
 }
 
 /* End of file employee.php */

@@ -5,6 +5,18 @@ include 'conn.php';
 //mengambil data dari tabel
 $sql=mysqli_query($conn, "SELECT id_link, host_a, host_b, fa_a, fa_b, nms, ne_a, board_a, shelf_a, slot_a, port_a, ne_b, board_b, shelf_b, slot_b, port_b FROM link_statis");
 
+		$no = 0;
+		$qrys=mysqli_query($conn,"select * from link_statis");
+		
+		
+		if(isset($_GET['x'])){
+			$e = $_GET['x'];
+			if($e != ""){
+				$sql=mysqli_query($conn,"select id_link, host_a, host_b, fa_a, fa_b, nms, ne_a, board_a, shelf_a, slot_a, port_a, ne_b, board_b, shelf_b, slot_b, port_b FROM link_statis WHERE host_a LIKE '$e'");
+			}
+		}
+		
+
 $data = array();
 	while ($row = mysqli_fetch_assoc($sql)) {
    		array_push($data, $row);
@@ -61,15 +73,17 @@ $pdf->SetFillColor(220,220,220); //warna dalam kolom data
 $pdf->SetTextColor(0); //warna tulisan hitam
 $pdf->SetFont('');
 $fill=false;
-
+$i=1;
 	foreach ($data as $baris) {
 		$j = 0;
+		$baris['id_link']=$i;
 		foreach ($baris as $cell) {
 			
 				$pdf->Cell($header[$j]['length'], 6, $cell, 1, '0', 'C', $fill);
 			
 		$j++;
 		}
+		$i++;
 		$fill = !$fill;
 		$pdf->Ln();
 		}

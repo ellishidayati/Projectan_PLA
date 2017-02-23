@@ -144,7 +144,7 @@
 										<div class="control-group">											
 											<label class="control-label" for="firstname">Lokasi</label>
 												<div class="controls">
-													<input  name="nama_lokasi" type="text" class="span6" id="firstname" required="required">
+													<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama_lokasi" type="text" required="required">
 												</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 										

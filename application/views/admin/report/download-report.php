@@ -98,18 +98,26 @@
                             $x = $_SESSION['x'];
                         }
                         ?>
-					
-                    <div class="title_right">
+
+                        <div class="title_right">
                        <div class="control-group">                                         
-                                            <label class="control-label" for="radiobtns">Download Report Sesuai Pencarian</label>
+                                            <label class="control-label" for="radiobtns">Download Report</label>
                                             
                                             <div class="controls">
                                               <div class="btn-group" style="margin-top:3px; margin-left: 0px; position: absolute;">
-
-                                             <a class="btn btn-primary" href="<?php echo base_url('Download/download_excel.php?x=').$x;?>"><i class="icon-download icon-white"></i> Download File</a>
+                                              <a class="btn btn-primary" href="#"><i class="icon-download icon-white"></i> Download File</a>
+                                              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                                              <ul class="dropdown-menu">
+                                                
+                                                <li><a href="<?php echo base_url('Download/download_excel.php?x=').$x;?>"><i class="icon-file"></i>Excel</a></li>
+                                                <li><a href="<?php echo base_url('Downloadpdf/pdf.php?x=').$x;?>"><i class="icon-file"></i>PDF</a></li>
+                                               <!--  <li class="divider"></li>
+                                                <li><a href="#"><i class="i"></i> Make admin</a></li> -->
                                               </ul>
                                             </div>
                                               </div>
+
+					
                                                   <!-- /controls -->          
                         <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
                             <div class="input-group">
