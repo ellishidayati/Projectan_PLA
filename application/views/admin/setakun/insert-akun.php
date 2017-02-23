@@ -95,6 +95,7 @@
 				<li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
 	        	<li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
        			<li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>	
+				<li><a href="<?php echo site_url('Home/setakun_');?>"><i class="icon-list-alt"></i><span>Setting Akun</span> </a> </li>
 			
 			</ul>
 		</div> <!-- /container -->
@@ -119,117 +120,58 @@
 	      			
 	      			<div class="widget-header">
 	      				<i class="icon-bookmark"></i>
-	      				<h3>Insert Single Data</h3>
+	      				<h3>Insert New akun</h3>
 	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">		
 						<div class="tab-content">
 							<div>
-								<form id="edit-profile" class="form-horizontal" <?php echo form_open_multipart('Home/proses_insert_nms'); ?> 
+								<form id="edit-profile" class="form-horizontal" <?php echo form_open_multipart('Home/proses_insert_akun'); ?> 
 									<fieldset>
 										
 									<div class="control-group">											
-										<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nama NMS</label>
+										<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nama</label>
 
 										<div class="controls">
 										 <div class="col-md-6 col-sm-6 col-xs-12">
-                          					<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama_nms" type="text" required="required">
+                          					<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama" type="text" required="required">
                       					 </div>
-												<!-- <input type="text" class="span6 disabled" id="username" value="Example" disabled>
-												<p class="help-block">Your username is for logging in and cannot be changed.</p> -->
 											</div> 				
 										</div> <!-- /control-group -->
 										
 										
 										<div class="control-group">											
-											<label class="control-label" for="name">Lokasi</label>
+											<label class="control-label" for="name">Jabatan</label>
 												<div class="controls">
-<<<<<<< HEAD
-													<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama_lokasi" type="text" required="required">
-=======
-													<input  name="nama_lokasi" type="text" class="col-md-3 col-sm-3 col-xs-12" id="firstname" required="required">
->>>>>>> origin/master
+
+													<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="jabatan" type="text" required="required">
+													
 												</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
-										
-										 <div class="control-group">
-                       					 	<label class="control-label" for="email">Merk</label>
-                       							 <div class="controls">
-                             						<select class="form-control" name="id_merk" required="required">
-                                							<?php foreach ($merk as $merkk){ ?>
-                                						<option  value="<?php echo $merkk->id_merk; ?>"><?php echo $merkk->nama_merk ?></option>
-                                						 <?php } ?>
-                              						</select>
-                       							 </div>
-                      					</div>
+									
 
                       					<div class="control-group">
-                       						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Nama NE</label>
+                       						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Status akun</label>
                         				<div class="controls">
-                         					 <input  id="number" name="nama_ne" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
+                         					 <input  id="number" name="status" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
                         				</div>
                      					</div>
 
 										 <div class="control-group">
-                        					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Rack</label>
+                        					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Username</label>
                        					 	<div class="controls">
-                          						<input  id="website" name="rack" required="required" class="form-control col-md-7 col-xs-12">
+                          						<input  id="website" name="username" required="required" class="form-control col-md-7 col-xs-12">
                        					 	</div>
                       					</div>
 										
 										
 										 <div class="control-group">
-                       						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Shelf</label>
+                       						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Password</label>
                        							 <div class="controls">
-                          							<input  type="text" name="shelf"  data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12" required="required">
+                          							<input  type="text" name="password"  data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12" required="required">
                         						</div>
                      					 </div>
 
-                     					 <div class="control-group">
-                       						 <label for="password" class="control-label col-md-3">Slot</label>
-                       							 <div class="controls">
-                         							 <input type="text" name="slot" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
-                        						</div>
-                     					 </div>
-
-                     					 
-                     					<div class="control-group">
-                      						<label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Port</label>
-                        						<div class="controls">
-                          							<input type="text" name="port"  class="form-control col-md-7 col-xs-12" required="required">
-                        						</div>
-                      					</div>
-
-                      					<div class="control-group">
-                        					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">Board</label>
-                        						<div class="controls">
-                          							<input type="text" name="board" required="required" data-validate-length-range="8,20" class="form-control col-md-7 col-xs-12">
-                       							 </div>
-                      					</div>
-
-                     					<div class="control-group">
-                        					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Frekuensi</label>
-                        						<div class="controls">
-                         							 <input type="text" required="required" name="frekuensi"  class="form-control col-md-7 col-xs-12"></input>
-                        						</div>
-                    					  </div>
-
-                    					  <div class="control-group">
-                       						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">User</label>
-                        						<div class="controls">
-                          							<input id="text" required="required" name="user"  class="form-control col-md-7 col-xs-12"></input>
-                       							 </div>
-                      						</div>
-
-                           				<div class="control-group">
-                       						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Deskripsi</label>
-                        						<div class="controls">
-                         							 <input type="text" required="required" name="deskripsi" class="form-control col-md-7 col-xs-12"></input>
-                        						</div>
-                    					  </div>
-										
-										
-										</br>
 
 										 <div class="form-actions">
                        
@@ -238,16 +180,12 @@
                      
                       </div>
 										
-											
-										<!-- <div class="form-actions">
-											<button type="submit" class="btn btn-primary">Save</button> 
-											<button class="btn">Cancel</button>
-										</div> <!-- /form-actions --> 
+							
 									</fieldset>
 								</form>
 								 <div class="control-group" style="margin-top:-83px; margin-left: 250px; position: absolute;">
                       <div class="controls">
-                          <a href="<?php echo site_url('Home/table_nms');?>"><button type="submit" class="btn">Cancel</button></a>
+                          <a href="<?php echo site_url('Home/setakun_');?>"><button type="submit" class="btn">Cancel</button></a>
                       </div>
                     </div>
 								</div>

@@ -33,17 +33,17 @@
 				<span class="icon-bar"></span>
 			</a>
 			
-			<a class="brand" href="index.html">
-				SISTEM INVENTORY DATA TEKNIS TRANSPORT
+			<a class="brand" href="<?php echo site_url('Home/sukses');?>">
+				SINDANISTRA
 			</a>
 			
 			<div class="nav-collapse">
 				<ul class="nav pull-right">
 					
 					<li class="">						
-						<a href="<?php echo site_url('Home/login');?>" class="">
+						<a href="<?php echo site_url('Home/sukses');?>" class="">
 							<i class="icon-chevron-left"></i>
-							Back to Homepage
+							Back to Dashbord
 						</a>
 						
 					</li>
@@ -66,11 +66,11 @@
 		
 		<?php echo form_open('Home/login_saaa')?>
 		
-			<h1>Super Admin</h1>		
+			<h1>Member Login</h1>		
 			
 			<div class="login-fields">
 				
-				<p>Please provide your details if you super admin!</p>
+				<p>Please provide your details if you SUPER ADMIN!</p>
 
 				<div class="form-bottom">
 					<?php echo validation_errors(); ?>

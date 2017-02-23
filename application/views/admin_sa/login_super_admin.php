@@ -35,7 +35,22 @@
 			
 			<a class="brand" href="index.html">
 				SISTEM INVENTORY DATA TEKNIS TRANSPORT
-			</a>			
+			</a>
+			
+			<div class="nav-collapse">
+				<ul class="nav pull-right">
+					
+					<li class="">						
+						<a href="<?php echo site_url('Home/login');?>" class="">
+							<i class="icon-chevron-left"></i>
+							Back to Homepage
+						</a>
+						
+					</li>
+			
+				</ul>
+				
+			</div>
 	
 		</div> <!-- /container -->
 		
@@ -49,13 +64,13 @@
 	
 	<div class="content clearfix">
 		
-		<?php echo form_open('Home/login')?>
+		<?php echo form_open('superadmin/login')?>
 		
-			<h1>Member Login</h1>		
+			<h1>Super Admin</h1>		
 			
 			<div class="login-fields">
 				
-				<p>Please provide your details</p>
+				<p>Please provide your details if you super admin!</p>
 
 				<div class="form-bottom">
 					<?php echo validation_errors(); ?>
@@ -72,6 +87,9 @@
 					<input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field" value="<?php echo set_value('password')?>" />
 				</div> <!-- /password -->
 				
+				<div class="field">
+				<input type="hidden" id="status" name="status" value="super admin" class="login password-field" value="<?php echo set_value('status')?>" />
+				</div>
 			</div> <!-- /login-fields -->
 			
 			<div class="login-actions">

@@ -39,7 +39,7 @@
 				<span class="icon-bar"></span>
 			</a>
 			
-			<a class="brand" href="<?php echo site_url('Home');?>">SINDANISTRA</a>		
+			<a class="brand" href="<?php echo site_url('superadmin/sukses');?>">SINDANISTRA</a>		
 			
 			<div class="nav-collapse">
 				<ul class="nav pull-right">
@@ -65,10 +65,11 @@
 						
 						<ul class="dropdown-menu">
 							<li><a href="javascript:;">Profile</a></li>
-							<li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
+							<li><a href="<?php echo site_url('superadmin/logout'); ?>">Logout</a></li>
 						</ul>						
 					</li>
 				</ul>
+			
 				
 			</div><!--/.nav-collapse -->	
 	
@@ -90,14 +91,13 @@
 
 			<ul class="mainnav">
 			
-				<li><a href="<?php echo site_url('Home/sukses');?>"></i><span>Dashboard</span></a></li>
-				<li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>NMS</span> </a> </li>
+				<li><a href="<?php echo site_url('superadmin/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span></a></li>
+				<li><a href="<?php echo site_url('superadmin/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
 	        	<li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
        			<li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-		
+				<li><a href="<?php echo site_url('setakun');?>"><i class="icon-list-alt"></i><span>Setting akun</span> </a> </li>
 			
 			</ul>
-
 		</div> <!-- /container -->
 	
 	</div> <!-- /subnavbar-inner -->
@@ -119,14 +119,14 @@
 	      		<div class="widget ">
 	      			
 	      			<div class="widget-header">
-	      				<i class="icon-user"></i>
-	      				<h3>Edit Data Inventory</h3>
+	      				<i class="icon-bookmark"></i>
+	      				<h3>Insert Single Data</h3>
 	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">		
 						<div class="tab-content">
 							<div>
-								<form id="edit-profile" class="form-horizontal" <?php echo form_open_multipart('Home/proses_edit_nms'); ?>
+								<form id="edit-profile" class="form-horizontal" <?php echo form_open_multipart('superadmin/proses_insert_nms'); ?> 
 									<fieldset>
 										
 									<div class="control-group">											
@@ -134,7 +134,7 @@
 
 										<div class="controls">
 										 <div class="col-md-6 col-sm-6 col-xs-12">
-                          					<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama_nms" value="<?php echo $port->nama_nms; ?>" type="text" required="required">
+                          					<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama_nms" type="text" required="required">
                       					 </div>
 												<!-- <input type="text" class="span6 disabled" id="username" value="Example" disabled>
 												<p class="help-block">Your username is for logging in and cannot be changed.</p> -->
@@ -143,23 +143,22 @@
 										
 										
 										<div class="control-group">											
-											<label class="control-label" for="firstname">Lokasi</label>
+											<label class="control-label" for="name">Lokasi</label>
 												<div class="controls">
-<<<<<<< HEAD
-													<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama_nms" value="<?php echo $port->nama_lokasi; ?>" type="text" required="required">
+
+													<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama_lokasi" type="text" required="required">
+
 													
-=======
-													<input  name="nama_lokasi" value="<?php echo $port->nama_lokasi; ?>" type="text" class="col-md-6 col-sm-6 col-xs-12" id="firstname" required="required">
->>>>>>> origin/master
+
 												</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 										
 										 <div class="control-group">
                        					 	<label class="control-label" for="email">Merk</label>
                        							 <div class="controls">
-                             						<select class="form-control" name="id_merk" value="<?php echo $port->id_merk; ?>" required="required">
-                             							<?php foreach ($merk as $merkk){ ?>
-                                						<option <?php if($merkk->id_merk==$port->id_merk){echo "selected='selected'";}?> value="<?php echo $merkk->id_merk; ?>"><?php echo $merkk->nama_merk ?></option>
+                             						<select class="form-control" name="id_merk" required="required">
+                                							<?php foreach ($merk as $merkk){ ?>
+                                						<option  value="<?php echo $merkk->id_merk; ?>"><?php echo $merkk->nama_merk ?></option>
                                 						 <?php } ?>
                               						</select>
                        							 </div>
@@ -168,14 +167,14 @@
                       					<div class="control-group">
                        						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Nama NE</label>
                         				<div class="controls">
-                         					 <input  id="number" name="nama_ne" value="<?php echo $port->nama_ne; ?>" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
+                         					 <input  id="number" name="nama_ne" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
                         				</div>
                      					</div>
 
 										 <div class="control-group">
                         					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Rack</label>
                        					 	<div class="controls">
-                          						<input  id="website" name="rack" value="<?php echo $port->rack; ?>" required="required" class="form-control col-md-7 col-xs-12">
+                          						<input  id="website" name="rack" required="required" class="form-control col-md-7 col-xs-12">
                        					 	</div>
                       					</div>
 										
@@ -183,14 +182,14 @@
 										 <div class="control-group">
                        						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Shelf</label>
                        							 <div class="controls">
-                          							<input  type="text" name="shelf" value="<?php echo $port->shelf; ?>" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12" required="required">
+                          							<input  type="text" name="shelf"  data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12" required="required">
                         						</div>
                      					 </div>
 
                      					 <div class="control-group">
                        						 <label for="password" class="control-label col-md-3">Slot</label>
                        							 <div class="controls">
-                         							 <input type="text" name="slot" value="<?php echo $port->slot; ?>" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+                         							 <input type="text" name="slot" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
                         						</div>
                      					 </div>
 
@@ -198,54 +197,60 @@
                      					<div class="control-group">
                       						<label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Port</label>
                         						<div class="controls">
-                          							<input type="text" name="port" value="<?php echo $port->port; ?>" class="form-control col-md-7 col-xs-12" required="required">
+                          							<input type="text" name="port"  class="form-control col-md-7 col-xs-12" required="required">
                         						</div>
                       					</div>
 
                       					<div class="control-group">
                         					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">Board</label>
                         						<div class="controls">
-                          							<input type="text" name="board" value="<?php echo $port->board; ?>" required="required" data-validate-length-range="8,20" class="form-control col-md-7 col-xs-12">
+                          							<input type="text" name="board" required="required" data-validate-length-range="8,20" class="form-control col-md-7 col-xs-12">
                        							 </div>
                       					</div>
 
                      					<div class="control-group">
                         					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Frekuensi</label>
                         						<div class="controls">
-                         							 <input type="text" required="required" name="frekuensi" value="<?php echo $port->frekuensi; ?>" class="form-control col-md-7 col-xs-12"></input>
+                         							 <input type="text" required="required" name="frekuensi"  class="form-control col-md-7 col-xs-12"></input>
                         						</div>
                     					  </div>
 
                     					  <div class="control-group">
                        						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">User</label>
                         						<div class="controls">
-                          							<input id="text" required="required" name="user" value="<?php echo $port->user; ?>" class="form-control col-md-7 col-xs-12"></input>
+                          							<input id="text" required="required" name="user"  class="form-control col-md-7 col-xs-12"></input>
                        							 </div>
                       						</div>
 
                            				<div class="control-group">
                        						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Deskripsi</label>
                         						<div class="controls">
-                         							 <input type="text" required="required" name="deskripsi" value="<?php echo $port->nama_ne; ?>" class="form-control col-md-7 col-xs-12"></input>
+                         							 <input type="text" required="required" name="deskripsi" class="form-control col-md-7 col-xs-12"></input>
                         						</div>
                     					  </div>
-
 										
 										
 										</br>
 
-										<div class="form-actions">
-											<input name="id_port" type="hidden" value="<?php echo $port->id_port; ?>"/>
-                       						<button id="send" type="submit" class="btn btn-primary">Submit</button>
+										 <div class="form-actions">
+                       
+                      
+                          <button id="send" type="submit" class="btn btn-primary">Submit</button>
                      
-                     					 </div>
-							</fieldset>
+                      </div>
+										
+											
+										<!-- <div class="form-actions">
+											<button type="submit" class="btn btn-primary">Save</button> 
+											<button class="btn">Cancel</button>
+										</div> <!-- /form-actions --> 
+									</fieldset>
 								</form>
-								 		<div class="control-group" style="margin-top:-83px; margin-left: 250px; position: absolute;">
-                      						<div class="controls">
-                          						<a href="<?php echo site_url('Home/table_nms');?>"><button type="submit" class="btn">Cancel</button></a>
-                     						 </div>
-                    					</div>
+								 <div class="control-group" style="margin-top:-83px; margin-left: 250px; position: absolute;">
+                      <div class="controls">
+                          <a href="<?php echo site_url('superadmin/table_nms');?>"><button type="submit" class="btn">Cancel</button></a>
+                      </div>
+                    </div>
 								</div>
 								
 								

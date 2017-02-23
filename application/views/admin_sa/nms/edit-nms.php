@@ -39,7 +39,7 @@
 				<span class="icon-bar"></span>
 			</a>
 			
-			<a class="brand" href="<?php echo site_url('Home');?>">SINDANISTRA</a>		
+			<a class="brand" href="<?php echo site_url('superadmin');?>">SINDANISTRA</a>		
 			
 			<div class="nav-collapse">
 				<ul class="nav pull-right">
@@ -65,7 +65,7 @@
 						
 						<ul class="dropdown-menu">
 							<li><a href="javascript:;">Profile</a></li>
-							<li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
+							<li><a href="<?php echo site_url('superadmin/logout'); ?>">Logout</a></li>
 						</ul>						
 					</li>
 				</ul>
@@ -90,12 +90,11 @@
 
 			<ul class="mainnav">
 			
-				<li><a href="<?php echo site_url('Home/sukses');?>"></i><span>Dashboard</span></a></li>
-				<li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>NMS</span> </a> </li>
+				<li><a href="<?php echo site_url('superadmin/sukses');?>"></i><span>Dashboard</span></a></li>
+				<li><a href="<?php echo site_url('superadmin/table_nms');?>"><i class="icon-bar-chart"></i><span>NMS</span> </a> </li>
 	        	<li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
        			<li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-       			<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>
-		
+				<li><a href="<?php echo site_url('setakun');?>"><i class="icon-list-alt"></i><span>Setting akun</span> </a> </li>
 			
 			</ul>
 
@@ -127,7 +126,7 @@
 					<div class="widget-content">		
 						<div class="tab-content">
 							<div>
-								<form id="edit-profile" class="form-horizontal" <?php echo form_open_multipart('Home/proses_edit_nms'); ?>
+								<form id="edit-profile" class="form-horizontal" <?php echo form_open_multipart('superadmin/proses_edit_nms'); ?>
 									<fieldset>
 										
 									<div class="control-group">											
@@ -244,7 +243,7 @@
 								</form>
 								 		<div class="control-group" style="margin-top:-83px; margin-left: 250px; position: absolute;">
                       						<div class="controls">
-                          						<a href="<?php echo site_url('Home/table_nms');?>"><button type="submit" class="btn">Cancel</button></a>
+                          						<a href="<?php echo site_url('superadmin/table_nms');?>"><button type="submit" class="btn">Cancel</button></a>
                      						 </div>
                     					</div>
 								</div>

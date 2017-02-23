@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Superadmin extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -11,59 +11,10 @@ class Home extends CI_Controller {
 	}
 
 	public function index(){
-		$data['port'] = $this->tn_model->get_port()->result();
-		$data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
-		$this->load->view('admin/login',$data);	
-	}
-
-    public function login(){
-        $username = $this->input->post('username', 'true');
-        $password = $this->input->post('password', 'true');
-        $temp_account = $this->admin_model->check_admin_account1($username, $password)->row();
-
-        // check account
-        $num_account = count($temp_account);
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-        
-        if ($this->form_validation->run() == FALSE){
-            $this->load->view('admin/login');
-        }else{
-            if ($num_account > 0){
-                // kalau ada set session
-                $array_items = array(
-                    'id_admin' => $temp_account->id_admin,
-                    'username' => $temp_account->username,
-                    'logged_in' => true
-                );
-                $this->session->set_userdata($array_items);
-                redirect(site_url('Home/sukses'));
-            }else{
-                // kalau ga ada diredirect lagi ke halaman login
-                $this->session->set_flashdata('notification', 'Peringatan : username dan password salah');
-                redirect(site_url('home'));
-            }   
-        }
-    }
-	
-	//logout
-	public function logout(){
-		$this->session->sess_destroy(); //untuk mencatat akan dihapus
-		redirect(site_url('home'));
-    }
-	
-	
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public function setakun(){
-		$this->load->view('admin/login_super_admin');	
+		$this->load->view('admin_sa/login_super_admin');	
 	}
 	
-	public function setakun_(){
-		$data['admin'] = $this->tn_model->get_admin()->result();
-		$this->load->view('admin/setakun/tables-akun', $data);	
-	}
-	
-	public function login_saaa(){
+	public function login(){
         $username = $this->input->post('username', 'true');
         $password = $this->input->post('password', 'true');
         $status = $this->input->post('status', 'true');
@@ -76,60 +27,37 @@ class Home extends CI_Controller {
         $this->form_validation->set_rules('status', 'Status', 'required');
         
         if ($this->form_validation->run() == FALSE){
-            $this->load->view('admin/login_super_admin');
+            $this->load->view('admin_sa/login_super_admin');
         }else{
             if ($num_account > 0){
                 // kalau ada set session
                 $array_items = array(
-                    'id_admin' => $temp_account->id_admin,
+                    'id_admin_sa' => $temp_account->id_admin_sa,
                     'username' => $temp_account->username,
                     'status' => $temp_account->status,
                     'logged_in' => true
                 );
                 $this->session->set_userdata($array_items);
-                redirect(site_url('Home/setakun_'));
+                redirect(site_url('superadmin/sukses'));
             }else{
                 // kalau ga ada diredirect lagi ke halaman login
                 $this->session->set_flashdata('notification', 'Peringatan : username dan password salah');
-                redirect(site_url('home/login_sa'));
+                redirect(site_url('superadmin'));
             }   
         }
     }
 	
-	public function delete_akun($id_admin){
-	 	$this->tn_model->delete_akun($id_admin);
-		$data['admin'] = $this->tn_model->get_admin()->result();
-		$this->load->view('admin/setakun/tables-akun', $data);
-	}
-	
-	function insert_akun(){
-		$this->load->view('admin/setakun/insert-akun');
-	}	
-	
-	public function proses_insert_akun(){
-        $data['id_admin'] = $this->input->post('id_admin');
-        $data['nama'] = $this->input->post('nama');
-        $data['jabatan'] = $this->input->post('jabatan');
-        $data['status'] = $this->input->post('status');
-        $data['username'] = $this->input->post('username');
-        $data['password'] = $this->input->post('password');
-		
-		$this->tn_model->insert_akun($data);
-		$this->load->view('admin/setakun/tables-akun');
-    }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
     public function sukses(){
         $data['port'] = $this->tn_model->get_port()->result();
         $data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
-        $this->load->view('admin/index',$data); 
+        $this->load->view('admin_sa/index',$data); 
     }
 
 	public function table_nms(){
 		$this->load->database();
 		$jumlah_data = $this->tn_model->jumlah_data();
 		$this->load->library('pagination');
-		$config['base_url'] = base_url().'index.php/home/table_nms';
+		$config['base_url'] = base_url().'index.php/superadmin/table_nms';
 		$config['total_rows'] = $jumlah_data;
 		$config['per_page'] = 100;
 		$from = $this->uri->segment(3);
@@ -137,36 +65,36 @@ class Home extends CI_Controller {
 
 		$data['port'] = $this->tn_model->data($config['per_page'],$from);
 		$data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
-		$this->load->view('admin/nms/tables-nms', $data);
+		$this->load->view('admin_sa/nms/tables-nms', $data);
 	}
 
 	public function tables_link_statis(){
 		$data['link_statis'] = $this->tn_model->get_link_statis()->result();
-		$this->load->view('admin/perangkat/tables_perangkat', $data);
+		$this->load->view('admin_sa/perangkat/tables_perangkat', $data);
 	}
 	
 	public function table_perangkat(){
 		$data['link_statis'] = $this->tn_model->get_link_statis()->result();
-		$this->load->view('admin/perangkat/tables_perangkat', $data);
+		$this->load->view('admin_sa/perangkat/tables_perangkat', $data);
 	}
 
 	public function insert_single_nms(){
         $data['merk']=$this->tn_model->get_merk()->result();
-        $this->load->view('admin/nms/insert-single-nms', $data);
+        $this->load->view('admin_sa/nms/insert-single-nms', $data);
 	}
 	
 	public function insert_double_nms(){
-		$this->load->view('admin/nms/insert-double-nms');
+		$this->load->view('admin_sa/nms/insert-double-nms');
 	}
 
 	public function insert_double_link(){
-		$this->load->view('admin/perangkat/insert_double_link');
+		$this->load->view('admin_sa/perangkat/insert_double_link');
 	}
 
 	public function edit_nms($id_port){
 		$data['port']=$this->tn_model->get_port_by_id($id_port)->row();
 		$data['merk']=$this->tn_model->get_merk()->result();
-		$this->load->view('admin/nms/edit-nms',$data);
+		$this->load->view('admin_sa/nms/edit-nms',$data);
 	}
 
 	 public function proses_edit_nms(){
@@ -185,21 +113,21 @@ class Home extends CI_Controller {
         $data['deskripsi']=$this->input->post('deskripsi');
         $id_port=$this->input->post('id_port');
         $this->tn_model->update_port($id_port, $data);
-      	  //redirect(site_url().'/Home');
+      	  //redirect(site_url().'/superadmin_sa');
    		$data['port'] = $this->tn_model->get_port()->result();
 		$data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
-		$this->load->view('admin/nms/tables-nms', $data);
+		$this->load->view('admin_sa/nms/tables-nms', $data);
 	 }
 
 	function insert_nms($id_port){
-		$this->load->view('admin/nms/insert-single-nms');
+		$this->load->view('admin_sa/nms/insert-single-nms');
 	}	
 	
 	public function proses_insert_nms(){
 		$this->load->database();
 		$jumlah_data = $this->tn_model->jumlah_data();
 		$this->load->library('pagination');
-		$config['base_url'] = base_url().'index.php/home/table_nms';
+		$config['base_url'] = base_url().'index.php/superadmin/table_nms';
 		$config['total_rows'] = $jumlah_data;
 		$config['per_page'] = 100;
 		$from = $this->uri->segment(3);
@@ -222,14 +150,14 @@ class Home extends CI_Controller {
 		
 		$data['port'] = $this->tn_model->data($config['per_page'],$from);
 		$data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
-		$this->load->view('admin/nms/tables-nms', $data);
+		$this->load->view('admin_sa/nms/tables-nms', $data);
     }
 
 	public function delete_nms($id_port){
 		/*$this->load->database();
 		$jumlah_data = $this->tn_model->jumlah_data();
 		$this->load->library('pagination');
-		$config['base_url'] = base_url().'index.php/home/table_nms';
+		$config['base_url'] = base_url().'index.php/superadmin/table_nms';
 		$config['total_rows'] = $jumlah_data;
 		$config['per_page'] = 100;
 		$from = $this->uri->segment(3);
@@ -238,7 +166,7 @@ class Home extends CI_Controller {
 	 	$this->tn_model->delete_nms($id_port);
 		$data['port'] = $this->tn_model->get_port()->result();
 		$data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
-		$this->load->view('admin/nms/tables-nms', $data);
+		$this->load->view('admin_sa/nms/tables-nms', $data);
 	
 	}
 
@@ -246,11 +174,11 @@ class Home extends CI_Controller {
 
             $this->load->database();
             $this->tn_model->remove_checked();
-            // redirect('Home/tables_nms');
+            // redirect('superadmin_sa/tables_nms');
 
         $jumlah_data = $this->tn_model->jumlah_data();
         $this->load->library('pagination');
-        $config['base_url'] = base_url().'index.php/home/table_nms';
+        $config['base_url'] = base_url().'index.php/superadmin/table_nms';
         $config['total_rows'] = $jumlah_data;
         $config['per_page'] = 100;
         $from = $this->uri->segment(3);
@@ -258,22 +186,22 @@ class Home extends CI_Controller {
 
         $data['port'] = $this->tn_model->data($config['per_page'],$from);
         $data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
-        $this->load->view('admin/nms/tables-nms', $data);
+        $this->load->view('admin_sa/nms/tables-nms', $data);
 
-            // $this->load->view('admin/nms/tables-nms');
+            // $this->load->view('admin_sa/nms/tables-nms');
 
 
         }
 
 	public function insert_single_perangkat(){
-		$this->load->view('admin/perangkat/insert_single_perangkat');
+		$this->load->view('admin_sa/perangkat/insert_single_perangkat');
 	}
 
 	public function insert_double_perangkat(){
-		$this->load->view('admin/perangkat/insert_double_perangkat');
+		$this->load->view('admin_sa/perangkat/insert_double_perangkat');
 	}
 	public function edit_perangkat(){
-		$this->load->view('admin/perangkat/edit_perangkat');
+		$this->load->view('admin_sa/perangkat/edit_perangkat');
 	}
 	
 	 function importcsv() {
@@ -291,7 +219,7 @@ class Home extends CI_Controller {
         if (!$this->upload->do_upload()) {
             $data['error'] = $this->upload->display_errors();
  
-            $this->load->view('admin/nms/tables-nms', $data);
+            $this->load->view('admin_sa/nms/tables-nms', $data);
         } else {
             $file_data = $this->upload->data();
             $file_path =  './uploads/'.$file_data['file_name'];
@@ -321,7 +249,7 @@ class Home extends CI_Controller {
                 $this->load->database();
                 $jumlah_data = $this->tn_model->jumlah_data();
                 $this->load->library('pagination');
-                $config['base_url'] = base_url().'index.php/home/table_nms';
+                $config['base_url'] = base_url().'index.php/superadmin/table_nms';
                 $config['total_rows'] = $jumlah_data;
                 $config['per_page'] = 100;
                 $from = $this->uri->segment(3);
@@ -329,11 +257,11 @@ class Home extends CI_Controller {
 
                 $data['port'] = $this->tn_model->data($config['per_page'],$from);
                 $data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
-                $this->load->view('admin/nms/tables-nms', $data);
+                $this->load->view('admin_sa/nms/tables-nms', $data);
         	
                     } else 
                         $data['error'] = "Error occured";
-                        $this->load->view('admin/nms/tables-nms', $data);
+                        $this->load->view('admin_sa/nms/tables-nms', $data);
                     }
  
         } 
@@ -353,7 +281,7 @@ class Home extends CI_Controller {
         if (!$this->upload->do_upload()) {
             $data2['error'] = $this->upload->display_errors();
  
-            $this->load->view('admin/perangkat/tables_perangkat', $data2);
+            $this->load->view('admin_sa/perangkat/tables_perangkat', $data2);
         } else {
             $file_data = $this->upload->data();
             $file_path =  './upload/'.$file_data['file_name'];
@@ -390,11 +318,11 @@ class Home extends CI_Controller {
 
                $data2['link_statis'] = $this->tn_model->get_link_statis()->result();
 				// $data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
-				$this->load->view('admin/perangkat/tables_perangkat', $data2);
+				$this->load->view('admin_sa/perangkat/tables_perangkat', $data2);
 	
             } else 
                 $data2['error'] = "Error occured";
-                $this->load->view('admin/perangkat/tables_perangkat', $data2);
+                $this->load->view('admin_sa/perangkat/tables_perangkat', $data2);
             }
         } 
 }

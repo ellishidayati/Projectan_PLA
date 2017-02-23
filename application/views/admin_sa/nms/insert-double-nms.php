@@ -39,7 +39,7 @@
         <span class="icon-bar"></span>
       </a>
       
-      <a class="brand" href="<?php echo site_url('Home/sukses');?>">SINDANISTRA</a>    
+      <a class="brand" href="<?php echo site_url('superadmin/sukses');?>">SINDANISTRA</a>    
       
       <div class="nav-collapse">
         <ul class="nav pull-right">
@@ -65,10 +65,11 @@
             
             <ul class="dropdown-menu">
               <li><a href="javascript:;">Profile</a></li>
-             <li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
+              <li><a href="<?php echo site_url('superadmin/logout'); ?>">Logout</a></li>
             </ul>           
           </li>
         </ul>
+      
         
       </div><!--/.nav-collapse -->  
   
@@ -90,13 +91,12 @@
 
       <ul class="mainnav">
       
-        <li><a href="<?php echo site_url('Home/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span></a></li>
-        <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
+        <li><a href="<?php echo site_url('superadmin/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span></a></li>
+        <li><a href="<?php echo site_url('superadmin/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
             <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
             <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-      
-      </ul>
-
+			<li><a href="<?php echo site_url('setakun');?>"><i class="icon-list-alt"></i><span>Setting akun</span> </a> </li>
+	   </ul>
     </div> <!-- /container -->
   
   </div> <!-- /subnavbar-inner -->
@@ -124,14 +124,14 @@
           
           <div class="widget-content">    
             <div class="tab-content">
-                <div class="x_content">
+                <div class="x_content" >
                 <fieldset>
-                     <form method="post" action="<?php echo site_url('Excel/link')?>" enctype="multipart/form-data">
+                     <form method="post" action="<?php echo site_url('Excel/nms')?>" enctype="multipart/form-data">
                     <input type="file" name="userfile" ><br><br>
                     <input type="submit" name="submit" value="Upload" class="btn btn-primary">
                    </form>
 
-                       <a href="<?php echo site_url('Link')?>"><button type="submit" class="btn btn-danger" style="margin-top:-47px; margin-left: 75px; position: absolute;">Cancel</button></a></fieldset>
+                       <a href="<?php echo site_url('superadmin/table_nms')?>"><button type="submit" class="btn btn-danger" style="margin-top:-46px; margin-left: 80px; position: absolute;">Cancel</button></a></fieldset>
                     <br />
                     <br />
                     <br />

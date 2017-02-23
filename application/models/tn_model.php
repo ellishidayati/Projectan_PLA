@@ -13,6 +13,25 @@ class tn_model extends CI_Model {
 			$this->db->from('port');
 			return $this->db->get();
 		}
+		
+		function get_admin(){
+			$this->db->select('*');
+			$this->db->from('admin');
+			return $this->db->get();
+		}
+		
+		function delete_akun($id_admin){
+			$this->db->where('id_admin',$id_admin);
+			$this->db->delete('admin');
+			if($this->db->affected_rows()==1){
+				return TRUE;
+			}
+			return FALSE;
+		}
+		
+		function insert_akun($data){
+			$this->db->insert('admin', $data);
+		}
 
 		function get_nms(){
 			$this->db->select('nama_nms');

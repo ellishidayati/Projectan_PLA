@@ -22,7 +22,9 @@ class admin_model extends CI_Model {
        
         return $this->db->get();
     }
-// mengambil data user tertentu
+	
+	
+	// mengambil data user tertentu
    function get_admin($id_admin){
         $this->db->select('*');
         $this->db->from('admin');

@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
+<style>
+
+#myDIV {
+    
+    height: 335px;
+   /* width: 400px;*/
+  /*  width.table-layout: 500px;*/
+}
+</style>
+
  <head>
     <meta charset="utf-8">
     <title>SINDANISTRA</title>
@@ -67,6 +77,7 @@
                     <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
                     <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+					<li><a href="<?php echo site_url('Home/setakun_');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>
                  </ul>      
             </div>
             <!-- /container -->
@@ -88,7 +99,7 @@
         <div class="main-inner">
             <div class="container">
                 <div class="widget">
-                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Report - Sistem Inventory Data Teknis Transport</h3>
+                    <div class="widget-header" ><i class="icon-user"></i><h3>Setting akun - Sistem Inventory Data Teknis Transport</h3>
                     </div>
 					
 
@@ -96,109 +107,48 @@
 					<div style="overflow-x:auto"> <!-- /widget-header -->
                     <div class="widget-content"  style="overflow-x:auto">
 					
-					
-					<div class="title_right">
-                       <div class="control-group">                                         
-                                            <label class="control-label" for="radiobtns">Download Report</label>
-                                            
-                                            <div class="controls">
-                                              <div class="btn-group" style="margin-top:3px; margin-left: 0px; position: absolute;">
-                                              <a class="btn btn-primary" href="#"><i class="icon-download icon-white"></i> Download File</a>
-                                              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                                              <ul class="dropdown-menu">
-                                                <li><a href="<?php echo site_url('Report/exportcsv');?>"><i class="icon-file"></i>CSV</a></li>
-                                                <li><a href="<?php echo base_url('Download/download_excel.php')?>"><i class="icon-file"></i>Excel</a></li>
-                                                <li><a href="<?php echo base_url('Downloadpdf/pdf.php');?>"><i class="icon-file"></i>PDF</a></li>
-                                               <!--  <li class="divider"></li>
-                                                <li><a href="#"><i class="i"></i> Make admin</a></li> -->
-                                              </ul>
-                                            </div>
-                                              </div>
-                                                  <!-- /controls -->          
-                        <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <form action="<?php print site_url();?>/report/cari" method=POST>
-                                <input type=text name=cari>             
-                                <a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">search</button></a>
-                                </form> 
-                            </div>
-                        </div>
-                    </div>
+				
                 </div> <!-- /control-group -->
                     
 					<div class="table-responsive">
 					<div class="x_content">
-						<table id="datatable-buttons" class="table table-striped table-bordered" border="1">
-							<thead>
-								<tr>
-									<th>No</th>                        
-									<th>Node A</th>
-									<th>Node B</th>
-									<th>Client A</th>
-									<th>Client B</th>
-									<th>NMS</th>
-									<th>NE A</th>
-									<th>Board A</th>
-									<th>Shelf A</th>
-									<th>Slot A</th>
-									<th>Port A</th>
-									<th>NE B</th>
-									<th>Board B</th>
-									<th>Shelf B</th>
-									<th>Slot B</th>
-									<th>Port B</th>
-								</tr>
-							</thead>
+					<table id="datatable-buttons" class="table table-striped table-bordered" border="1">
+						<thead>
+						<tr>
+                          <th>No</th>
+                          <th>Nama</th>
+                          <th>Jabatan</th>
+                          <th>Username</th>
+                          <th>Status</th>
+                          <th>Aksi</th>
+                        </tr>
+						</thead>
 
-						<tbody>
-							<?php 
-							$no = 0;
-							foreach($link_statis as $link){
-							?>
-								<tr>
-									<td>
-									 <?php	if($link->host_a=="-" || $link->host_a==""){
-												$no=$no+0;
-											}else{
-												$no++;
-												echo $no;
-											}
-									?>
-									</td>
-									<td><?php echo $link->host_a?></td>
-									<td><?php echo $link->host_b?></td>
-									<td><?php echo $link->fa_a?></td>
-									<td><?php echo $link->fa_b?></td>
-									<td><?php echo $link->nms?></td>
-									
-									<td><?php echo $link->ne_a?></td>
-									<td><?php echo $link->board_a?></td>
-									<td><?php echo $link->shelf_a?></td>
-									<td><?php echo $link->slot_a?></td>
-									<td><?php echo $link->port_a?></td>
-
-									<td><?php echo $link->ne_b?></td>
-									<td><?php echo $link->board_b?></td>
-									<td><?php echo $link->shelf_b?></td>
-									<td><?php echo $link->slot_b?></td>
-									<td><?php echo $link->port_b?></td>
-								</tr>
-							<?php }?>  
-						</tbody>
-						</table>
+					<tbody>
+						<?php 
+						$no = 0;
+						foreach($admin as $adminn){
+						  $no++;  
+						?>
 						
-						<br />
-							<?php echo $this->pagination->create_links(); ?>
-						<br />
-						<br />
-					  </div>
-					  </div>
-						
-						<!-- <td>
-						   <a href="<?php echo site_url('Report/exportcsv');?>"><button type="submit" class="btn btn-primary">Download Report (.csv)</button></a>
-						   <a href="<?php echo base_url('Download/download_excel.php')?>"><button type="submit" class="btn btn-success">Download Report (.xls)</button></a>
-						   <a href="<?php echo base_url('Downloadpdf/pdf.php');?>"><button type="submit" class="btn btn-primary">Download Report (.pdf)</button></a>
-						</td> -->
+                        <tr>
+                          <td><?php echo $no?></td>
+                          <td><?php echo $adminn->nama?></td>
+                          <td><?php echo $adminn->jabatan?></td>
+                          <td><?php echo $adminn->username?></td>
+                          <td><?php echo $adminn->status?></td>
+                          <td>
+                          <a href="<?php echo site_url('Home/delete_akun/'.$adminn->id_admin);?>" class="btn btn-primary" onclick="return doconfirm();"><i class="fa fa-trash-o"></i> Delete </a>
+						  </td> 
+                        </tr>
+						<?php } ?>
+					</tbody>
+					</table>
+					</div>
+					</div>
+						<td>
+                          <a href="<?php echo site_url('Home/insert_akun');?>" class="btn btn-primary"> Insert New akun </a>
+						  </td> 
 						
 					</div>
 					</div>
@@ -207,6 +157,15 @@
 		</div>
 	</div>
 	
+	<br>
+    <br>
+    <br>
+    <br>
+	 
+    </br>
+    </br>
+    </br>
+    </br>
 	
 	<div class="extra">
         <div class="extra-inner">
@@ -286,48 +245,12 @@
 <script src="<?php echo base_url('asset/admin2/js/bootstrap.js');?>"></script>
 <script src="<?php echo base_url('asset/admin2/js/base.js');?>"></script>
 <script>
-
-    var pieData = [
-				{
-				    value: 30,
-				    color: "#F38630"
-				},
-				{
-				    value: 50,
-				    color: "#E0E4CC"
-				},
-				{
-				    value: 100,
-				    color: "#69D2E7"
-				}
-
-			];
-
-    var myPie = new Chart(document.getElementById("pie-chart").getContext("2d")).Pie(pieData);
-
-    var barChartData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [
-				{
-				    fillColor: "rgba(220,220,220,0.5)",
-				    strokeColor: "rgba(220,220,220,1)",
-				    data: [65, 59, 90, 81, 56, 55, 40]
-				},
-				{
-				    fillColor: "rgba(151,187,205,0.5)",
-				    strokeColor: "rgba(151,187,205,1)",
-				    data: [28, 48, 40, 19, 96, 27, 100]
-				}
-			]
-
+    
+    function myFunction() {
+        document.getElementById("myDIV").style.overflowY = "scroll";
     }
-
-    var myLine = new Chart(document.getElementById("bar-chart").getContext("2d")).Bar(barChartData);
-	var myLine = new Chart(document.getElementById("bar-chart1").getContext("2d")).Bar(barChartData);
-	var myLine = new Chart(document.getElementById("bar-chart2").getContext("2d")).Bar(barChartData);
-	var myLine = new Chart(document.getElementById("bar-chart3").getContext("2d")).Bar(barChartData);
-	
-	</script>
+    
+    </script>
 
 
   </body>

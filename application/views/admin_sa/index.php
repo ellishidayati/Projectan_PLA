@@ -27,7 +27,7 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="<?php echo site_url('Home/sukses');?>">SINDANISTRA</a>
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="<?php echo site_url('superadmin/sukses');?>">SINDANISTRA</a>
       <div class="nav-collapse">
         <ul class="nav pull-right">
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
@@ -42,7 +42,7 @@
 			<i class="icon-user"></i> <?php echo $this->session->userdata('username');?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="javascript:;">Profile</a></li>
-             <li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
+             <li><a href="<?php echo site_url('superadmin/logout'); ?>">Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -59,11 +59,11 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="active"><a href="<?php echo site_url('home/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
-        <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
-         <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
-        <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-		<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>
+        <li class="active"><a href="<?php echo site_url('superadmin/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li><a href="<?php echo site_url('superadmin/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
+         <li><a href="<?php echo site_url('Link_superadmin');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
+        <li><a href="<?php echo site_url('Report_superadmin');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+        <li><a href="<?php echo site_url('setakun');?>"><i class="icon-list-alt"></i><span>Setting akun</span> </a> </li>
     <!--     <li><a href="guidely.html"><i class="icon-facetime-video"></i><span>App Tour</span> </a></li> -->
 	<ul>
     </div>

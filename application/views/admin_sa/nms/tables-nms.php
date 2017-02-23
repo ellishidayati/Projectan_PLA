@@ -32,7 +32,7 @@
             <div class="container">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                     class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </a><a class="brand" href="<?php echo site_url('Home/sukses');?>">SINDANISTRA</a>
+                </a><a class="brand" href="<?php echo site_url('superadmin/sukses');?>">SINDANISTRA</a>
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
@@ -46,7 +46,7 @@
                             class="icon-user"></i> <?php echo $this->session->userdata('username');?>  <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:;">Profile</a></li
-                                <li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
+                                <li><a href="<?php echo site_url('superadmin/logout'); ?>">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -62,12 +62,13 @@
         <div class="subnavbar-inner">
             <div class="container">
                 <ul class="mainnav">
-                    <li><a href="<?php echo site_url('Home/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a>
+                    <li><a href="<?php echo site_url('superadmin/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a>
                     </li>
-                    <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
+                    <li><a href="<?php echo site_url('superadmin/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
                     <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-                </ul>
+					<li><a href="<?php echo site_url('setakun');?>"><i class="icon-list-alt"></i><span>Setting akun</span> </a> </li>
+				</ul>
             </div>
             <!-- /container -->
         </div>
@@ -88,12 +89,12 @@
             <div class="container">
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Inventory - Sistem Inventory Data Teknis Transport</h3>
-                   <!--    <form action="<?php echo site_url('Home/delete_multiple'); ?>" method="post">
+                   <!--    <form action="<?php echo site_url('superadmin/delete_multiple'); ?>" method="post">
                       <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete" style="margin-top:10px; margin-left: 780px;"> -->
                      <div class="form-group" style="margin-top:-40px; margin-left: 880px;">
                       <div class="col-md-6 col-md-offset-3">
                      <td>
-                       <a href="<?php echo site_url('Home/insert_single_nms');?>"><button type="submit" class="btn btn-primary">Insert Single Data</button></a>
+                       <a href="<?php echo site_url('superadmin/insert_single_nms');?>"><button type="submit" class="btn btn-primary">Insert Single Data</button></a>
                     </td>
                     </div>
                     </div>  
@@ -101,7 +102,7 @@
                      <div class="form-group" style="margin-top:-40px; margin-left: 1018px;">
                       <div class="col-md-6 col-md-offset-3">
                      <td>
-                       <a href="<?php echo site_url('Home/insert_double_nms');?>"><button type="submit" class="btn btn-danger">Insert Multiple Data</button></a>
+                       <a href="<?php echo site_url('superadmin/insert_double_nms');?>"><button type="submit" class="btn btn-danger">Insert Multiple Data</button></a>
                       </td>
                       </div>
                     </div>
@@ -110,7 +111,7 @@
                        <!-- /widget-header -->
                         <div class="widget-content"  style="overflow-y:auto">
                      <div class="table-responsive" id="myDIV">
-                 <form action="<?php echo site_url('Home/delete_multiple'); ?>" method="post">
+                 <form action="<?php echo site_url('superadmin/delete_multiple'); ?>" method="post">
 
                         <table class="table table-striped table-bordered">
                  <thead>
@@ -164,10 +165,10 @@
 
 
                           <td>
-                          <a href="<?php echo site_url('Home/edit_nms/'.$portt->id_port);?>" class="btn btn-info btn-xs"><i class="btn-icon-only icon-pencil"></i></a>
+                          <a href="<?php echo site_url('superadmin/edit_nms/'.$portt->id_port);?>" class="btn btn-info btn-xs"><i class="btn-icon-only icon-pencil"></i></a>
                           </td>
                          <!--  <td>
-                          <a href="<?php echo site_url('Home/delete_nms/'.$portt->id_port);?>" class="btn btn-danger btn-xs" onclick="return doconfirm();"><i class="btn-icon-only icon-trash"></i></a>
+                          <a href="<?php echo site_url('superadmin/delete_nms/'.$portt->id_port);?>" class="btn btn-danger btn-xs" onclick="return doconfirm();"><i class="btn-icon-only icon-trash"></i></a>
                           </td> -->
                           <!-- Trigger the modal with a button -->
                          <!--  <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Details<?php echo $portt->id_port?></button> -->

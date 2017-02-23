@@ -31,7 +31,7 @@
             <div class="container">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                     class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </a><a class="brand" href="<?php echo site_url('Home/sukses');?>">SINDANISTRA</a>
+                </a><a class="brand" href="<?php echo site_url('superadmin/sukses');?>">SINDANISTRA</a>
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
@@ -45,7 +45,7 @@
                             class="icon-user"></i> <?php echo $this->session->userdata('username');?>  <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:;">Profile</a></li
-                                <li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
+                                <li><a href="<?php echo site_url('superadmin/logout'); ?>">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -60,11 +60,12 @@
         <div class="subnavbar-inner">
             <div class="container">
                 <ul class="mainnav">
-                    <li><a href="<?php echo site_url('Home/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a>
+                    <li><a href="<?php echo site_url('superadmin/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a>
                     </li>
-                    <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
-                    <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
-                    <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+                    <li><a href="<?php echo site_url('superadmin/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
+                    <li><a href="<?php echo site_url('Link_superadmin');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
+					<li><a href="<?php echo site_url('Report_superadmin');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+					<li><a href="<?php echo site_url('setakun');?>"><i class="icon-list-alt"></i><span>Setting akun</span> </a> </li>
                 </ul>
             </div>
             <!-- /container -->
@@ -104,7 +105,8 @@
                       
                     
                               <input class="form-control" name="jalur" placeholder="Masukan Jalur">
-                              </input>
+                              </input><br><br>
+                               <input type="submit" name="submit" class="btn btn-primary">
                       </form>
 
 
@@ -130,9 +132,13 @@
           
           <div class="widget-content">
         
-              <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary">Insert Multiple Data</button></a>
-              <br>
-              <br>
+            <div class="x_content">
+                <fieldset>
+                     <form method="post" action="<?php echo site_url('Excel/link')?>" enctype="multipart/form-data">
+                    <input type="file" name="userfile" ><br><br>
+                    <input type="submit" name="submit" value="Upload" class="btn btn-primary">
+                   </form>
+                  </div>
            <!--  <canvas id="bar-chart" class="chart-holder"></canvas> -->
           </div> <!-- /widget-content -->
         
@@ -141,48 +147,20 @@
           </div> <!-- /span6 -->
           
         </div> <!-- /row -->
-        
-
-          <!--    <div class="widget" > -->
-                    <!-- <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
-                    </div> -->
-                     <!--  <div class="widget-content"  style="overflow-x:auto">
-                  
-                       <form class="form-horizontal form-label-left" <?php echo form_open_multipart('Link/insert_jalur'); ?> 
-                        <label for="name">Masukan Jalur</label>
-                    
-                              <input class="form-control" name="jalur" placeholder="Jalur">
-                              </input>
-                      </form>
-
-
-                       <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary" style="margin-top:-45px; margin-left: 300px; position: absolute;">Insert Multiple Data</button></a>
-                   
-                  
-                   </div> -->
-           
-               <!-- <div class="widget" >
-                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single</h3>
-                    </div>
-                      <div class="widget-content"  >
-                       <a href="<?php echo site_url('link/insert_double_perangkat');?>"><button type="submit" class="btn btn-primary">Insert Multiple Data</button></a>
-                     </div>
-                     </div> -->
-                  
-            <!--   </div> -->
+      
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Data Link - Sistem Inventory Data Teknis Transport</h3>
 
-                     <!-- <form action="<?php echo site_url('Home/delete_multiple'); ?>" method="post">
+                     <!-- <form action="<?php echo site_url('superadmin/delete_multiple'); ?>" method="post">
                      <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete" style="margin-top:-80px; margin-left: 1070px;"> -->
                     </div>
 
 
-                        <div style="overflow-x:auto"> <!-- /widget-header -->
-                        <div class="widget-content"  style="overflow-x:auto">
+                        <!-- /widget-header -->
+                       
                    
                    
-                    <div style="overflow-y:auto">
+                    <div class="widget-content" style="overflow-y:auto">
                      <div class="table-responsive" id="myDIV">
                       <form action="<?php echo site_url('link/delete_multiple'); ?>" method="post">
                         <table class="table table-striped table-bordered">

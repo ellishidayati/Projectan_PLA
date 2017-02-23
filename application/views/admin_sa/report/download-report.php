@@ -10,7 +10,7 @@
   /*  width.table-layout: 500px;*/
 }
 </style>
-
+  
  <head>
     <meta charset="utf-8">
     <title>SINDANISTRA</title>
@@ -40,7 +40,7 @@
             <div class="container">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                     class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </a><a class="brand" href="<?php echo site_url('Home/sukses');?>">SINDANISTRA</a>
+                </a><a class="brand" href="<?php echo site_url('superadmin/sukses');?>">SINDANISTRA</a>
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
@@ -51,15 +51,13 @@
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-user"></i> <?php echo $this->session->userdata('username');?> <b class="caret"></b></a>
+                            class="icon-user"></i> <?php echo $this->session->userdata('username');?>  <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:;">Profile</a></li>
-                                <li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
+                                <li><a href="<?php echo site_url('superadmin/logout'); ?>">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
-                    
-					
                 </div>
                 <!--/.nav-collapse -->
             </div>
@@ -72,27 +70,26 @@
         <div class="subnavbar-inner">
             <div class="container">
                 <ul class="mainnav">
-                    <li><a href="<?php echo site_url('Home/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a>
+                    <li><a href="<?php echo site_url('superadmin/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a>
                     </li>
-                    <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
-                    <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
-                    <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-					<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-list-alt"></i><span>Setting Akun</span> </a> </li>
-                 </ul>      
-            </div>
+                    <li><a href="<?php echo site_url('superadmin/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
+                    <li><a href="<?php echo site_url('Link_superadmin');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
+					<li><a href="<?php echo site_url('Report_superadmin');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+					<li><a href="<?php echo site_url('setakun');?>"><i class="icon-list-alt"></i><span>Setting akun</span> </a> </li>
+				</ul>
+		   </div>
             <!-- /container -->
         </div>
         <!-- /subnavbar-inner -->
     </div>
 
-    </div>
-    <br>
-    <br>
-    <br>
-	 
-    </br>
-    </br>
-    </br>
+     </div>
+     <br>
+     <br>
+     <br>
+     </br>
+     </br>
+     </br>
     <!-- /subnavbar -->
 	
 	<div class="main">
@@ -102,41 +99,60 @@
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Report - Sistem Inventory Data Teknis Transport</h3>
                     </div>
 					
-
-
 					<div style="overflow-x:auto"> <!-- /widget-header -->
                     <div class="widget-content"  style="overflow-x:auto">
-					
-					
-					<div class="title_right">
+
+                    <?php   
+                        $x="";
+                        if(isset($_SESSION['x'])){
+                            //echo $_SESSION['x'];
+                            $x = $_SESSION['x'];
+                        }
+                        ?>
+
+                        <div class="title_right">
                        <div class="control-group">                                         
                                             <label class="control-label" for="radiobtns">Download Report</label>
                                             
                                             <div class="controls">
-                                              <div class="btn-group">
+                                              <div class="btn-group" style="margin-top:3px; margin-left: 0px;">
                                               <a class="btn btn-primary" href="#"><i class="icon-download icon-white"></i> Download File</a>
                                               <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                                               <ul class="dropdown-menu">
-                                                <li><a href="<?php echo site_url('Report/exportcsv');?>"><i class="icon-file"></i>CSV</a></li>
-                                                <li><a href="<?php echo base_url('Download/download_excel.php')?>"><i class="icon-file"></i>Excel</a></li>
-                                                <li><a href="<?php echo base_url('Downloadpdf/pdf.php');?>"><i class="icon-file"></i>PDF</a></li>
+                                                
+                                                <li><a href="<?php echo base_url('Download/download_excel.php?x=').$x;?>"><i class="icon-file"></i>Excel</a></li>
+                                                <li><a href="<?php echo base_url('Downloadpdf/pdf.php?x=').$x;?>"><i class="icon-file"></i>PDF</a></li>
                                                <!--  <li class="divider"></li>
                                                 <li><a href="#"><i class="i"></i> Make admin</a></li> -->
                                               </ul>
                                             </div>
-                        <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search" >
+                                              </div>
+
+					
+                                                  <!-- /controls -->          
+                        <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
                             <div class="input-group">
                                 <form action="<?php print site_url();?>/report/cari" method=POST>
                                 <input type=text name=cari>             
-                                <a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">search</button></a>
+                                <a href="<?php echo base_url('report_superadmin/download_report');?>"><button type="submit" class="btn btn-primary">search</button></a>
                                 </form> 
                             </div>
                         </div>
-                                              </div>
-                                                  <!-- /controls -->          
                     </div>
                 </div> <!-- /control-group -->
-                    
+
+					<!-- <br>
+					<div class="title_right">
+						<div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
+							<div class="input-group">
+								<form action="<?php print site_url();?>/report/cari" method=POST>
+								<input type=text name=cari>				
+								<a href="<?php echo base_url('report_superadmin/download_report');?>"><button type="submit" class="btn btn-primary">search</button></a>
+								</form>	
+							</div>
+						</div>
+					</div> -->
+					
 					<div class="table-responsive">
 					<div class="x_content" id="myDIV">
 						<table id="datatable-buttons" class="table table-striped table-bordered" border="1">
@@ -164,7 +180,7 @@
 						<tbody>
 							<?php 
 							$no = 0;
-							foreach($link_statis as $link){
+							foreach($link_statis as $link){	
 							?>
 								<tr>
 									<td>
@@ -197,25 +213,28 @@
 							<?php }?>  
 						</tbody>
 						</table>
-						
-						
-                      </div>
-							<!-- <?php echo $this->pagination->create_links(); ?> -->
-                      </div>
+						</div>
+						</div>
+					 
+						<!-- <?php 	
+						$x="";
+						if(isset($_SESSION['x'])){
+							//echo $_SESSION['x'];
+							$x = $_SESSION['x'];
+						}
+						?> -->
 						
 						<!-- <td>
-						   <a href="<?php echo site_url('Report/exportcsv');?>"><button type="submit" class="btn btn-primary">Download Report (.csv)</button></a>
-						   <a href="<?php echo base_url('Download/download_excel.php')?>"><button type="submit" class="btn btn-success">Download Report (.xls)</button></a>
-						   <a href="<?php echo base_url('Downloadpdf/pdf.php');?>"><button type="submit" class="btn btn-primary">Download Report (.pdf)</button></a>
-						</td> -->
-						
+							<a href="<?php echo base_url('Download/download_excel.php?x=').$x;?>"><button type="submit" class="btn btn-primary">Download Report berdasarkan pencarian </button></a>
+							<a href="<?php echo site_url('Report_superadmin');?>"><button type="submit" class="btn btn-danger">Back</button></a>
+						</td>
+						 -->
 					</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
 	
 	<div class="extra">
         <div class="extra-inner">
@@ -294,7 +313,7 @@
 <script src="<?php echo base_url('asset/admin2/js/chart.min.js');?>" type="text/javascript"></script>
 <script src="<?php echo base_url('asset/admin2/js/bootstrap.js');?>"></script>
 <script src="<?php echo base_url('asset/admin2/js/base.js');?>"></script>
-<script>
+    <script>
     
     function myFunction() {
         document.getElementById("myDIV").style.overflowY = "scroll";
