@@ -70,7 +70,7 @@
 			
 			<div class="login-fields">
 				
-				<p>Please provide your details if you SUPER ADMIN!</p>
+				<p> SUPER ADMIN, please provide your details</p>
 
 				<div class="form-bottom">
 					<?php echo validation_errors(); ?>
