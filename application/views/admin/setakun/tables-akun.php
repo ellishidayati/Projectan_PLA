@@ -117,7 +117,7 @@
 						<tr>
                           <th>No</th>
                           <th>Nama</th>
-                          <th>Jabatan</th>
+                          <th>Jabatan</th>                      
                           <th>Username</th>
                           <th>Status</th>
                           <th>Aksi</th>

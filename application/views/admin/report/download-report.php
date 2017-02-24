@@ -75,7 +75,7 @@
                     <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
                     <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-					<li><a href="<?php echo site_url('home/setakun');?>"><i class="icon-list-alt"></i><span>Setting Akun</span> </a> </li>
+					<li><a href="<?php echo site_url('home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>
 				</ul>
 		   </div>
             <!-- /container -->

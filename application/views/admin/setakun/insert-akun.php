@@ -143,9 +143,11 @@
 										<div class="control-group">											
 											<label class="control-label" for="name">Jabatan</label>
 												<div class="controls">
-
-													<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="jabatan" type="text" required="required">
-													
+                             						<select class="form-control" name="jabatan" required="required">
+                             								<option value=""></option> 
+                                							<option value="manager">manager</option>
+                                							<option value="pegawai">pegawai</option>
+                              						</select>
 												</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 									
@@ -153,7 +155,11 @@
                       					<div class="control-group">
                        						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Status akun</label>
                         				<div class="controls">
-                         					 <input  id="number" name="status" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
+                         					<select class="form-control" name="status" required="required">
+                         						<option value=""></option> 
+                                				<option value="super admin">super admin</option>
+                                				<option value="admin">admin</option>
+                              				</select>
                         				</div>
                      					</div>
 

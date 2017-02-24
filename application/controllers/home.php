@@ -40,7 +40,7 @@ class Home extends CI_Controller {
                 redirect(site_url('Home/sukses'));
             }else{
                 // kalau ga ada diredirect lagi ke halaman login
-                $this->session->set_flashdata('notification', 'Peringatan : username dan password salah');
+                $this->session->set_flashdata('notification', 'username dan password tidak sesuai, coba lagi');
                 redirect(site_url('home'));
             }   
         }
@@ -60,7 +60,7 @@ class Home extends CI_Controller {
 	
 	public function setakun_(){
 		$data['admin'] = $this->tn_model->get_admin()->result();
-		$this->load->view('admin/setakun/tables-akun', $data);	
+		$this->load->view('admin/setakun/tables-akun', $data);
 	}
 	
 	public function login_saaa(){
@@ -90,7 +90,7 @@ class Home extends CI_Controller {
                 redirect(site_url('Home/setakun_'));
             }else{
                 // kalau ga ada diredirect lagi ke halaman login
-                $this->session->set_flashdata('notification', 'Peringatan : username dan password salah');
+                $this->session->set_flashdata('notification', 'username dan password tidak sesuai, coba lagi');
                 redirect(site_url('home/setakun'));
             }   
         }
@@ -115,7 +115,7 @@ class Home extends CI_Controller {
         $data['password'] = $this->input->post('password');
 		
 		$this->tn_model->insert_akun($data);
-		$this->load->view('admin/setakun/tables-akun');
+		redirect('Home/setakun_');
     }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
