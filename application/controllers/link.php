@@ -119,7 +119,7 @@ class Link extends CI_Controller {
             $data['fa_b'] = $this->input->post('fa_b');
            	$data['nms'] = $this->input->post('nama_nms1');;
             $data['ne_a'] = $this->input->post('ne1');
-            $data['boyard_a'] = $this->input->post('board1');
+            $data['board_a'] = $this->input->post('board1');
             $data['shelf_a'] = $this->input->post('shelf1');
             $data['slot_a'] = $this->input->post('slot1');
             $data['port_a'] = $this->input->post('port1');
