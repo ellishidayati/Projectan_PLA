@@ -66,11 +66,11 @@
 		
 		<?php echo form_open('Home/login_saaa')?>
 		
-			<h1>Member Login</h1>		
+			<h1>Super Admin Login</h1>		
 			
 			<div class="login-fields">
 				
-				<p> SUPER ADMIN, please provide your details</p>
+				<p>please provide your details</p>
 
 				<div class="form-bottom">
 					<?php echo validation_errors(); ?>
