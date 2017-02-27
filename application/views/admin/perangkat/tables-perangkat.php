@@ -167,7 +167,8 @@
                   <thead>
                         <tr>
                          <th><input type="checkbox" class="cek-all"></th>
-                          <th>No</th>                        
+                          <th>No</th>
+                          <th>User</th>                        
                           <th>Node A</th>
                           <th>Node B</th>
                           <th>Client A</th>
@@ -205,7 +206,8 @@
                                 $no++;
                                 echo $no; }
                                  ?></td>
-                        
+
+                          <td><?php echo $link->user?></td>
                           <td><?php echo $link->host_a?></td>
                           <td><?php echo $link->host_b?></td>
                           <td><?php echo $link->fa_a?></td>

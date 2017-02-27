@@ -16,7 +16,7 @@ class Phpexcel_model extends CI_Model {
         $numRows = count($worksheet);
 
         for ($i=2; $i < ($numRows+1) ; $i++) { 
-       
+                
 
             $ins = array(
                         'id_port'=>'NULL',
@@ -60,20 +60,21 @@ class Phpexcel_model extends CI_Model {
                         'fa_a'=>$worksheet[$i]['C'],
                         'fa_b'=>$worksheet[$i]['D'],
                         'nms'=>$worksheet[$i]['E'],
-                        'ne_a'=>$worksheet[$i]['F'],
-                        'board_a'=>$worksheet[$i]['G'],
-                        'rack_a'=>$worksheet[$i]['H'],
-                        'shelf_a'=>$worksheet[$i]['I'],
-                        'slot_a'=>$worksheet[$i]['J'],
-                        'port_a'=>$worksheet[$i]['K'],
-                        'freq_a'=>$worksheet[$i]['L'],
-                        'ne_b'=>$worksheet[$i]['M'],
-                        'board_b'=>$worksheet[$i]['N'],
-                        'rack_b'=>$worksheet[$i]['O'],
-                        'shelf_b'=>$worksheet[$i]['P'],
-                        'slot_b'=>$worksheet[$i]['Q'],
-                        'port_b'=>$worksheet[$i]['R'],
-                        'freq_b'=>$worksheet[$i]['S']
+                        'user'=>$worksheet[$i]['F'],
+                        'ne_a'=>$worksheet[$i]['G'],
+                        'board_a'=>$worksheet[$i]['H'],
+                        'rack_a'=>$worksheet[$i]['I'],
+                        'shelf_a'=>$worksheet[$i]['J'],
+                        'slot_a'=>$worksheet[$i]['K'],
+                        'port_a'=>$worksheet[$i]['L'],
+                        'freq_a'=>$worksheet[$i]['M'],
+                        'ne_b'=>$worksheet[$i]['N'],
+                        'board_b'=>$worksheet[$i]['O'],
+                        'rack_b'=>$worksheet[$i]['P'],
+                        'shelf_b'=>$worksheet[$i]['Q'],
+                        'slot_b'=>$worksheet[$i]['R'],
+                        'port_b'=>$worksheet[$i]['S'],
+                        'freq_b'=>$worksheet[$i]['T']
                    );
 
             $this->db->insert('link_statis', $ins);
