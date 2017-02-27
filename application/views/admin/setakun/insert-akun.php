@@ -174,7 +174,7 @@
 										 <div class="control-group">
                        						 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Password</label>
                        							 <div class="controls">
-                          							<input  type="text" name="password"  data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12" required="required">
+                          							<input  type="password" name="password"  data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12" required="required">
                         						</div>
                      					 </div>
 
