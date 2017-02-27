@@ -1,218 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
+  
+ <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>SINDANISTRA</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <!-- Bootstrap -->
-    <link href="<?php echo base_url('asset/admin/vendors/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="<?php echo base_url('asset/admin/vendors/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="<?php echo base_url('asset/admin/vendors/nprogress/nprogress.css'); ?>" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="<?php echo base_url('asset/admin/vendors/iCheck/skins/flat/green.css'); ?>" rel="stylesheet">
-    <!-- bootstrap-progressbar -->
-    <link href="<?php echo base_url('asset/admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css'); ?>" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="<?php echo base_url('asset/admin/vendors/jqvmap/dist/jqvmap.min.css'); ?>" rel="stylesheet"/>
-    <!-- bootstrap-daterangepicker -->
-    <link href="<?php echo base_url('asset/admin/vendors/bootstrap-daterangepicker/daterangepicker.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('asset/admin2/css/bootstrap.min.css');?>" rel="stylesheet">
+    <link href="<?php echo base_url('asset/admin2/css/bootstrap-responsive.min.css');?>" rel="stylesheet">
+    
+    <link href="<?php echo base_url('asset/admin2/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600');?>" rel="stylesheet">
+    <link href="<?php echo base_url('asset/admin2/css/font-awesome.css');?>" rel="stylesheet">
+    
+    <link href="<?php echo base_url('asset/admin2/css/style.css');?>" rel="stylesheet">
+    
+    <link href="<?php echo base_url('asset/admin2/css/pages/reports.css');?>" rel="stylesheet">
 
-    <!-- Custom Theme Style -->
-    <link href="<?php echo base_url('asset/admin/build/css/custom.min.css'); ?>" rel="stylesheet">
+  
   </head>
-
-  <body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="<?php echo site_url('Home/index');?>" class="site_title"><i class="fa fa-paw"></i> <span>SINDANISTRA</span></a>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="asset/admin/production/images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
-
-            <br />
-
-            <!-- sidebar menu -->
-             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-table"></i> Transport Users </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
-          </div>
-        </div>
-
-        <!-- top navigation -->
-        <div class="top_nav">
-          <div class="nav_menu">
-            <nav>
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
-
-              <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
-                    <span class=" fa fa-angle-down"></span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                  </ul>
-                </li>
-
-                <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <!-- /top navigation -->
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>Sistem Inventory Data Teknis Transport</h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">Go!</button>
-                          </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="clearfix"></div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Transport Users</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
+  
+  <body>
+    <div class="navbar navbar-fixed-top" style="position: fixed;">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </a><a class="brand" href="<?php echo site_url('Home/sukses');?>">SINDANISTRA</a>
+                <div class="nav-collapse">
+                    <ul class="nav pull-right">
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-cog"></i> Account <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:;">Settings</a></li>
+                                <li><a href="javascript:;">Help</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-user"></i> EGrappler.com <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:;">Profile</a></li>
+                                <li><a href="javascript:;">Logout</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
+                    
+          
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /navbar-inner -->
+   
+    <!-- /navbar -->
+    <div class="subnavbar">
+        <div class="subnavbar-inner">
+            <div class="container">
+                <ul class="mainnav">
+                    <li><a href="<?php echo site_url('Home/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a>
+                    </li>
+                    <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
+                    <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
+                    <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+          <li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>
+                 </ul>      
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /subnavbar-inner -->
+    </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+   
+    </br>
+    </br>
+    </br>
+    <!-- /subnavbar -->
+  
+  <div class="main">
+        <div class="main-inner">
+            <div class="container">
+                <div class="widget">
+                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Edit Single Data Link - Sistem Inventory Data Teknis Transport</h3>
+                    </div>
+          
+
+
+          <div style="overflow-x:auto"> <!-- /widget-header -->
+                    <div class="widget-content"  style="overflow-x:auto">
+          
+          
+          <div class="title_right">
+                   
+                </div> <!-- /control-group -->
 
                  <form class="form-horizontal form-label-left" <?php echo form_open_multipart('Link/proses_edit_link'); ?> 
                       <!--  <input name="jalur" type="text" value="<?php echo $jumlah_jalur; ?>" hidden/> -->
@@ -221,7 +106,7 @@
                         </label>
                       <div class="item form-group">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <select class="form-control" name="nama_lokasi">
+                        <select class="form-control" name="nama_lokasi" value=" <?php echo $link->user; ?>">
                           <option>METRO</option>
                           <option>TERA</option>
                           <option>TELKOMSEL</option>
@@ -230,27 +115,23 @@
                           <option>OTHERS</option>
                         </select>
                       </div>
-                      </br> </br> 
                       </br>
-
-                        <div class="col-md-3 col-sm-6 col-xs-12">
+                      
                              <input class="form-control" name="host_a" value=" <?php echo $link->host_a; ?>">
                           
                               </input>
-                        </div>
-                          <div class="col-md-3 col-sm-6 col-xs-12">
+                      
                               <input class="form-control" name="host_b" value="<?php echo $link->host_b; ?>">
                           
                               </input>
-                        </div>
-                              <div class="col-md-3 col-sm-6 col-xs-12">
+                      
                                 <input class="form-control" name="fa_a" value="<?php echo $link->fa_a; ?>"></input>
-                        </div>
-                          <div class="col-md-3 col-sm-6 col-xs-12">
+                       
+                          
                              <input class="form-control" name="fa_b" value="<?php echo $link->fa_b; ?>">
                           
                               </input>
-                        </div>
+                    
                       </div>
 
                       
@@ -430,35 +311,34 @@
                       }
                   }
                   </script>
+                  </br>
                         <label >Jalur A <span class="required">*</span>
                         </label>
                       <div class="item form-group">
-                      <div class="col-md-6 col-sm-12 col-xs-12">
+                      
                         <select class="form-control" name="nama_nms" id="nama_nms" onchange="ajaxnmsA(this.value)"> 
                                 <option value="<?php echo $link->nms?>"><?php echo $link->nms?></option>
                            <?php foreach($port as $p){?>
                                 <option value="<?php echo $p->nama_nms;?>"><?php echo $p->nama_nms?></option>
                                 <?php } ?>
                         </select>
-                      </div>
-                      </div>
-                      <div class="item form-group">
-                        <div class="col-md-3 col-sm-3 col-xs-12" id="nama_lokasi">
+                   
+                 
+                        
                         <select class="form-control" name="nama_lokasiA" id="nama_lokasiA" onchange="ajaxlokasiA(this.value)">
                                  <option value="">Lokasi</option>
                                
                         </select>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-12">
+                   
+                       
                             
                               <?php echo form_error('ne'); ?>
 
                               <select class="form-control" name="neA" id="berubahA" onchange="ajaxneA(this.value)" >
                               <option value="<?php echo $link->ne_a?>"><?php echo $link->ne_a?></option>
                               </select>
-                          
-                        </div>
-                              <div class="col-md-3 col-sm-3 col-xs-12">
+                        
+                              
                             
                               <?php echo form_error('board'); ?>
 
@@ -466,8 +346,11 @@
                               <option value="<?php echo $link->board_a?>"><?php echo $link->board_a?></option>
                               </select>
                           
-                        </div>
-                        <div class="col-md-2 col-sm-3 col-xs-12">
+                     
+                           
+                      </div></br>
+                      <div class="item form-group">
+                       
                             
                              <?php echo form_error('shelf'); ?> 
 
@@ -475,12 +358,9 @@
                                 <option value="<?php echo $link->shelf_a?>"><?php echo $link->shelf_a?></option>
                               </select>
                           
-                        </div>
+                       
                    
-                           
-                      </div>
-                      <div class="item form-group">
-                             <div class="col-md-3 col-sm-3 col-xs-12">
+                          
                             
                               <?php echo form_error('slot'); ?>
 
@@ -488,9 +368,9 @@
                                <option value="<?php echo $link->slot_a?>"><?php echo $link->slot_a?></option>
                               </select>
                           
-                        </div>
+                      
                     
-                        <div class="col-md-3 col-sm-3 col-xs-12">
+                      
                             
                               <?php echo form_error('port'); ?>
 
@@ -498,7 +378,7 @@
                                 <option value="<?php echo $link->port_a?>"><?php echo $link->port_a?></option>
                               </select>
                           
-                        </div>
+                    
                         </div>
                          
                       <!-- NODE B -->
@@ -671,27 +551,26 @@
                       }
                       }
                   }
-                  </script>
+                  </script></br>
                         <label >Jalur B <span class="required">*</span>
                         </label>
-                      <div class="item form-group">
-                      <div class="col-md-6 col-sm-12 col-xs-12">
+                   
+                     
                         <select class="form-control" name="nama_nms" id="nama_nms" onchange="ajaxnmsB(this.value)"> 
                                 <option value="<?php echo $link->nms?>"><?php echo $link->nms?></option>
                            <?php foreach($port as $p){?>
                                 <option value="<?php echo $p->nama_nms;?>"><?php echo $p->nama_nms?></option>
                                 <?php } ?>
                         </select>
-                      </div>
-                      </div>
-                      <div class="item form-group">
-                        <div class="col-md-3 col-sm-3 col-xs-12" id="nama_lokasi">
+                  
+                    
+                       
                         <select class="form-control" name="nama_lokasiB" id="nama_lokasiB" onchange="ajaxlokasiB(this.value)">
                                  <option value="">Lokasi</option>
                                
                         </select>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-12">
+                     
+                        
                             
                               <?php echo form_error('ne'); ?>
 
@@ -699,8 +578,8 @@
                               <option value="<?php echo $link->ne_b?>"><?php echo $link->ne_b?></option>
                               </select>
                           
-                        </div>
-                              <div class="col-md-3 col-sm-3 col-xs-12">
+                   
+                          
                             
                               <?php echo form_error('board'); ?>
 
@@ -708,8 +587,9 @@
                               <option value="<?php echo $link->board_b?>"><?php echo $link->board_b?></option>
                               </select>
                           
-                        </div>
-                        <div class="col-md-2 col-sm-3 col-xs-12">
+                       </br></br>
+                        
+                      <div class="item form-group">
                             
                              <?php echo form_error('shelf'); ?> 
 
@@ -717,12 +597,11 @@
                                 <option value="<?php echo $link->shelf_b?>"><?php echo $link->shelf_b?></option>
                               </select>
                           
-                        </div>
+                    
                    
                            
-                      </div>
-                      <div class="item form-group">
-                             <div class="col-md-3 col-sm-3 col-xs-12">
+                    
+                          
                             
                               <?php echo form_error('slot'); ?>
 
@@ -730,9 +609,8 @@
                                <option value="<?php echo $link->slot_b?>"><?php echo $link->slot_b?></option>
                               </select>
                           
-                        </div>
+                   
                     
-                        <div class="col-md-3 col-sm-3 col-xs-12">
                             
                               <?php echo form_error('port'); ?>
 
@@ -740,90 +618,157 @@
                                 <option value="<?php echo $link->port_b?>"><?php echo $link->port_b?></option>
                               </select>
                           
-                        </div>
+                    
                         </div>
                  
-                      <div class="ln_solid"></div>
+                        <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                         <input name="id_port" type="text" hidden/>
-                         <div class="form-group" style="margin-top:11px; margin-left: -150px; position: absolute;">
-                          <input name="id_link" type="text" value="<?php echo $link->id_link; ?>" hidden/>
-                          <button id="send" type="submit" class="btn btn-success">Submit</button>
+                      </br>
+                         <div class="form-group">
+                         <table><th>
+                          <button id="send" type="submit" class="btn btn-success">Submit</button></th><th>
+                            <a href="<?php echo site_url('Link')?>"><button type="submit" class="btn btn-danger" >Cancel</button></a></th></table>
                           </div>
                         </div>
                       </div>
                     </form>
 
-                   <td>
-                       <a href="<?php echo site_url('Link');?>"><button type="submit" class="btn btn-primary">Cancel</button></a>
-                      </td>
-                  
+                   
                 </div>
               </div>
               </div>
-                </div>
-              </div>
-            </div>
+            
+          </div>
           </div>
         </div>
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
       </div>
     </div>
+  </div>
+  
+  
+  <div class="extra">
+        <div class="extra-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span3">
+                        <h4>
+                            About Free Admin Template</h4>
+                        <ul>
+                            <li><a href="javascript:;">EGrappler.com</a></li>
+                            <li><a href="javascript:;">Web Development Resources</a></li>
+                            <li><a href="javascript:;">Responsive HTML5 Portfolio Templates</a></li>
+                            <li><a href="javascript:;">Free Resources and Scripts</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Support</h4>
+                        <ul>
+                            <li><a href="javascript:;">Frequently Asked Questions</a></li>
+                            <li><a href="javascript:;">Ask a Question</a></li>
+                            <li><a href="javascript:;">Video Tutorial</a></li>
+                            <li><a href="javascript:;">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Something Legal</h4>
+                        <ul>
+                            <li><a href="javascript:;">Read License</a></li>
+                            <li><a href="javascript:;">Terms of Use</a></li>
+                            <li><a href="javascript:;">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Open Source jQuery Plugins</h4>
+                        <ul>
+                            <li><a href="http://www.egrappler.com">Open Source jQuery Plugins</a></li>
+                            <li><a href="http://www.egrappler.com;">HTML5 Responsive Tempaltes</a></li>
+                            <li><a href="http://www.egrappler.com;">Free Contact Form Plugin</a></li>
+                            <li><a href="http://www.egrappler.com;">Flat UI PSD</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /extra-inner -->
+    </div>
+    <!-- /extra -->
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        &copy; 2013 <a href="http://www.egrappler.com/">Bootstrap Responsive Admin Template</a>.
+                    </div>
+                    <!-- /span12 -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /footer-inner -->
+    </div>
+    <!-- /footer -->
 
-    <!-- jQuery -->
-    <script src="<?php echo base_url('/vendors/jquery/dist/jquery.min.js'); ?>"></script>
-    <!-- Bootstrap -->
-    <script src="<?php echo base_url('/vendors/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
-    <!-- FastClick -->
-    <script src="<?php echo base_url('/vendors/fastclick/lib/fastclick.js'); ?>"></script>
-    <!-- NProgress -->
-    <script src="<?php echo base_url('/vendors/nprogress/nprogress.js'); ?>"></script>
-    <!-- validator -->
-    <script src="<?php echo base_url('/vendors/validator/validator.js'); ?>"></script>
+<script src="<?php echo base_url('asset/admin2/js/jquery-1.7.2.min.js');?>"></script>
+<script src="<?php echo base_url('asset/admin2/js/excanvas.min.js');?>"></script>
+<script src="<?php echo base_url('asset/admin2/js/chart.min.js');?>" type="text/javascript"></script>
+<script src="<?php echo base_url('asset/admin2/js/bootstrap.js');?>"></script>
+<script src="<?php echo base_url('asset/admin2/js/base.js');?>"></script>
+<script>
 
-    <!-- Custom Theme Scripts -->
-    <script src="<?php echo base_url('/build/js/custom.min.js'); ?>"></script>
-
-    <!-- validator -->
-    <script>
-      // initialize the validator function
-      validator.message.date = 'not a real date';
-
-      // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
-      $('form')
-        .on('blur', 'input[required], input.optional, select.required', validator.checkField)
-        .on('change', 'select.required', validator.checkField)
-        .on('keypress', 'input[required][pattern]', validator.keypress);
-
-      $('.multi.required').on('keyup blur', 'input', function() {
-        validator.checkField.apply($(this).siblings().last()[0]);
-      });
-
-      $('form').submit(function(e) {
-        e.preventDefault();
-        var submit = true;
-
-        // evaluate the form using generic validaing
-        if (!validator.checkAll($(this))) {
-          submit = false;
+    var pieData = [
+        {
+            value: 30,
+            color: "#F38630"
+        },
+        {
+            value: 50,
+            color: "#E0E4CC"
+        },
+        {
+            value: 100,
+            color: "#69D2E7"
         }
 
-        if (submit)
-          this.submit();
+      ];
 
-        return false;
-      });
-    </script>
-    <!-- /validator -->
+    var myPie = new Chart(document.getElementById("pie-chart").getContext("2d")).Pie(pieData);
+
+    var barChartData = {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+        {
+            fillColor: "rgba(220,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,1)",
+            data: [65, 59, 90, 81, 56, 55, 40]
+        },
+        {
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 96, 27, 100]
+        }
+      ]
+
+    }
+
+    var myLine = new Chart(document.getElementById("bar-chart").getContext("2d")).Bar(barChartData);
+  var myLine = new Chart(document.getElementById("bar-chart1").getContext("2d")).Bar(barChartData);
+  var myLine = new Chart(document.getElementById("bar-chart2").getContext("2d")).Bar(barChartData);
+  var myLine = new Chart(document.getElementById("bar-chart3").getContext("2d")).Bar(barChartData);
+  
+  </script>
+
+
   </body>
+
 </html>

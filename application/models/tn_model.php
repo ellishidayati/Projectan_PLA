@@ -52,7 +52,7 @@ class tn_model extends CI_Model {
 			return $this->db->get();
 		}
 		
-		function get_merk_by_id($id){
+		function get_merk_by_id(){
 			$this->db->select('*');
 			$this->db->from('merk');
 			return $this->db->get();
@@ -135,7 +135,22 @@ class tn_model extends CI_Model {
 			}
 		
 	}
+
+	function jumlah_nms(){
+		$this->db->select("count(nama_nms) as 'total', nama_nms");
+		$this->db->from('port');
+		$this->db->group_by('nama_nms');
+		return $this->db->get();
+	}
+
+	function jumlah_link(){
+		$this->db->select("count(nms) as 'total', nms");
+		$this->db->from('link_statis');
+		$this->db->group_by('nms');
+		return $this->db->get();
+	}
 }
+
 
 /* End of file employee.php */
 /* Location: ./application/models/employee.php */

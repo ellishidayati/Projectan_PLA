@@ -86,7 +86,7 @@
         <div class="main-inner">
             <div class="container">
                 <div class="widget">
-                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Report - Sistem Inventory Data Teknis Transport</h3>
+                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Insert Single Data Link - Sistem Inventory Data Teknis Transport</h3>
                     </div>
           
 
@@ -99,15 +99,15 @@
                    
                 </div> <!-- /control-group -->
                     
-              <form class="form-horizontal form-label-left" <?php echo form_open_multipart('Link/create_link'); ?>  >
-                       <input id="jalur" name="jalur" type="text" value="<?php echo $jumlah_jalur; ?>" hidden/>
+              <form class="form-horizontal form-label-left" <?php echo form_open_multipart('Link/create_link'); ?> 
+                       <input id="jalur" name="jalur" type="hidden" value="<?php echo $jumlah_jalur; ?>" hidden/>
 
 
                         <label for="name">Perangkat <span class="required">*</span>
                         </label>
                       <div class="item form-group">
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <select class="form-control" name="nama_lokasi">
+                        <select class="form-control" name="user">
                           <option>METRO</option>
                           <option>TERA</option>
                           <option>TELKOMSEL</option>
@@ -116,32 +116,13 @@
                           <option>OTHERS</option>
                         </select>
                       </div>
-                      </br> </br> 
-                      </br>
-
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                              <input class="form-control" name="host_a" placeholder="Node A">
-                          
-                              </input>
-                        </div>
-                          <div class="col-md-3 col-sm-6 col-xs-12">
-                              <input class="form-control" name="host_b" placeholder="Node B">
-                          
-                              </input>
-                        </div>
-                              <div class="col-md-3 col-sm-6 col-xs-12">
-                              <input class="form-control" name="fa_a" placeholder="Interface A">
-                          
-                              </input>
-                        </div>
-                          <div class="col-md-3 col-sm-6 col-xs-12">
-                              <input class="form-control" name="fa_b" placeholder="Interface B">
-                          
-                              </input>
-                        </div>
+                      </br> 
+                              <input class="form-control" name="host_a" placeholder="Node A"></input>
+                              <input class="form-control" name="host_b" placeholder="Node B"></input>
+                              <input class="form-control" name="fa_a" placeholder="Interface A"></input>
+                              <input class="form-control" name="fa_b" placeholder="Interface B"> </input>                   
                       </div>
-
-            
+                    </br>
              <!-- NODE A -->
                       <?php 
                       $a=1;

@@ -180,7 +180,7 @@
                 <?php }?>  
                       </tbody>
                   
-                      <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete">
+                      <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete"></input>
                       <br>
                       <br>
                      

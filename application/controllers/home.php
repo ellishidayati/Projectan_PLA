@@ -120,8 +120,9 @@ class Home extends CI_Controller {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
     public function sukses(){
-        $data['port'] = $this->tn_model->get_port()->result();
-        $data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
+        $data['port'] = $this->tn_model->get_nms()->result();
+        $data['jumlah'] = $this->tn_model->jumlah_nms()->result();
+        $data['link'] = $this->tn_model->jumlah_link()->result();
         $this->load->view('admin/index',$data); 
     }
 
@@ -135,8 +136,8 @@ class Home extends CI_Controller {
 		$from = $this->uri->segment(3);
 		$this->pagination->initialize($config);
 
-		$data['port'] = $this->tn_model->data($config['per_page'],$from);
-		$data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
+		$data['port'] = $this->tn_model->data($config['total_rows'],$from);
+		$data['merk'] = $this->tn_model->get_merk_by_id()->result();
 		$this->load->view('admin/nms/tables-nms', $data);
 	}
 
