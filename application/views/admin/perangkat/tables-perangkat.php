@@ -4,15 +4,29 @@
 <style>
 
 #myDIV {
-  
-  /*  width.table-layout: 500px;*/
+    
     height: 335px;
+   /* width: 400px;*/
+  /*  width.table-layout: 500px;*/
 }
 </style>
     <meta charset="utf-8">
     <title>SINDANISTRA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Tell the browser to be responsive to screen width -->
+
+  <link rel="stylesheet" href="<?php echo base_url('css/ionicons.min.css');?>">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?php echo base_url('plugins/datatables/dataTables.bootstrap.css');?>">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?php echo base_url('dist/css/AdminLTE.min.css');?>">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins-->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css');?>">
+
+  <link rel="stylesheet" href="<?php echo base_url('theme/assets/css/bootstrap.css');?>">
+  <link rel="stylesheet" href="<?php echo base_url('theme/assets/css/font-awesome.min.css');?>">
+
     <link href="<?php echo base_url('asset/admin2/css/bootstrap.min.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('asset/admin2/css/bootstrap-responsive.min.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('asset/admin2/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600')?>"
@@ -25,6 +39,7 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
+
 <body>
     <div class="navbar navbar-fixed-top" style="position: fixed;">
         <div class="navbar-inner">
@@ -54,7 +69,8 @@
             </div>
             <!-- /container -->
         </div>
-        <!-- /navbar-inner -->   
+        <!-- /navbar-inner -->
+   
     <!-- /navbar -->
     <div class="subnavbar">
         <div class="subnavbar-inner">
@@ -65,7 +81,7 @@
                     <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
                     <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-					<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>
+          <li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>
                 </ul>
             </div>
             <!-- /container -->
@@ -74,30 +90,23 @@
     </div>
 
      </div>
-    <br>
+     <br>
      <br>
      <br>
      </br>
      </br>
      </br>
     <!-- /subnavbar -->
-  
-    <div class="main">
+<div class="main">
         <div class="main-inner">
             <div class="container">
-
-              <!-- /row -->
-  
-        <div class="row">
-          
-          <div class="span6">
+            <div class="span6">
+              <div class="widget">
             
-            <div class="widget">
-            
-          <div class="widget-header">
-            <i class="icon-bookmark"></i>
-            <h3>Insert Single Data Link</h3>
-          </div> <!-- /widget-header -->
+                  <div class="widget-header">
+                    <i class="icon-bookmark"></i>
+                    <h3>Insert Single Data Link</h3>
+                  </div> <!-- /widget-header -->
           
           <div class="widget-content">
 
@@ -114,16 +123,9 @@
           </div> <!-- /widget-content -->
             
         </div> <!-- /widget -->
-        
-            
-            
-            
-        </div> <!-- /span6 -->
-          
-          
-          <div class="span6">
-            
-            <div class="widget">
+            </div>
+            <div class="span6">
+               <div class="widget">
               
           <div class="widget-header">
             <i class="icon-bookmark"></i>
@@ -143,27 +145,18 @@
           </div> <!-- /widget-content -->
         
         </div> <!-- /widget -->
-                  
-          </div> <!-- /span6 -->
-          
-        </div> <!-- /row -->
-      
+            </div>
+
+     
                 <div class="widget">
-                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Data Link - Sistem Inventory Data Teknis Transport</h3>
-
-                     <!-- <form action="<?php echo site_url('Home/delete_multiple'); ?>" method="post">
-                     <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete" style="margin-top:-80px; margin-left: 1070px;"> -->
+                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Inventory - Sistem Inventory Data Teknis Transport</h3>
                     </div>
-
-
-                        <!-- /widget-header -->
-                       
-                   
-                   
-                    <div class="widget-content" style="overflow-y:auto">
+                       <!-- /widget-header -->
+                        <div class="widget-content"  style="overflow-y:auto">
                      <div class="table-responsive" id="myDIV">
-                      <form action="<?php echo site_url('link/delete_multiple'); ?>" method="post">
-                        <table class="table table-striped table-bordered">
+                 <form action="<?php echo site_url('link/delete_multiple'); ?>" method="post">
+
+                       <table id="example1" class="table table-bordered table-striped" style="background-color: none;">
                   <thead>
                         <tr>
                          <th><input type="checkbox" class="cek-all"></th>
@@ -195,18 +188,17 @@
             foreach($link_statis as $link){
 
               ?>
-                        <tr>
-                         <tr>
+                        
+                         
                           <td><input type="checkbox" name="del[]" class="cekmultipel" value="<?php echo $link->id_link;?>"></td>
 
-                          <td><?php 
+                        <td><?php 
                            if($link->host_a=="-" || $link->host_a==""){
                               $no=$no+0;
                             }else{
                                 $no++;
                                 echo $no; }
-                                 ?></td>
-
+                                 ?></td> 
                           <td><?php echo $link->user?></td>
                           <td><?php echo $link->host_a?></td>
                           <td><?php echo $link->host_b?></td>
@@ -237,9 +229,6 @@
               </table>
               </div>
               </div>
-       <!--  <ul class="pagination">
-                          <li ><?php echo $this->pagination->create_links(); ?></li>
-                    </ul>  -->
 
                                 <!-- /bar-chart -->
                             </div>
@@ -250,7 +239,61 @@
         </div>
         <!-- /main-inner -->
     </div>
-
+    <!-- /main -->
+    <div class="extra">
+        <div class="extra-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span3">
+                        <h4>
+                            About Free Admin Template</h4>
+                        <ul>
+                            <li><a href="javascript:;">EGrappler.com</a></li>
+                            <li><a href="javascript:;">Web Development Resources</a></li>
+                            <li><a href="javascript:;">Responsive HTML5 Portfolio Templates</a></li>
+                            <li><a href="javascript:;">Free Resources and Scripts</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Support</h4>
+                        <ul>
+                            <li><a href="javascript:;">Frequently Asked Questions</a></li>
+                            <li><a href="javascript:;">Ask a Question</a></li>
+                            <li><a href="javascript:;">Video Tutorial</a></li>
+                            <li><a href="javascript:;">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Something Legal</h4>
+                        <ul>
+                            <li><a href="javascript:;">Read License</a></li>
+                            <li><a href="javascript:;">Terms of Use</a></li>
+                            <li><a href="javascript:;">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Open Source jQuery Plugins</h4>
+                        <ul>
+                            <li><a href="http://www.egrappler.com">Open Source jQuery Plugins</a></li>
+                            <li><a href="http://www.egrappler.com;">HTML5 Responsive Tempaltes</a></li>
+                            <li><a href="http://www.egrappler.com;">Free Contact Form Plugin</a></li>
+                            <li><a href="http://www.egrappler.com;">Flat UI PSD</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /extra-inner -->
+    </div>
     <!-- /extra -->
     <div class="footer">
         <div class="footer-inner">
@@ -269,67 +312,64 @@
     </div>
     <!-- /footer -->
     <!-- Le javascript
-================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo base_url('asset/admin2/js/jquery-1.7.2.min.js');?>"></script>
-    <script src="<?php echo base_url('asset/admin2/js/excanvas.min.js');?>"></script>
-    <script src="<?php echo base_url('asset/admin2/js/chart.min.js');?>" type="text/javascript"></script>
-    <script src="<?php echo base_url('asset/admin2/js/bootstrap.js');?>"></script>
-    <script src="<?php echo base_url('asset/admin2/js/base.js');?>"></script>
-<<<<<<< HEAD
+
+  <!-- jQuery 2.2.3 -->
+<script src="<?php echo base_url('plugins/jQuery/jquery-2.2.3.min.js');?>"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="<?php echo base_url('bootstrap/js/bootstrap.min.js');?>"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url('plugins/datatables/jquery.dataTables.min.js');?>"></script>
+<script src="<?php echo base_url('plugins/datatables/dataTables.bootstrap.min.js');?>"></script>
+<!-- SlimScroll -->
+<script src="<?php echo base_url('plugins/slimScroll/jquery.slimscroll.min.js');?>"></script>
+<!-- FastClick -->
+<script src="<?php echo base_url('plugins/fastclick/fastclick.js');?>"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo base_url('dist/js/app.min.js');?>"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?php echo base_url('dist/js/demo.js');?>"></script>
+
+<!-- page script -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+      
+
     <script>
-        var doughnutData = [
-        {
-            value: 30,
-            color: "#F7464A"
-        },
-        {
-            value: 50,
-            color: "#46BFBD"
-        },
-        {
-            value: 100,
-            color: "#FDB45C"
-        },
-        {
-            value: 40,
-            color: "#949FB1"
-        },
-        {
-            value: 120,
-            color: "#4D5360"
-        }
+    
+    function myFunction() {
+        document.getElementById("myDIV").style.overflowY = "scroll";
+    }
+    
+    </script>
 
-      ];
+    <script>
 
-        var myDoughnut = new Chart(document.getElementById("donut-chart").getContext("2d")).Doughnut(doughnutData);
+    $(function(){
+        $('.cek-all').click(function(){
 
+          var cek = $(this).attr('checked')=='checked' ? true : false;
 
-        var lineChartData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [
-        {
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            data: [65, 59, 90, 81, 56, 55, 40]
-        },
-        {
-            fillColor: "rgba(151,187,205,0.5)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            data: [28, 48, 40, 19, 96, 27, 100]
-        }
-      ]
-=======
-	<script>
-function myFunction() {
-    document.getElementById("myDIV").style.overflowY = "scroll";
-}
+            $('.cekmultipel').attr('checked', cek);
+
+        })
+
+    })
+
 </script>
->>>>>>> origin/master
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": false,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
+
 
   <script>
 
@@ -345,8 +385,5 @@ function myFunction() {
     })
 
 </script>
-
-
-
 </body>
 </html>

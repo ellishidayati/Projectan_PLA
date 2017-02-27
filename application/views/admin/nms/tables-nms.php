@@ -103,24 +103,11 @@
             <div class="container">
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Inventory - Sistem Inventory Data Teknis Transport</h3>
-                   <!--    <form action="<?php echo site_url('Home/delete_multiple'); ?>" method="post">
-                      <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete" style="margin-top:10px; margin-left: 780px;"> -->
-                     <div class="form-group" style="margin-top:-40px; margin-left: 880px;">
-                      <div class="col-md-6 col-md-offset-3">
-                     <td>
                        <a href="<?php echo site_url('Home/insert_single_nms');?>"><button type="submit" class="btn btn-primary">Insert Single Data</button></a>
-                    </td>
-                    </div>
-                    </div>  
-                     
-                     <div class="form-group" style="margin-top:-40px; margin-left: 1018px;">
-                      <div class="col-md-6 col-md-offset-3">
-                     <td>
+                    
                        <a href="<?php echo site_url('Home/insert_double_nms');?>"><button type="submit" class="btn btn-danger">Insert Multiple Data</button></a>
-                      </td>
-                      </div>
-                    </div>
-                    </br>
+               
+                     
                     </div>
                        <!-- /widget-header -->
                         <div class="widget-content"  style="overflow-y:auto">
