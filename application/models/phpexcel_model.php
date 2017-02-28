@@ -55,12 +55,12 @@ class Phpexcel_model extends CI_Model {
        
 
             $ins = array(
-                         'host_a'=>$worksheet[$i]['A'],
-                        'host_b'=>$worksheet[$i]['B'],
-                        'fa_a'=>$worksheet[$i]['C'],
-                        'fa_b'=>$worksheet[$i]['D'],
-                        'nms'=>$worksheet[$i]['E'],
-                        'user'=>$worksheet[$i]['F'],
+                         'user'=>$worksheet[$i]['A'],
+                         'host_a'=>$worksheet[$i]['B'],
+                        'host_b'=>$worksheet[$i]['C'],
+                        'fa_a'=>$worksheet[$i]['D'],
+                        'fa_b'=>$worksheet[$i]['E'],
+                        'nms'=>$worksheet[$i]['F'],
                         'ne_a'=>$worksheet[$i]['G'],
                         'board_a'=>$worksheet[$i]['H'],
                         'rack_a'=>$worksheet[$i]['I'],

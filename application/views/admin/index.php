@@ -199,7 +199,7 @@
     //     text: 'Source: WorldClimate.com'
     // },
     xAxis: {
-        categories: [<?php foreach ($port as $p) {
+        categories: [<?php foreach ($jumlah as $p) {
               echo "'".$p->nama_nms."',";
             }?>]
     },
@@ -236,8 +236,8 @@
     //     text: 'Source: WorldClimate.com'
     // },
     xAxis: {
-        categories: [<?php foreach ($link as $p) {
-              echo "'".$p->nms."',";
+        categories: [<?php foreach ($lala as $jml) {
+              echo "'".$jml->nms."',";
             }?>]
     },
     yAxis: {

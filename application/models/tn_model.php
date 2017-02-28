@@ -149,6 +149,13 @@ class tn_model extends CI_Model {
 		$this->db->group_by('nms');
 		return $this->db->get();
 	}
+
+		function get_nms_link(){
+			$this->db->select('*');
+			$this->db->from('link_statis');
+			$this->db->group_by('nms');
+			return $this->db->get();
+		}
 }
 
 
