@@ -23,6 +23,7 @@
 		<td bgcolor="#FFFFFFFF"><b>Shelf B</b></td>
 		<td bgcolor="#FFFFFFFF"><b>Slot B</b></td>
 		<td bgcolor="#FFFFFFFF"><b>Port B</b></td>
+		<td bgcolor="#FFFFFFFF"><b>Keterangan</b></td>
 	</tr>
 
 	<?php
@@ -61,6 +62,7 @@
 			<td bgcolor="#FFFFFFFF">'.$result['shelf_b'].'</td>
 			<td bgcolor="#FFFFFFFF">'.$result['slot_b'].'</td>
 			<td bgcolor="#FFFFFFFF">'.$result['port_b'].'</td>
+			<td bgcolor="#FFFFFFFF">'.$result['ket'].'</td>
 			
 			</tr>';
 	 } ?>

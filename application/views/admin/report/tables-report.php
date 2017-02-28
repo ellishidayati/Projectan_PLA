@@ -182,6 +182,7 @@
                                     <th>Shelf B</th>
                                     <th>Slot B</th>
                                     <th>Port B</th>
+                                    <th>keterangan</th>
                                 </tr>
                             </thead>
 
@@ -218,6 +219,7 @@
                                     <td><?php echo $link->shelf_b?></td>
                                     <td><?php echo $link->slot_b?></td>
                                     <td><?php echo $link->port_b?></td>
+                                    <td><?php echo $link->ket?></td>
                                 </tr>
                             <?php }?>  
                         </tbody>
