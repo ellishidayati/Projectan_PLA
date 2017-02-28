@@ -3,22 +3,22 @@
 include 'conn.php';
 
 //mengambil data dari tabel
-$sql=mysqli_query($conn, "SELECT id_link, host_a, host_b, fa_a, fa_b, nms, ne_a, board_a, shelf_a, slot_a, port_a, ne_b, board_b, shelf_b, slot_b, port_b FROM link_statis");
+$sql=mysqli_query($conn, "SELECT * FROM link_statis");
 
 		$no = 0;
-		$qrys=mysqli_query($conn,"select * from link_statis");
+		$qrys=mysqli_query($conn,"SELECT * FROM link_statis");
 		
 		
 		if(isset($_GET['x'])){
 			$e = $_GET['x'];
 			if($e != ""){
-				$sql=mysqli_query($conn,"select id_link, host_a, host_b, fa_a, fa_b, nms, ne_a, board_a, shelf_a, slot_a, port_a, ne_b, board_b, shelf_b, slot_b, port_b FROM link_statis WHERE host_a LIKE '$e'");
+				$sql=mysqli_query($conn,"SELECT * FROM link(target, link)k_statis WHERE host_a LIKE '$e'");
 			}
 		}
 		
 
 $data = array();
-	while ($row = mysqli_fetch_assoc($sql)) {
+	while ($row = mysqli_fetch_array($sql)) {
    		array_push($data, $row);
 	}
  
@@ -26,22 +26,21 @@ $data = array();
 
 $judul = "DATA TEKNIS TRANSPORT";
 $header = array(
-			array("label"=>"No", "length"=>10, "align"=>"L"),
-			array("label"=>"Node A", "length"=>17, "align"=>"L"),
-			array("label"=>"Node B", "length"=>17, "align"=>"L"),
-			array("label"=>"Client A", "length"=>17, "align"=>"L"),
-			array("label"=>"Client B", "length"=>17, "align"=>"L"),
-			array("label"=>"NMS", "length"=>13, "align"=>"L"),
-			array("label"=>"NE A", "length"=>43, "align"=>"L"),
-			array("label"=>"Board A", "length"=>20, "align"=>"L"),
-			array("label"=>"Shelf A", "length"=>12, "align"=>"L"),
-			array("label"=>"Slot A", "length"=>10, "align"=>"L"),
-			array("label"=>"Port A", "length"=>10, "align"=>"L"),
-			array("label"=>"NE B", "length"=>43, "align"=>"L"),
-			array("label"=>"Board B", "length"=>20, "align"=>"L"),
-			array("label"=>"Shelf B", "length"=>12, "align"=>"L"),
-			array("label"=>"Slot B", "length"=>10, "align"=>"L"),
-			array("label"=>"Port B", "length"=>10, "align"=>"L"),
+			array("label"=>"No", "length"=>10, "align"=>"C"),
+			array("label"=>"User", "length"=>20, "align"=>"C"),
+			array("label"=>"Node A", "length"=>25, "align"=>"C"),
+			array("label"=>"Node B", "length"=>25, "align"=>"C"),
+			array("label"=>"Client A", "length"=>22, "align"=>"C"),
+			array("label"=>"Client B", "length"=>22, "align"=>"C"),
+			array("label"=>"NMS", "length"=>20, "align"=>"C"),
+			array("label"=>"NE", "length"=>43, "align"=>"C"),
+			array("label"=>"Board", "length"=>30, "align"=>"C"),
+			array("label"=>"Rack", "length"=>10, "align"=>"C"),
+			array("label"=>"Shelf", "length"=>12, "align"=>"C"),
+			array("label"=>"Slot", "length"=>10, "align"=>"C"),
+			array("label"=>"Port", "length"=>10, "align"=>"C"),
+			array("label"=>"Frekuensi", "length"=>15, "align"=>"C"),
+			
 		);
  
 
@@ -76,12 +75,26 @@ $fill=false;
 $i=1;
 	foreach ($data as $baris) {
 		$j = 0;
-		$baris['id_link']=$i;
-		foreach ($baris as $cell) {
+		$baris[0]=$i;
+		$temp=$baris[1];
+		$baris[1]=$baris[6];
+		$baris[6]=$temp;
+
+		for($j=0; $j<14; $j++){
 			
-				$pdf->Cell($header[$j]['length'], 6, $cell, 1, '0', 'C', $fill);
+				$pdf->Cell($header[$j]['length'], 6, $baris[$j], 1, '0', 'C', $fill);
+		
 			
-		$j++;
+		
+		}
+
+		$pdf->Ln();
+		for($k=0; $k<14; $k++){
+			if($k>6){
+		$pdf->Cell($header[$k]['length'], 6, $baris[$k+7], 1, '0', 'C', $fill);
+		}else{
+			$pdf->Cell($header[$k]['length'], 6, '', 1, '0', 'C', $fill);
+		}
 		}
 		$i++;
 		$fill = !$fill;
