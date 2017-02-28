@@ -5,7 +5,7 @@
 
 #myDIV {
     
-    height: 335px;
+    height: 400px;
    /* width: 400px;*/
   /*  width.table-layout: 500px;*/
 }
@@ -156,7 +156,7 @@
                      <div class="table-responsive" id="myDIV">
                  <form action="<?php echo site_url('link/delete_multiple'); ?>" method="post">
 
-                       <table id="example1" class="table table-bordered table-striped" style="background-color: none;">
+                       <table id="example2" class="table table-bordered table-striped" style="background-color: none;">
                   <thead>
                         <tr>
                          <th><input type="checkbox" class="cek-all"></th>

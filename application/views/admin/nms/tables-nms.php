@@ -5,7 +5,7 @@
 
 #myDIV {
     
-    height: 335px;
+    height: 400px;
    /* width: 400px;*/
   /*  width.table-layout: 500px;*/
 }
@@ -290,8 +290,16 @@
 <!-- page script -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
-      
+    
+    <script>
 
+    function doconfirm(){
+      job = confirm("Are you sure to delete permanently?");
+        if (job!=true){
+          return false;
+        }
+    }
+</script>
     <script>
     
     function myFunction() {
@@ -317,10 +325,10 @@
 <script>
   $(function () {
     $("#example1").DataTable();
-    $('#example2').DataTable({
+    $("#example2").DataTable({
       "paging": true,
       "lengthChange": false,
-      "searching": false,
+      "searching": true,
       "ordering": true,
       "info": true,
       "autoWidth": false

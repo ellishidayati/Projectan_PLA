@@ -77,11 +77,17 @@
 <div class="main">
   <div class="main-inner">
     <div class="container">
+    <div class="row">
+      <div id="googleMap" style="width:100%;height:450px;"></div>
+    </div>
       <div class="row">
+       <br>
+        <br>
         <div class="span6">
            <div id="container1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
         <!-- /span6 -->
+       
         <div class="span6">
         
     
@@ -255,6 +261,16 @@
     }]
 });
 </script>
+<script>
+function myMap() {
+var mapProp= {
+    center:new google.maps.LatLng(0.7893,113.9213),
+    zoom:5,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpLItGaLzmoLdYdYu4FX0wzHu0yngX9xo&callback=myMap"></script>
 </body>
 </html>
