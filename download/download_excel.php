@@ -34,7 +34,7 @@
 		if(isset($_GET['x'])){
 			$c = $_GET['x'];
 			if($c != ""){
-				$qrys=mysqli_query($conn,"select * from link_statis WHERE user like '$c'");
+				$qrys=mysqli_query($conn,"select * from link_statis WHERE host_a like '$c'");
 			}
 		}
 		

@@ -25,7 +25,7 @@ class Report extends CI_Controller {
 			$from = $this->uri->segment(3);
 			$this->pagination->initialize($config);
 
-			$data['link_statis'] = $this->report_model->data($config['per_page'],$from);
+			$data['link_statis'] = $this->report_model->data($config['total_rows'],$from);
 			$this->load->view('admin/report/tables-report', $data);
 		}
 		
@@ -70,7 +70,7 @@ class Report extends CI_Controller {
 				$c = $_POST['cari'];
 				$this->session->set_userdata('x',$c);
 				
-				$data2['link_statis'] = $this->report_model->data($config['per_page'],$from);
+				$data2['link_statis'] = $this->report_model->data($config['total_rows'],$from);
 				$this->load->view('admin/report/download-report',$data);
 			}
 		}

@@ -105,15 +105,13 @@
             
                   <div class="widget-header">
                     <i class="icon-bookmark"></i>
-                    <h3>Insert Single Data Link</h3>
+                    <h3>Download Report</h3>
                   </div> <!-- /widget-header -->
           
           <div class="widget-content">
 
                            <div class="title_right">
-                       <div class="control-group">                                         
-                                            <label class="control-label" for="radiobtns">Download Report</label>
-                                            
+                       <div class="control-group">                                        
                                             <div class="controls">
                                               <div class="btn-group">
                                               <a class="btn btn-primary" href="#"><i class="icon-download icon-white"></i> Download File</a>
@@ -134,8 +132,10 @@
                                 </form> 
                             </div>
                         </div>
-                                              </div>
-                                                  <!-- /controls -->          
+						<br></br>
+						<br></br>
+                            </div>
+                               <!-- /controls -->          
                     </div>
               <!-- /control-group -->
 
