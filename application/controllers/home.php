@@ -6,7 +6,7 @@ class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
         $this->load->model('tn_model');
-		$this->load->model('link_model');
+		$this->load->model('admin_model');
 		$this->load->library('csvimport');
 	}
 
@@ -124,6 +124,7 @@ class Home extends CI_Controller {
         $data['jumlah'] = $this->tn_model->jumlah_nms()->result();
         $data['link'] = $this->tn_model->jumlah_link()->result();
         $data['lala'] = $this->tn_model->get_nms_link()->result();
+        $data['user'] = $this->tn_model->get_user()->result();
         $this->load->view('admin/index',$data); 
     }
 

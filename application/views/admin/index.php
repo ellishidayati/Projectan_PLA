@@ -99,6 +99,25 @@
       
           
         </div>
+        <div class="row">
+       <br>
+        <br>
+        <div class="span6">
+           <div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        </div>
+        <!-- /span6 -->
+       
+        <div class="span6">
+        
+    
+         
+            <!-- /widget-content --> 
+          </div>
+          <!-- /widget -->
+   
+      
+          
+        </div>
         <!-- /span6 --> 
       </div>
       <!-- /row --> 
@@ -256,6 +275,43 @@
     series: [ {
         name: 'Data Link',
         data: [<?php foreach ($link as $jml) {
+              echo "".$jml->total.",";
+            }?>]
+    }]
+});
+</script>
+<script type="text/javascript">
+  Highcharts.chart('container2', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Data User'
+    },
+    // subtitle: {
+    //     text: 'Source: WorldClimate.com'
+    // },
+    xAxis: {
+        categories: [<?php foreach ($user as $jml) {
+              echo "'".$jml->user."',";
+            }?>]
+    },
+    yAxis: {
+        title: {
+            text: 'Jumlah Data'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [ {
+        name: 'Data User',
+        data: [<?php foreach ($user as $jml) {
               echo "".$jml->total.",";
             }?>]
     }]

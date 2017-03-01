@@ -74,7 +74,8 @@ class Phpexcel_model extends CI_Model {
                         'shelf_b'=>$worksheet[$i]['Q'],
                         'slot_b'=>$worksheet[$i]['R'],
                         'port_b'=>$worksheet[$i]['S'],
-                        'freq_b'=>$worksheet[$i]['T']
+                        'freq_b'=>$worksheet[$i]['T'],
+                        'keterangan'=>$worksheet[$i]['U']
                    );
 
             $this->db->insert('link_statis', $ins);
