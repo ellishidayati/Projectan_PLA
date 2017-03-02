@@ -78,7 +78,9 @@
   <div class="main-inner">
     <div class="container">
     <div class="row">
-      <div id="googleMap" style="width:100%;height:450px;"></div>
+        <?php echo $map['js']; ?>
+        
+                <?php echo $map['html']; ?>
     </div>
       <div class="row">
        <br>
@@ -108,8 +110,9 @@
         <!-- /span6 -->
        
         <div class="span6">
+                <?php echo $map['js']; ?>
         
-    
+                <?php echo $map['html']; ?>
          
             <!-- /widget-content --> 
           </div>
