@@ -46,7 +46,7 @@
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                             class="icon-cog"></i> Account <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:;">Settings</a></li>
+                                <li><a href="<?php echo site_url('Home/setakun_');?>">Settings</a></li>
                                 <li><a href="javascript:;">Help</a></li>
                             </ul>
                         </li>
@@ -77,7 +77,7 @@
                     <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
                     <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-					<li><a href="<?php echo site_url('Home/setakun_');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>
+					<li><a href="<?php echo site_url('Home/setakun_');?>"><i class="icon-cog"></i><span>Settings Account</span> </a> </li>
                  </ul>      
             </div>
             <!-- /container -->
@@ -99,7 +99,7 @@
         <div class="main-inner">
             <div class="container">
                 <div class="widget">
-                    <div class="widget-header" ><i class="icon-user"></i><h3>Setting akun - Sistem Inventory Data Teknis Transport</h3>
+                    <div class="widget-header" ><i class="icon-cog"></i><h3>Settings Account - Sistem Inventory Data Teknis Transport</h3>
                     </div>
 					
 
@@ -147,7 +147,7 @@
 					</div>
 					</div>
 						<td>
-                          <a href="<?php echo site_url('Home/insert_akun');?>" class="btn btn-primary"> Insert New akun </a>
+                          <a href="<?php echo site_url('Home/insert_akun');?>" class="btn btn-primary"> Insert New Account </a>
 						  </td> 
 						
 					</div>

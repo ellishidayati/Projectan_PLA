@@ -4,18 +4,19 @@
 <head>
     <meta charset="utf-8">
     <title>SINDANISTRA</title>
+	
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
     
-<link href="<?php echo base_url('asset/admin2/css/bootstrap.min.css');?>" rel="stylesheet" type="text/css" />
-<link href="<?php echo base_url('asset/admin2/css/bootstrap-responsive.min.css');?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url('asset/admin2/css/bootstrap.min.css');?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url('asset/admin2/css/bootstrap-responsive.min.css');?>" rel="stylesheet" type="text/css" />
 
-<link href="<?php echo base_url('asset/admin2/css/font-awesome.css');?>" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-    
-<link href="<?php echo base_url('asset/admin2/css/style.css');?>" rel="stylesheet" type="text/css">
-<link href="<?php echo base_url('asset/admin2/css/pages/signin.css');?>" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url('asset/admin2/css/font-awesome.css');?>" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+		
+	<link href="<?php echo base_url('asset/admin2/css/style.css');?>" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url('asset/admin2/css/pages/signin.css');?>" rel="stylesheet" type="text/css">
 
 </head>
 

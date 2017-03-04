@@ -6,11 +6,18 @@ class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
         $this->load->model('tn_model');
+        $this->load->model('admin_model');
 		$this->load->model('link_model');
 		$this->load->library('csvimport');
 	}
 
 	public function index(){
+		$data['port'] = $this->tn_model->get_port()->result();
+		$data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
+		$this->load->view('user/index',$data);	
+	}
+	
+	public function index2(){
 		$data['port'] = $this->tn_model->get_port()->result();
 		$data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
 		$this->load->view('admin/login',$data);	
@@ -41,7 +48,7 @@ class Home extends CI_Controller {
             }else{
                 // kalau ga ada diredirect lagi ke halaman login
                 $this->session->set_flashdata('notification', 'username dan password tidak sesuai, coba lagi');
-                redirect(site_url('home'));
+                redirect(site_url('home/index2'));
             }   
         }
     }
@@ -120,7 +127,6 @@ class Home extends CI_Controller {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
     public function sukses(){
- 
         $data['jumlah'] = $this->tn_model->jumlah_nms()->result();
         $data['link'] = $this->tn_model->jumlah_link()->result();
         $data['lala'] = $this->tn_model->get_nms_link()->result();

@@ -51,7 +51,7 @@
 						</a>
 						
 						<ul class="dropdown-menu">
-							<li><a href="javascript:;">Settings</a></li>
+							<li><a href="<?php echo site_url('Home/setakun_');?>">Settings</a></li>
 							<li><a href="javascript:;">Help</a></li>
 						</ul>						
 					</li>
@@ -95,7 +95,7 @@
 				<li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
 	        	<li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
        			<li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>	
-				<li><a href="<?php echo site_url('Home/setakun_');?>"><i class="icon-list-alt"></i><span>Setting Akun</span> </a> </li>
+				<li><a href="<?php echo site_url('Home/setakun_');?>"><i class="icon-cog"></i><span>Settings Account</span> </a> </li>
 			
 			</ul>
 		</div> <!-- /container -->
@@ -120,7 +120,7 @@
 	      			
 	      			<div class="widget-header">
 	      				<i class="icon-bookmark"></i>
-	      				<h3>Insert New akun</h3>
+	      				<h3>Insert New Account</h3>
 	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">		

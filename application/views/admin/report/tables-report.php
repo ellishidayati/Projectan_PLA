@@ -52,7 +52,7 @@
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                             class="icon-cog"></i> Account <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:;">Settings</a></li>
+                                <li><a href="<?php echo site_url('Home/setakun');?>">Settings</a></li>
                                 <li><a href="javascript:;">Help</a></li>
                             </ul>
                         </li>
@@ -81,7 +81,7 @@
                     <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
                     <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-          <li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>
+          <!--<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>-->
                 </ul>
             </div>
             <!-- /container -->
@@ -124,11 +124,12 @@
                                                 <li><a href="#"><i class="i"></i> Make admin</a></li> -->
                                               </ul>
                                             </div>
-                        <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search" >
+                        <div class="col-md-4 col-sm-4 col-xs-12 form-group pull-right top_search" >
                             <div class="input-group">
+								<h4>Download berdasarkan node A</h4>
                                 <form action="<?php print site_url();?>/report/cari" method=POST>
-                                <input type=text name=cari>             
-                                <a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">search</button></a>
+                                <input class="input-lg" type=text name=cari>             
+                                <a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">OK</button></a>
                                 </form> 
                             </div>
                         </div>

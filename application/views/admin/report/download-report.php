@@ -46,7 +46,7 @@
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                             class="icon-cog"></i> Account <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:;">Settings</a></li>
+                                <li><a href="<?php echo site_url('Home/setakun');?>">Settings</a></li>
                                 <li><a href="javascript:;">Help</a></li>
                             </ul>
                         </li>
@@ -75,7 +75,7 @@
                     <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
                     <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-					<li><a href="<?php echo site_url('home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>
+					<!--<li><a href="<?php echo site_url('home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>-->
 				</ul>
 		   </div>
             <!-- /container -->
@@ -95,6 +95,58 @@
 	<div class="main">
         <div class="main-inner">
             <div class="container">
+			 <div class="widget">
+            
+                  <div class="widget-header">
+                    <i class="icon-bookmark"></i>
+                    <h3>Download Report</h3>
+                  </div> <!-- /widget-header -->
+          
+          <div class="widget-content">
+			
+				<?php   
+					$x="";
+                    if(isset($_SESSION['x'])){
+                    //echo $_SESSION['x'];
+                     $x = $_SESSION['x'];
+                     }
+                ?>
+
+                           <div class="title_right">
+                       <div class="control-group">                                        
+                                            <div class="controls">
+                                              <div class="btn-group">
+                                              <a class="btn btn-primary" href="#"><i class="icon-download icon-white"></i> Download File</a>
+                                              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                                              <ul class="dropdown-menu">
+                                                <li><a href="<?php echo base_url('Download/download_excel.php?x=').$x;?>"><i class="icon-file"></i>Excel</a></li>
+                                                <li><a href="<?php echo base_url('Downloadpdf/pdf.php?x=').$x;?>"><i class="icon-file"></i>PDF</a></li>
+                                               <!--  <li class="divider"></li>
+                                                <li><a href="#"><i class="i"></i> Make admin</a></li> -->
+                                              </ul>
+                                            </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 form-group pull-right top_search" >
+                            <div class="input-group">
+								<h4>Download berdasarkan node A</h4>
+                                <form action="<?php print site_url();?>/report/cari" method=POST>
+                                <input class="input-lg" type=text name=cari>             
+                                <a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">OK</button></a>
+                                </form> 
+                            </div>
+                        </div>
+						<br></br>
+						<br></br>
+                            </div>
+                               <!-- /controls -->          
+                    </div>
+              <!-- /control-group -->
+
+
+          <!--   <canvas id="pie-chart" class="chart-holder"></canvas> -->
+          </div> <!-- /widget-content -->
+            
+        </div> <!-- /widget -->
+            </div>
                 <div class="widget">
                     <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Report - Sistem Inventory Data Teknis Transport</h3>
                     </div>
@@ -102,44 +154,7 @@
 					<div style="overflow-x:auto"> <!-- /widget-header -->
                     <div class="widget-content"  style="overflow-x:auto">
 
-                    <?php   
-                        $x="";
-                        if(isset($_SESSION['x'])){
-                            //echo $_SESSION['x'];
-                            $x = $_SESSION['x'];
-                        }
-                        ?>
-
-                        <div class="title_right">
-                       <div class="control-group">                                         
-                                            <label class="control-label" for="radiobtns">Download Report</label>
-                                            
-                                            <div class="controls">
-                                              <div class="btn-group" style="margin-top:3px; margin-left: 0px;">
-                                              <a class="btn btn-primary" href="#"><i class="icon-download icon-white"></i> Download File</a>
-                                              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                                              <ul class="dropdown-menu">
-                                                
-                                                <li><a href="<?php echo base_url('Download/download_excel.php?x=').$x;?>"><i class="icon-file"></i>Excel</a></li>
-                                                <li><a href="<?php echo base_url('Downloadpdf/pdf.php?x=').$x;?>"><i class="icon-file"></i>PDF</a></li>
-                                               <!--  <li class="divider"></li>
-                                                <li><a href="#"><i class="i"></i> Make admin</a></li> -->
-                                              </ul>
-                                            </div>
-                                              </div>
-
-					
-                                                  <!-- /controls -->          
-                        <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <form action="<?php print site_url();?>/report/cari" method=POST>
-                                <input type=text name=cari>             
-                                <a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">search</button></a>
-                                </form> 
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /control-group -->
+                   
 
 					<!-- <br>
 					<div class="title_right">
