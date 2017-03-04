@@ -65,6 +65,7 @@ class Link extends CI_Controller {
             $data['shelf_b'] = $this->input->post('shelf2');
             $data['slot_b'] = $this->input->post('slot2');
             $data['port_b'] = $this->input->post('port2');
+            $data['keterangan'] = $this->input->post('keterangan');
             
     		$this->link_model->insert_link($data);
         }else{
@@ -84,6 +85,7 @@ class Link extends CI_Controller {
             $data['shelf_b'] = $this->input->post('shelf2');
             $data['slot_b'] = $this->input->post('slot2');
             $data['port_b'] = $this->input->post('port2');
+            $data['keterangan'] = $this->input->post('keterangan');
             
             $this->link_model->insert_link($data);
             $a=2;
@@ -102,6 +104,7 @@ class Link extends CI_Controller {
                 $data2['shelf_b']=$this->input->post('shelf'.$b);
                 $data2['slot_b']=$this->input->post('slot'.$b);
                 $data2['port_b']=$this->input->post('port'.$b);
+                 $data['keterangan'] = $this->input->post('keterangan');
 
                 $this->link_model->insert_link($data2);
                 $a++;
@@ -129,11 +132,14 @@ class Link extends CI_Controller {
             $data['shelf_a'] = $this->input->post('shelfA');
             $data['slot_a'] = $this->input->post('slotA');
             $data['port_a'] = $this->input->post('portA');
+            $data['freq_a'] = $this->input->post('freqA');
             $data['ne_b'] = $this->input->post('neB');
             $data['board_b'] =$this->input->post('boardB');
             $data['shelf_b'] = $this->input->post('shelfB');
             $data['slot_b'] = $this->input->post('slotB');
             $data['port_b'] = $this->input->post('portB');
+            $data['freq_b'] = $this->input->post('freqB');
+            $data['keterangan'] = $this->input->post('keterangan');
             $id_link=$this->input->post('id_link');
         $this->link_model->update_link($id_link, $data);
         // print_r($data);

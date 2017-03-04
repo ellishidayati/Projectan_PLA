@@ -156,6 +156,13 @@ class tn_model extends CI_Model {
 			$this->db->group_by('nms');
 			return $this->db->get();
 		}
+	function get_user(){
+		$this->db->select("count(user) as 'total', user");
+		$this->db->from('link_statis');
+		$this->db->group_by('user');
+		return $this->db->get();
+	}
+
 }
 
 

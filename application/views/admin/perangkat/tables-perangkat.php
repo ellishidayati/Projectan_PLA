@@ -174,11 +174,14 @@
                           <th>Shelf A</th>
                           <th>Slot A</th>
                           <th>Port A</th>
+                          <th>Freq A</th>
                           <th>NE B</th>
                           <th>Board B</th>
                           <th>Shelf B</th>
                           <th>Slot B</th>
                           <th>Port B</th>
+                          <th>freq B</th>
+                          <th>Keterangan</th>
                           <th>Aksi</th>
                         </tr>
                       </thead>
@@ -212,12 +215,14 @@
                           <td><?php echo $link->shelf_a?></td>
                           <td><?php echo $link->slot_a?></td>
                           <td><?php echo $link->port_a?></td>
-
+                          <td><?php echo $link->freq_a?></td>
                           <td><?php echo $link->ne_b?></td>
                           <td><?php echo $link->board_b?></td>
                           <td><?php echo $link->shelf_b?></td>
                           <td><?php echo $link->slot_b?></td>
                           <td><?php echo $link->port_b?></td>
+                          <td><?php echo $link->freq_b?></td>
+                          <td><?php echo $link->keterangan?></td>
                           <td> <a href="<?php echo site_url('Link/edit_link/'.$link->id_link);?>" class="btn btn-info btn-xs"><i class="btn-icon-only icon-pencil"></i></a></td>
                          <!--  <td>
                           <a href="<?php echo site_url('Link/delete_link/'.$link->id_link);?>" class="btn btn-danger btn-xs" onclick="return doconfirm();"><i class="btn-icon-only icon-trash"></i></a>

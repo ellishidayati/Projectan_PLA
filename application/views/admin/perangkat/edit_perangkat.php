@@ -617,8 +617,11 @@
                               <select class="form-control" name="portB" id="portB" <?php echo set_value('board');?> onchange="ajaxtampilB(this.value)">
                                 <option value="<?php echo $link->port_b?>"><?php echo $link->port_b?></option>
                               </select>
-                          
-                    
+                            <br>
+                               <select class="form-control" name="keterangan" >
+                                <option value="<?php echo $link->keterangan?>"><?php echo $link->keterangan?></option>
+                              </select>
+                              </br>
                         </div>
                  
                         <div class="ln_solid"></div>

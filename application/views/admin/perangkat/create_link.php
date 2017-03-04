@@ -374,7 +374,9 @@
                         </div>
                         </div></th></tr></tbody></table>
                         <?php $a++;} ?>
-                 
+                          <br>
+                             <input type="text" name="keterangan" placeholder="Keterangan"></input>
+                             <br><br>
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
