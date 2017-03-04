@@ -154,8 +154,8 @@
                                 You can delete the links only if you purchased the pro version.
                                 Licensing information: https://bootstrapmade.com/license/
                                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Sailor
-                            -->
-                            <a href="">SINDANISTRA</a> Sistem Inventory Data Teknis Transport<a href=""></a>
+                            
+                            <a href="">SINDANISTRA</a> Sistem Inventory Data Teknis Transport<a href=""></a> -->
                         </div>
 					</div>
 				</div>
