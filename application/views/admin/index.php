@@ -16,14 +16,7 @@
     <link href="<?php echo base_url('asset/admin2/css/style.css');?>" rel="stylesheet">
     
     <link href="<?php echo base_url('asset/admin2/css/pages/reports.css');?>" rel="stylesheet">
-<<<<<<< HEAD
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-	<script src="https://code.highcharts.com/modules/exporting.js"></script
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-=======
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
