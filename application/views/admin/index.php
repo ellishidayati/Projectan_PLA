@@ -16,8 +16,10 @@
     <link href="<?php echo base_url('asset/admin2/css/style.css');?>" rel="stylesheet">
     
     <link href="<?php echo base_url('asset/admin2/css/pages/reports.css');?>" rel="stylesheet">
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>

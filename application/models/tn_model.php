@@ -162,7 +162,11 @@ class tn_model extends CI_Model {
 		$this->db->group_by('user');
 		return $this->db->get();
 	}
-
+		function get_longlat(){
+		$this->db->select("*");
+		$this->db->from('lokasi');
+		return $this->db->get();
+	}
 }
 
 

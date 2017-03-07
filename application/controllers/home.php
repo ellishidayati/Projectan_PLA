@@ -138,17 +138,17 @@ class Home extends CI_Controller {
         $config['zoom'] = 5;
         $this->googlemaps->initialize($config);
 
-        $marker = array();
-        $marker['position'] = '-6.914744, 107.609810';
-        $this->googlemaps->add_marker($marker);
-         $marker = array();
-        $marker['position'] = '4.695135  ,96.7493993';
-        $this->googlemaps->add_marker($marker);
-        // $data['map'] = $this->googlemaps->create_map();
+       $coords = $this->tn_model->get_longlat()->result();
+	         foreach ($coords as $kordinat) {
+	            
+	             $marker = array();
+	             $marker['position'] = $kordinat->lng.','.$kordinat->lat;
+	         	$marker['infowindow_content'] = '1 - Hello World!';
+				$marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld='.$kordinat->kd.'|'.$kordinat->warna.'|000000';
+	             $this->googlemaps->add_marker($marker);
 
-        $marker = array();
-        $marker['position'] = '1.122564, 103.945845';
-        $this->googlemaps->add_marker($marker);
+	         }
+
         $data['map'] = $this->googlemaps->create_map();
 
         $this->load->view('admin/index',$data); 
