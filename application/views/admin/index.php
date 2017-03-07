@@ -16,12 +16,22 @@
     <link href="<?php echo base_url('asset/admin2/css/style.css');?>" rel="stylesheet">
     
     <link href="<?php echo base_url('asset/admin2/css/pages/reports.css');?>" rel="stylesheet">
+<<<<<<< HEAD
     <script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
+=======
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+>>>>>>> origin/master
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -46,11 +56,16 @@
 			<a href="" class="dropdown-toggle" data-toggle="dropdown">
 			<i class="icon-user"></i> <?php echo $this->session->userdata('username');?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
+<<<<<<< HEAD
               <li><a data-toggle="modal" data-target="#myModal">Profile</a></li>
 			  
 			<!-- Trigger the modal with a button 
 			<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
 							
+=======
+               <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+              <li><a href="javascript:; " data-toggle="modal" data-target="#myModal">Profile</a></li>
+>>>>>>> origin/master
              <li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
             </ul>
           </li>
@@ -83,6 +98,32 @@
 <!-- /subnavbar -->
 <div class="main">
   <div class="main-inner">
+  <div class="container">
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
     <div class="container">
 	
 		<!-- Modal -->
@@ -107,7 +148,9 @@
 		</div>	
 		
     <div class="row">
-      <div id="googleMap" style="width:100%;height:450px;"></div>
+        <?php echo $map['js']; ?>
+        
+                <?php echo $map['html']; ?>
     </div>
       <div class="row">
        <br>
@@ -137,8 +180,9 @@
         <!-- /span6 -->
        
         <div class="span6">
+                <?php echo $map['js']; ?>
         
-    
+                <?php echo $map['html']; ?>
          
             <!-- /widget-content --> 
           </div>

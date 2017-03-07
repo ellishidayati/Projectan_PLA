@@ -15,6 +15,10 @@
 	<!-- Theme skin -->
 	<link id="t-colors" href="<?php echo base_url('asset/user/skins/default.css');?>" rel="stylesheet" />
 	<!-- boxed bg -->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -54,28 +58,13 @@
 				<div id="main-slider" class="main-slider flexslider">
 					<ul class="slides">
 					  <li>
-						<img src="<?php echo base_url('asset/user/img/slides/flexslider/1.jpg')?>" alt="" />
-						<div class="flex-caption">
-							<h3>Modern Design</h3> 
-							<p>Duis fermentum auctor ligula ac malesuada. Mauris et metus odio, in pulvinar urna</p> 
-							<a href="#" class="btn btn-theme">Learn More</a>
-						</div>
+						<img src="<?php echo base_url('asset/img/1.jpg')?>" alt="" />
 					  </li>
 					  <li>
-						<img src="<?php echo base_url('asset/user/img/slides/flexslider/2.jpg')?>" alt="" />
-						<div class="flex-caption">
-							<h3>Fully Responsive</h3> 
-							<p>Sodales neque vitae justo sollicitudin aliquet sit amet diam curabitur sed fermentum.</p> 
-							<a href="#" class="btn btn-theme">Learn More</a>
-						</div>
+						<img src="<?php echo base_url('asset/img/2.jpeg')?>" alt="" />
 					  </li>
 					  <li>
-						<img src="<?php echo base_url('asset/user/img/slides/flexslider/3.jpg')?>" alt="" />
-						<div class="flex-caption">
-							<h3>Clean & Fast</h3> 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit donec mer lacinia.</p> 
-							<a href="#" class="btn btn-theme">Learn More</a>
-						</div>
+						<img src="<?php echo base_url('asset/img/3.png')?>" alt="" />
 					  </li>
 					</ul>
 				</div>
@@ -84,10 +73,24 @@
 		</div>
 	</div>	
 	</section>
-	
+			
 	<section class="callaction">
 	<div class="container">
+		 <div class="row">
+        <?php echo $map['js']; ?>
+        
+                <?php echo $map['html']; ?>
+    </div>
 		<div class="row">
+			<div class="col-lg-6">
+				<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			<div class="col-lg-6">
+				<div id="container1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			</div>
+			
+		</div>
+				<div class="row">
 			<div class="col-lg-8">
 				<div class="cta-text">
 					<h2>PT Telekomunikasi Indonesia (Persero) Tbk</h2>
@@ -101,6 +104,7 @@
 				</div>
 			</div>					
 		</div>
+
 	</div>
 	</section>
 
@@ -142,14 +146,80 @@
 <script src="<?php echo base_url('asset/user/js/bootstrap.min.js');?>"></script>
 <script src="<?php echo base_url('asset/user/plugins/flexslider/jquery.flexslider-min.js');?>"></script> 
 <script src="<?php echo base_url('asset/user/plugins/flexslider/flexslider.config.js');?>"></script>
-<script src="<?php echo base_url('asset/user/js/jquery.appear.js');?>"></script>
-<script src="<?php echo base_url('asset/user/js/stellar.js');?>"></script>
-<script src="<?php echo base_url('asset/user/js/classie.js');?>"></script>
-<script src="<?php echo base_url('asset/user/js/uisearch.js');?>"></script>
-<script src="<?php echo base_url('asset/user/js/jquery.cubeportfolio.min.js');?>"></script>
-<script src="<?php echo base_url('asset/user/js/google-code-prettify/prettify.js');?>"></script>
-<script src="<?php echo base_url('asset/user/js/animate.js');?>"></script>
-<script src="<?php echo base_url('asset/user/js/custom.js');?>"></script>
 
+<script type="text/javascript">
+  Highcharts.chart('container', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Data Link'
+    },
+    // subtitle: {
+    //     text: 'Source: WorldClimate.com'
+    // },
+    xAxis: {
+        categories: [<?php foreach ($lala as $jml) {
+              echo "'".$jml->nms."',";
+            }?>]
+    },
+    yAxis: {
+        title: {
+            text: 'Jumlah Data'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [ {
+        name: 'Data Link',
+        data: [<?php foreach ($link as $jml) {
+              echo "".$jml->total.",";
+            }?>]
+    }]
+});
+</script>
+<script type="text/javascript">
+  Highcharts.chart('container1', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Data Inventory'
+    },
+    // subtitle: {
+    //     text: 'Source: WorldClimate.com'
+    // },
+    xAxis: {
+        categories: [<?php foreach ($jumlah as $p) {
+              echo "'".$p->nama_nms."',";
+            }?>]
+    },
+    yAxis: {
+        title: {
+            text: 'Jumlah Data'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [{
+        name: 'Inventory',
+        data: [<?php foreach ($jumlah as $jml) {
+              echo "".$jml->total.",";
+            }?>]
+    }]
+});
+</script>
 </body>
 </html>
