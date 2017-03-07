@@ -29,9 +29,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-
->>>>>>> origin/master
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -56,16 +53,13 @@
 			<a href="" class="dropdown-toggle" data-toggle="dropdown">
 			<i class="icon-user"></i> <?php echo $this->session->userdata('username');?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-<<<<<<< HEAD
+
               <li><a data-toggle="modal" data-target="#myModal">Profile</a></li>
 			  
 			<!-- Trigger the modal with a button 
 			<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
-							
-=======
                <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
               <li><a href="javascript:; " data-toggle="modal" data-target="#myModal">Profile</a></li>
->>>>>>> origin/master
              <li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
             </ul>
           </li>
