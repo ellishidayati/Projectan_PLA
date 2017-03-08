@@ -50,13 +50,6 @@
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-cog"></i> Account <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?php echo site_url('Home/setakun');?>">Settings</a></li>
-                                <li><a href="javascript:;">Help</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                             class="icon-user"></i> <?php echo $this->session->userdata('username');?>  <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:;">Profile</a></li
@@ -81,7 +74,7 @@
                     <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
                     <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-          <!--<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>-->
+					<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-cog"></i><span>Setting Account </span> </a> </li>
                 </ul>
             </div>
             <!-- /container -->

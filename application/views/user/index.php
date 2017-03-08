@@ -106,6 +106,7 @@
 		</div>
 
 	</div>
+	</div>
 	</section>
 
 	<div id="sub-footer">
@@ -136,7 +137,6 @@
 			</div>
 		</div>
 	</div>	
-	</div>
 	<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 
 <!-- Placed at the end of the document so the pages load faster -->

@@ -59,7 +59,7 @@
                         <li><a href="<?php echo site_url('User');?>">Home</a></li>
                         <li><a href="<?php echo site_url('User/table_nms');?>">Inventory</a></li>
                         <li><a href="<?php echo site_url('User/table_perangkat');?>">Data Link</a></li>
-                        <li><a href="<?php echo site_url('Home/index2');?>">Login as Admin</a></li>
+                        <li><a href="<?php echo site_url('Home');?>">Login as Admin</a></li>
                     </ul>
                 </div>
             </div>
