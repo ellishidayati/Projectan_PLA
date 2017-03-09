@@ -28,7 +28,7 @@ class report_model extends CI_Model {
 		}
 		function caridata(){
 			$c = $this->input->POST('cari');
-			$this->db->like('host_a', $c);
+			$this->db->like('user', $c);
 			$query = $this->db->get('link_statis');
 			return $query->result(); 	
 		}

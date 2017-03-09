@@ -12,7 +12,7 @@ $sql=mysqli_query($conn, "SELECT * FROM link_statis");
 		if(isset($_GET['x'])){
 			$e = $_GET['x'];
 			if($e != ""){
-				$sql=mysqli_query($conn,"SELECT * FROM link(target, link)k_statis WHERE host_a LIKE '$e'");
+				$sql=mysqli_query($conn,"SELECT * FROM link_statis WHERE user LIKE '$e'");
 			}
 		}
 		

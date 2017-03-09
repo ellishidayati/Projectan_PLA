@@ -119,7 +119,7 @@
                                             </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 form-group pull-right top_search" >
                             <div class="input-group">
-								<h4>Download berdasarkan node A</h4>
+								<h4>Download berdasarkan USER</h4>
                                 <form action="<?php print site_url();?>/report/cari" method=POST>
                                 <input class="input-lg" type=text name=cari>             
                                 <a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">OK</button></a>
@@ -156,7 +156,7 @@
                     
                     <div class="table-responsive">
                     <div class="x_content" id="myDIV">
-                        <table id="example1" class="table table-striped table-bordered" border="1">
+                        <table id="example2" class="table table-striped table-bordered" border="1">
                             <thead>
                                 <tr>
                                     <th>No</th> 
@@ -213,7 +213,7 @@
                                     <td><?php echo $link->shelf_b?></td>
                                     <td><?php echo $link->slot_b?></td>
                                     <td><?php echo $link->port_b?></td>
-                                    <td><?php echo $link->ket?></td>
+                                    <td><?php echo $link->keterangan?></td>
                                 </tr>
                             <?php }?>  
                         </tbody>
@@ -360,8 +360,8 @@
     $("#example1").DataTable();
     $('#example2').DataTable({
       "paging": true,
-      "lengthChange": false,
-      "searching": false,
+      "lengthChange": true,
+      "searching": true,
       "ordering": false,
       "info": true,
       "autoWidth": false
