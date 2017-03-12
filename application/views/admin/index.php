@@ -16,12 +16,11 @@
     <link href="<?php echo base_url('asset/admin2/css/style.css');?>" rel="stylesheet">
     
     <link href="<?php echo base_url('asset/admin2/css/pages/reports.css');?>" rel="stylesheet">
+	
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -36,20 +35,12 @@
                     class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="<?php echo site_url('Home/sukses');?>">SINDANISTRA</a>
       <div class="nav-collapse">
         <ul class="nav pull-right">
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-cog"></i> Account <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="<?php echo site_url('Home/setakun');?>">Settings</a></li>
-              <li><a href="javascript:;">Help</a></li>
-            </ul>
-          </li>
           <li class="dropdown"> 
 			<a href="" class="dropdown-toggle" data-toggle="dropdown">
 			<i class="icon-user"></i> <?php echo $this->session->userdata('username');?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-               <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
-              <li><a href="javascript:; " data-toggle="modal" data-target="#myModal">Profile</a></li>
-             <li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
+				<li><a href="javascript:;">Profile</a></li>
+				<li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>			 
             </ul>
           </li>
         </ul>
@@ -66,6 +57,7 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
+<<<<<<< HEAD
        <li><a href="<?php echo site_url('Home/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a>
                     </li>
                     <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
@@ -74,6 +66,13 @@
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Manual Book</span> </a> </li>
 		<!-- <li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li> -->
+=======
+        <li class="active"><a href="<?php echo site_url('home/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
+         <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
+        <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+		<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-cog"></i><span>Setting Account </span> </a> </li>
+>>>>>>> origin/master
     <!--     <li><a href="guidely.html"><i class="icon-facetime-video"></i><span>App Tour</span> </a></li> -->
 	<ul>
     </div>
@@ -84,33 +83,29 @@
 <!-- /subnavbar -->
 <div class="main">
   <div class="main-inner">
-  <div class="container">
- 
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-</div>
-
     <div class="container">
+	
+		<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Profile</h4>
+				 </div>
+				 <div class="modal-body">
+					<p>Some text in the modal.</p>
+				 </div>
+				 <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+			</div>
+
+			</div>
+		</div>	
+		
     <div class="row">
         <?php echo $map['js']; ?>
         

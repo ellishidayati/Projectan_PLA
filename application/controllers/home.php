@@ -12,6 +12,7 @@ class Home extends CI_Controller {
         $this->load->library('google_maps');
 	}
 
+
 	public function index(){
 		$data['jumlah'] = $this->tn_model->jumlah_nms()->result();
         $data['link'] = $this->tn_model->jumlah_link()->result();
@@ -37,8 +38,9 @@ class Home extends CI_Controller {
         $data['map'] = $this->google_maps->create_map();
 		$this->load->view('user/index',$data);	
 	}
+
 	
-	public function index2(){
+	public function index(){
 		$data['port'] = $this->tn_model->get_port()->result();
 		$data['merk'] = $this->tn_model->get_merk_by_id($data['port'][0]->id_merk)->result();
 		$this->load->view('admin/login',$data);	
@@ -69,7 +71,7 @@ class Home extends CI_Controller {
             }else{
                 // kalau ga ada diredirect lagi ke halaman login
                 $this->session->set_flashdata('notification', 'username dan password tidak sesuai, coba lagi');
-                redirect(site_url('home/index2'));
+                redirect(site_url('home/index'));
             }   
         }
     }

@@ -35,7 +35,7 @@
 		if(isset($_GET['x'])){
 			$c = $_GET['x'];
 			if($c != ""){
-				$qrys=mysqli_query($conn,"select * from link_statis WHERE host_a like '$c'");
+				$qrys=mysqli_query($conn,"select * from link_statis WHERE user like '$c'");
 			}
 		}
 		
@@ -62,7 +62,7 @@
 			<td bgcolor="#FFFFFFFF">'.$result['shelf_b'].'</td>
 			<td bgcolor="#FFFFFFFF">'.$result['slot_b'].'</td>
 			<td bgcolor="#FFFFFFFF">'.$result['port_b'].'</td>
-			<td bgcolor="#FFFFFFFF">'.$result['ket'].'</td>
+			<td bgcolor="#FFFFFFFF">'.$result['keterangan'].'</td>
 			
 			</tr>';
 	 } ?>

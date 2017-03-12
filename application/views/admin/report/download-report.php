@@ -5,34 +5,40 @@
 
 #myDIV {
     
-    height: 335px;
+    height: 400px;
    /* width: 400px;*/
   /*  width.table-layout: 500px;*/
 }
 </style>
-  
- <head>
     <meta charset="utf-8">
     <title>SINDANISTRA</title>
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Tell the browser to be responsive to screen width -->
+
+  <link rel="stylesheet" href="<?php echo base_url('css/ionicons.min.css');?>">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?php echo base_url('plugins/datatables/dataTables.bootstrap.css');?>">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?php echo base_url('dist/css/AdminLTE.min.css');?>">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins-->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css');?>">
+
+  <link rel="stylesheet" href="<?php echo base_url('theme/assets/css/bootstrap.css');?>">
+  <link rel="stylesheet" href="<?php echo base_url('theme/assets/css/font-awesome.min.css');?>">
 
     <link href="<?php echo base_url('asset/admin2/css/bootstrap.min.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('asset/admin2/css/bootstrap-responsive.min.css');?>" rel="stylesheet">
-    
-    <link href="<?php echo base_url('asset/admin2/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600');?>" rel="stylesheet">
+    <link href="<?php echo base_url('asset/admin2/http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600')?>"
+        rel="stylesheet">
     <link href="<?php echo base_url('asset/admin2/css/font-awesome.css');?>" rel="stylesheet">
-    
     <link href="<?php echo base_url('asset/admin2/css/style.css');?>" rel="stylesheet">
     
-    <link href="<?php echo base_url('asset/admin2/css/pages/reports.css');?>" rel="stylesheet">
-
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  </head>
+</head>
   
   <body>
     <div class="navbar navbar-fixed-top" style="position: fixed;">
@@ -43,13 +49,6 @@
                 </a><a class="brand" href="<?php echo site_url('Home/sukses');?>">SINDANISTRA</a>
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-cog"></i> Account <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?php echo site_url('Home/setakun');?>">Settings</a></li>
-                                <li><a href="javascript:;">Help</a></li>
-                            </ul>
-                        </li>
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                             class="icon-user"></i> <?php echo $this->session->userdata('username');?>  <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -75,7 +74,7 @@
                     <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
                     <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-					<!--<li><a href="<?php echo site_url('home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>-->
+					<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-cog"></i><span>Setting Account </span> </a> </li>
 				</ul>
 		   </div>
             <!-- /container -->
@@ -127,7 +126,7 @@
                                             </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 form-group pull-right top_search" >
                             <div class="input-group">
-								<h4>Download berdasarkan node A</h4>
+								<h4>Download berdasarkan USER</h4>
                                 <form action="<?php print site_url();?>/report/cari" method=POST>
                                 <input class="input-lg" type=text name=cari>             
                                 <a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">OK</button></a>
@@ -170,63 +169,67 @@
 					
 					<div class="table-responsive">
 					<div class="x_content" id="myDIV">
-						<table id="datatable-buttons" class="table table-striped table-bordered" border="1">
+						<table id="example2" class="table table-striped table-bordered" border="1">
 							<thead>
 								<tr>
-									<th>No</th>                        
-									<th>Node A</th>
-									<th>Node B</th>
-									<th>Client A</th>
-									<th>Client B</th>
-									<th>NMS</th>
-									<th>NE A</th>
-									<th>Board A</th>
-									<th>Shelf A</th>
-									<th>Slot A</th>
-									<th>Port A</th>
-									<th>NE B</th>
-									<th>Board B</th>
-									<th>Shelf B</th>
-									<th>Slot B</th>
-									<th>Port B</th>
-								</tr>
+                                    <th>No</th> 
+                                    <th>User</th>                       
+                                    <th>Node A</th>
+                                    <th>Node B</th>
+                                    <th>Client A</th>
+                                    <th>Client B</th>
+                                    <th>NMS</th>
+                                    <th>NE A</th>
+                                    <th>Board A</th>
+                                    <th>Shelf A</th>
+                                    <th>Slot A</th>
+                                    <th>Port A</th>
+                                    <th>NE B</th>
+                                    <th>Board B</th>
+                                    <th>Shelf B</th>
+                                    <th>Slot B</th>
+                                    <th>Port B</th>
+                                    <th>keterangan</th>
+                                </tr>
 							</thead>
 
 						<tbody>
-							<?php 
-							$no = 0;
-							foreach($link_statis as $link){	
-							?>
-								<tr>
-									<td>
-									 <?php	if($link->host_a=="-" || $link->host_a==""){
-												$no=$no+0;
-											}else{
-												$no++;
-												echo $no;
-											}
-									?>
-									</td>
-									<td><?php echo $link->host_a?></td>
-									<td><?php echo $link->host_b?></td>
-									<td><?php echo $link->fa_a?></td>
-									<td><?php echo $link->fa_b?></td>
-									<td><?php echo $link->nms?></td>
-									
-									<td><?php echo $link->ne_a?></td>
-									<td><?php echo $link->board_a?></td>
-									<td><?php echo $link->shelf_a?></td>
-									<td><?php echo $link->slot_a?></td>
-									<td><?php echo $link->port_a?></td>
+                            <?php 
+                            $no = 0;
+                            foreach($link_statis as $link){
+                            ?>
+                                <tr>
+                                    <td>
+                                     <?php  if($link->host_a=="-" || $link->host_a==""){
+                                                $no=$no+0;
+                                            }else{
+                                                $no++;
+                                                echo $no;
+                                            }
+                                    ?>
+                                    </td>
+                                    <td><?php echo $link->user?></td>
+                                    <td><?php echo $link->host_a?></td>
+                                    <td><?php echo $link->host_b?></td>
+                                    <td><?php echo $link->fa_a?></td>
+                                    <td><?php echo $link->fa_b?></td>
+                                    <td><?php echo $link->nms?></td>
+                                    
+                                    <td><?php echo $link->ne_a?></td>
+                                    <td><?php echo $link->board_a?></td>
+                                    <td><?php echo $link->shelf_a?></td>
+                                    <td><?php echo $link->slot_a?></td>
+                                    <td><?php echo $link->port_a?></td>
 
-									<td><?php echo $link->ne_b?></td>
-									<td><?php echo $link->board_b?></td>
-									<td><?php echo $link->shelf_b?></td>
-									<td><?php echo $link->slot_b?></td>
-									<td><?php echo $link->port_b?></td>
-								</tr>
-							<?php }?>  
-						</tbody>
+                                    <td><?php echo $link->ne_b?></td>
+                                    <td><?php echo $link->board_b?></td>
+                                    <td><?php echo $link->shelf_b?></td>
+                                    <td><?php echo $link->slot_b?></td>
+                                    <td><?php echo $link->port_b?></td>
+                                    <td><?php echo $link->keterangan?></td>
+                                </tr>
+                            <?php }?>  
+                        </tbody>
 						</table>
 						</div>
 						</div>
@@ -323,11 +326,27 @@
     </div>
     <!-- /footer -->
 
-<script src="<?php echo base_url('asset/admin2/js/jquery-1.7.2.min.js');?>"></script>
-<script src="<?php echo base_url('asset/admin2/js/excanvas.min.js');?>"></script>
-<script src="<?php echo base_url('asset/admin2/js/chart.min.js');?>" type="text/javascript"></script>
-<script src="<?php echo base_url('asset/admin2/js/bootstrap.js');?>"></script>
-<script src="<?php echo base_url('asset/admin2/js/base.js');?>"></script>
+  <!-- jQuery 2.2.3 -->
+<script src="<?php echo base_url('plugins/jQuery/jquery-2.2.3.min.js');?>"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="<?php echo base_url('bootstrap/js/bootstrap.min.js');?>"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url('plugins/datatables/jquery.dataTables.min.js');?>"></script>
+<script src="<?php echo base_url('plugins/datatables/dataTables.bootstrap.min.js');?>"></script>
+<!-- SlimScroll -->
+<script src="<?php echo base_url('plugins/slimScroll/jquery.slimscroll.min.js');?>"></script>
+<!-- FastClick -->
+<script src="<?php echo base_url('plugins/fastclick/fastclick.js');?>"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo base_url('dist/js/app.min.js');?>"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?php echo base_url('dist/js/demo.js');?>"></script>
+
+<!-- page script -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+      
+
     <script>
     
     function myFunction() {
@@ -336,7 +355,48 @@
     
     </script>
 
+    <script>
 
-  </body>
+    $(function(){
+        $('.cek-all').click(function(){
 
+          var cek = $(this).attr('checked')=='checked' ? true : false;
+
+            $('.cekmultipel').attr('checked', cek);
+
+        })
+
+    })
+
+</script>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": false,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
+
+
+  <script>
+
+    $(function(){
+        $('.cek-all').click(function(){
+
+          var cek = $(this).attr('checked')=='checked' ? true : false;
+
+            $('.cekmultipel').attr('checked', cek);
+
+        })
+
+    })
+
+</script>
+</body>
 </html>

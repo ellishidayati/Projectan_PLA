@@ -50,16 +50,9 @@
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-cog"></i> Account <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?php echo site_url('Home/setakun');?>">Settings</a></li>
-                                <li><a href="javascript:;">Help</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                             class="icon-user"></i> <?php echo $this->session->userdata('username');?>  <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:;">Profile</a></li
+                                <li><a href="javascript:;">Profile</a></li>
                                 <li><a href="<?php echo site_url('home/logout'); ?>">Logout</a></li>
                             </ul>
                         </li>
@@ -82,8 +75,12 @@
                      <li><a href="<?php echo site_url('Home/table_sisa');?>"><i class="icon-bar-chart"></i><span>Sisa Jalur</span> </a> </li>
                     <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+<<<<<<< HEAD
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Manual Book</span> </a> </li>
           <!--<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>-->
+=======
+					<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-cog"></i><span>Setting Account </span> </a> </li>
+>>>>>>> origin/master
                 </ul>
             </div>
             <!-- /container -->
@@ -128,7 +125,7 @@
                                             </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 form-group pull-right top_search" >
                             <div class="input-group">
-								<h4>Download berdasarkan node A</h4>
+								<h4>Download berdasarkan USER</h4>
                                 <form action="<?php print site_url();?>/report/cari" method=POST>
                                 <input class="input-lg" type=text name=cari>             
                                 <a href="<?php echo base_url('report/download_report');?>"><button type="submit" class="btn btn-primary">OK</button></a>
@@ -165,7 +162,7 @@
                     
                     <div class="table-responsive">
                     <div class="x_content" id="myDIV">
-                        <table id="example1" class="table table-striped table-bordered" border="1">
+                        <table id="example2" class="table table-striped table-bordered" border="1">
                             <thead>
                                 <tr>
                                     <th>No</th> 
@@ -222,7 +219,7 @@
                                     <td><?php echo $link->shelf_b?></td>
                                     <td><?php echo $link->slot_b?></td>
                                     <td><?php echo $link->port_b?></td>
-                                    <td><?php echo $link->ket?></td>
+                                    <td><?php echo $link->keterangan?></td>
                                 </tr>
                             <?php }?>  
                         </tbody>
@@ -369,8 +366,8 @@
     $("#example1").DataTable();
     $('#example2').DataTable({
       "paging": true,
-      "lengthChange": false,
-      "searching": false,
+      "lengthChange": true,
+      "searching": true,
       "ordering": false,
       "info": true,
       "autoWidth": false
