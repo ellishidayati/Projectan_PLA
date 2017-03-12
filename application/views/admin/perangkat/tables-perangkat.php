@@ -75,12 +75,10 @@
                      <li><a href="<?php echo site_url('Home/table_sisa');?>"><i class="icon-bar-chart"></i><span>Sisa Jalur</span> </a> </li>
                     <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-<<<<<<< HEAD
+
                     <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Manual Book</span> </a> </li>
           <!--<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-user"></i><span>Setting Akun</span> </a> </li>-->
-=======
-					<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-cog"></i><span>Setting Account </span> </a> </li>
->>>>>>> origin/master
+
                 </ul>
             </div>
             <!-- /container -->
@@ -154,7 +152,7 @@
                     </div>
                        <!-- /widget-header -->
                         <div class="widget-content"  style="overflow-y:auto">
-                     <div class="table-responsive" id="myDIV">
+                     <div >
                  <form action="<?php echo site_url('link/delete_multiple'); ?>" method="post">
 
                        <table id="example1" class="table table-bordered table-striped" style="background-color: none;">
