@@ -104,11 +104,8 @@
         <div class="main-inner">
             <div class="container">
                 <div class="widget">
-                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Inventory - Sistem Inventory Data Teknis Transport</h3>
-                       <a href="<?php echo site_url('Home/insert_single_nms');?>"><button type="submit" class="btn btn-primary">Insert Single Data</button></a>
-                    
-                       <a href="<?php echo site_url('Home/insert_double_nms');?>"><button type="submit" class="btn btn-danger">Insert Multiple Data</button></a>
-               
+                    <div class="widget-header" ><i class="icon-bar-chart"></i><h3>Jalur yang Belum Terpakai - Sistem Inventory Data Teknis Transport</h3>
+                      
                      
                     </div>
                        <!-- /widget-header -->

@@ -155,7 +155,7 @@
                       lok= $("#nama_lokasi"+id).val();
                         ajaxku = buatajax();
                         var url="../../ajax/select_lokasi.php";
-                        url=url+"?ne="+lok+"&nm="+nms;
+                        url=url+"?lok="+lok+"&nm="+nms;
                         console.log(url);
 
                         ajaxku.onreadystatechange=stateChanged<?php echo $a;?>;
@@ -168,7 +168,7 @@
                     function ajaxne<?php echo $a;?>(str){
                         ajaxku = buatajax();
                         var url="../../ajax/select_lokasi.php";
-                        url=url+"?board="+str;
+                        url=url+"?ne="+str+"&lok1="+lok+"&nm1="+nms;
                         console.log(url);
                       string = str;
                         ajaxku.onreadystatechange=stateChangedNe<?php echo $a;?>;
@@ -182,7 +182,8 @@
                        board = str;
                         ajaxku = buatajax();
                         var url="../../ajax/select_lokasi.php";
-                        url=url+"?shelf="+string;
+                        url=url+"?board="+board+"&ne1="+string+"&lok2="+lok+"&nm2="+nms;
+                        shelf=str;
                         console.log(url);
                         ajaxku.onreadystatechange=stateChangedBoard<?php echo $a;?>;
                         ajaxku.open("GET",url,true);
@@ -194,7 +195,8 @@
                         ajaxku = buatajax();
                         var url="../../ajax/select_lokasi.php";
                         sh = str;
-                        url=url+"?slot="+str+"&sh="+string+"&n="+lok;
+                        url=url+"?shelf="+str+"&board1="+board+"&ne2="+string+"&lok3="+lok+"&nm3="+nms;
+                        shelf=str;
                         console.log(url);
                         ajaxku.onreadystatechange=stateChangedShelf<?php echo $a;?>;
                         ajaxku.open("GET",url,true);
@@ -207,7 +209,7 @@
                         console.log(string);
                         ajaxku = buatajax();
                         var url="../../ajax/select_lokasi.php";
-                        url=url+"?port="+board;
+                        url=url+"?slot="+str+"&shelf1="+shelf+"&board2="+board+"&ne3="+string+"&lok4="+lok+"&nm4="+nms;
                         console.log(url);
                         ajaxku.onreadystatechange=stateChangedSlot<?php echo $a;?>;
                         ajaxku.open("GET",url,true);

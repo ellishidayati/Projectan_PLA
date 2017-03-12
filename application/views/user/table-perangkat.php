@@ -77,9 +77,10 @@
                     <div class="widget-content"  style="overflow-y:auto">
                     <div class="table-responsive" id="myDIV">
               
-                    <table id="example1" class="table table-bordered table-striped" style="background-color: none;">
-						<thead>
+                      <table id="example2" class="table table-bordered table-striped" style="background-color: none;">
+                  <thead>
                         <tr>
+                         
                           <th>No</th>
                           <th>User</th>                        
                           <th>Node A</th>
@@ -92,49 +93,62 @@
                           <th>Shelf A</th>
                           <th>Slot A</th>
                           <th>Port A</th>
+                          <th>Freq A</th>
                           <th>NE B</th>
                           <th>Board B</th>
                           <th>Shelf B</th>
                           <th>Slot B</th>
                           <th>Port B</th>
-                          <th>Aksi</th>
+                          <th>freq B</th>
+                          <th>Keterangan</th>
+                        
                         </tr>
                       </thead>
-					  
-                    <tbody>
-						<?php 
-						$no = 0;
-						foreach($link_statis as $link){
-						?>
+
+
+                      <tbody>
+            <?php 
+            $no = 0;
+            foreach($link_statis as $link){
+
+              ?>
+                        
+                         
+                       
+
                         <td><?php 
                            if($link->host_a=="-" || $link->host_a==""){
-                              $no=0;
+                              $no=$no+0;
                             }else{
                                 $no++;
                                 echo $no; }
-                            ?></td> 
+                                 ?></td> 
                           <td><?php echo $link->user?></td>
                           <td><?php echo $link->host_a?></td>
                           <td><?php echo $link->host_b?></td>
                           <td><?php echo $link->fa_a?></td>
                           <td><?php echo $link->fa_b?></td>
                           <td><?php echo $link->nms?></td>
-						  
                           <td><?php echo $link->ne_a?></td>
                           <td><?php echo $link->board_a?></td>
                           <td><?php echo $link->shelf_a?></td>
                           <td><?php echo $link->slot_a?></td>
                           <td><?php echo $link->port_a?></td>
-
+                          <td><?php echo $link->freq_a?></td>
                           <td><?php echo $link->ne_b?></td>
                           <td><?php echo $link->board_b?></td>
                           <td><?php echo $link->shelf_b?></td>
                           <td><?php echo $link->slot_b?></td>
-                          <td><?php echo $link->port_b?></td>   
+                          <td><?php echo $link->port_b?></td>
+                          <td><?php echo $link->freq_b?></td>
+                          <td><?php echo $link->keterangan?></td>
+                         
                         </tr>
-				<?php }?>  
-                </tbody>
-                        
+                <?php }?>  
+                      </tbody>
+                       
+                        <br>
+                        <br>
               </table>
               </div>
               </div>  
@@ -239,8 +253,8 @@
       "paging": true,
       "lengthChange": false,
       "searching": true,
-      "ordering": true,
-      "info": true,
+      "ordering": false,
+      "info": false,
       "autoWidth": false
     });
   });

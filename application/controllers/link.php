@@ -23,23 +23,10 @@ class Link extends CI_Controller {
 
     public function insert_jalur(){
        $data['jumlah_jalur'] =  $this->input->post('jalur');
-       $data['lokasi'] = $this->link_model->get_lokasi()->result();
-       $data['link_statis'] = $this->link_model->get_link_statis()->result();
        $data['port']= $this->link_model->get_nms()->result();
       
         $this->load->view('admin/perangkat/create_link', $data);
 
-    }
-
-    public function insert_double_perangkat(){
-        $this->load->view('admin/perangkat/insert-double-perangkat');
-    }
-
-	public function ne(){
-        $lokasi = $this->input->post('nama_lokasi');
-        $data['ne'] = $this->link_model->get_ne($lokasi)->result();
-        $this->load->view('admin/perangkat/tables_perangkat', $data);
-        
     }
 
     public function create_link(){
@@ -67,7 +54,8 @@ class Link extends CI_Controller {
             $data['port_b'] = $this->input->post('port2');
             $data['keterangan'] = $this->input->post('keterangan');
             
-    		$this->link_model->insert_link($data);
+            $this->link_model->delete_port($data['ne_a'],$data['board_a'], $data['shelf_a'], $data['slot_a'], $data['port_a']);
+            $this->link_model->insert_link($data);
         }else{
             $data['host_a'] = $this->input->post('host_a');
             $data['host_b'] = $this->input->post('host_b');
@@ -88,9 +76,9 @@ class Link extends CI_Controller {
             $data['keterangan'] = $this->input->post('keterangan');
             
             $this->link_model->insert_link($data);
-            $a=2;
-            $b=3;
-            for ($i=2; $i < $dataa['jumlah_jalur'] ; $i++) { 
+            $a=3;
+            $b=4;
+            for ($i=3; $i < $dataa['jumlah_jalur'] ; $i++) { 
                 # code...
 
                 $data2['nms']=$this->input->post('nama_nms'.$a);

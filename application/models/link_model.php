@@ -35,7 +35,7 @@ class link_model extends CI_Model {
 
 		function get_nms(){
 			$this->db->select('nama_nms');
-			$this->db->from('port');
+			$this->db->from('sisa_port');
 			$this->db->group_by('nama_nms');
 			return $this->db->get();
 		}
@@ -52,14 +52,6 @@ class link_model extends CI_Model {
 			$this->db->insert('link_statis', $data);
 		}
 
-		// function insert_jalur($data){
-		// 	$this->db->insert('jumlah_jalur');
-		// }
-		// function get_jalur(){
-		// 	$this->db->select('*');
-		// 	$this->db->from('jumlah_jalur');
-		// 	return $this->db->affected_rows();
-		// }
 		    function update_link($id_link, $data){
 			$this->db->where('id_link', $id_link);
 			$this->db->update('link_statis', $data);
@@ -72,6 +64,20 @@ class link_model extends CI_Model {
 			}
 			return FALSE;
 		}
+
+		function delete_port($ne,$board,$shelf,$slot,$port){
+			$this->db->where('nama_ne', $ne);
+			$this->db->where('board', $board);
+			$this->db->where('shelf', $shelf);
+			$this->db->where('slot', $slot);
+			$this->db->where('port', $port);
+			$this->db->delete('sisa_port');
+			if($this->db->affected_rows()==1){
+				return TRUE;
+			}
+			return FALSE;
+		}
+
 
 		function remove_checked() {
 		

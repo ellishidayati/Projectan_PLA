@@ -32,6 +32,7 @@ class User extends CI_Controller {
 	             $this->googlemaps->add_marker($marker);
 
 	         }
+	         
         $data['map'] = $this->googlemaps->create_map();
 		$this->load->view('user/index', $data);	
 	}

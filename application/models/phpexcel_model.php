@@ -36,6 +36,7 @@ class Phpexcel_model extends CI_Model {
                    );
 
             $this->db->insert('port', $ins);
+            $this->db->insert('sisa_port', $ins);
         }
     }
 
@@ -79,6 +80,21 @@ class Phpexcel_model extends CI_Model {
                    );
 
             $this->db->insert('link_statis', $ins);
+
+
+            $this->db->where('nama_ne', $worksheet[$i]['G']);
+            $this->db->where('board', $worksheet[$i]['H']);
+            $this->db->where('shelf', $worksheet[$i]['J']);
+            $this->db->where('slot', $worksheet[$i]['K']);
+            $this->db->where('port', $worksheet[$i]['L']);
+            $this->db->delete('sisa_port');
+
+            $this->db->where('nama_ne', $worksheet[$i]['N']);
+            $this->db->where('board', $worksheet[$i]['O']);
+            $this->db->where('shelf', $worksheet[$i]['Q']);
+            $this->db->where('slot', $worksheet[$i]['R']);
+            $this->db->where('port', $worksheet[$i]['S']);
+            $this->db->delete('sisa_port');
         }
     }
 

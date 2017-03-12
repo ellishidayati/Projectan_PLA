@@ -13,6 +13,12 @@ class tn_model extends CI_Model {
 			$this->db->from('port');
 			return $this->db->get();
 		}
+
+		function get_sisa_port(){
+			$this->db->select('*');
+			$this->db->from('sisa_port');
+			return $this->db->get();
+		}
 		
 		function get_admin(){
 			$this->db->select('*');
@@ -71,32 +77,8 @@ class tn_model extends CI_Model {
 			return $this->db->get();
 		}
 
- 	 function get_addressbook() {     
-        $query = $this->db->get('port');
-        if ($query->num_rows() > 0) {
-            return $query->result_array();
-        } else {
-            return FALSE;
-        }
-    }
 
-     function get_addressbook_link() {     
-        $query = $this->db->get('link_statis');
-        if ($query->num_rows() > 0) {
-            return $query->result_array();
-        } else {
-            return FALSE;
-        }
-    }
  
-    function insert_csv($data) {
-        $this->db->insert('port', $data);
-    }
-
-     function insert_csv_link($data2) {
-        $this->db->insert('link_statis', $data2);
-    }
-	 
 	// function pagination NMS
 	function data($number,$offset){
 		return $query = $this->db->get('port',$number,$offset)->result();		
@@ -109,12 +91,14 @@ class tn_model extends CI_Model {
     function update_port($id_port, $data){
 			$this->db->where('id_port', $id_port);
 			$this->db->update('port', $data);
+			$this->db->update('sisa_port', $data);
 	}
 
 	//delete port
 	function delete_nms($id_port){
 		$this->db->where('id_port',$id_port);
 		$this->db->delete('port');
+		$this->db->delete('sisa_port');
 		if($this->db->affected_rows()==1){
 			return TRUE;
 		}
@@ -124,6 +108,7 @@ class tn_model extends CI_Model {
 	//function insert port
 	function insert_port($data){
 			$this->db->insert('port', $data);
+			$this->db->insert('sisa_port', $data);
 	}
 
 	function remove_checked() {
@@ -142,6 +127,13 @@ class tn_model extends CI_Model {
 		$this->db->group_by('nama_nms');
 		return $this->db->get();
 	}
+	function jumlah_sisa_port(){
+		$this->db->select("count(nama_nms) as 'total', nama_nms");
+		$this->db->from('sisa_port');
+		$this->db->group_by('nama_nms');
+		return $this->db->get();
+	}
+
 
 	function jumlah_link(){
 		$this->db->select("count(nms) as 'total', nms");
