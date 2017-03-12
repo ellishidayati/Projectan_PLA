@@ -8,7 +8,7 @@ class User extends CI_Controller {
         $this->load->model('tn_model');
         $this->load->model('admin_model');
 		$this->load->model('link_model');
-		$this->load->library('googlemaps');
+		$this->load->library('google_maps');
 	}
 
 	public function index(){
@@ -20,7 +20,7 @@ class User extends CI_Controller {
 
         $config['center'] = '0.7893,113.9213';
         $config['zoom'] = 5;
-        $this->googlemaps->initialize($config);
+        $this->google_maps->initialize($config);
 
              $coords = $this->tn_model->get_longlat()->result();
 	         foreach ($coords as $kordinat) {
@@ -29,11 +29,11 @@ class User extends CI_Controller {
 	             $marker['position'] = $kordinat->lng.','.$kordinat->lat;
 	         	$marker['infowindow_content'] = ''.$kordinat->nama_lokasi.'';
 				$marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld='.$kordinat->kd.'|'.$kordinat->warna.'|000000';
-	             $this->googlemaps->add_marker($marker);
+	             $this->google_maps->add_marker($marker);
 
 	         }
 	         
-        $data['map'] = $this->googlemaps->create_map();
+        $data['map'] = $this->google_maps->create_map();
 		$this->load->view('user/index', $data);	
 	}
 
