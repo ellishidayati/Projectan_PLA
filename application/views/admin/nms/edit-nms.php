@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>SINDANISTRA</title>
-    
+    <link rel="icon" type="image/png" href="<?php echo base_url('asset/img/logo.png');?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">    
     
@@ -76,13 +76,13 @@
 		<div class="container">
 
 			<ul class="mainnav">
-			
-				<li><a href="<?php echo site_url('Home/sukses');?>"></i><span>Dashboard</span></a></li>
-				<li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>NMS</span> </a> </li>
-	        	<li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
-       			<li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-       			<li><a href="<?php echo site_url('Home/setakun');?>"><i class="icon-cog"></i><span>Setting Account </span> </a> </li>
-		
+			<li class="active"><a href="<?php echo site_url('Home/sukses');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a>
+                    </li>
+                    <li><a href="<?php echo site_url('Home/table_nms');?>"><i class="icon-bar-chart"></i><span>Inventory</span> </a> </li>
+                     <li><a href="<?php echo site_url('Home/table_sisa');?>"><i class="icon-bar-chart"></i><span>Sisa Jalur</span> </a> </li>
+                    <li><a href="<?php echo site_url('Link');?>"><i class="icon-code"></i><span>Data Link</span> </a> </li>
+                    <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
+                    <li><a href="<?php echo site_url('Report');?>"><i class="icon-list-alt"></i><span>Manual Book</span> </a> </li>
 			
 			</ul>
 
@@ -133,12 +133,10 @@
 										<div class="control-group">											
 											<label class="control-label" for="firstname">Lokasi</label>
 												<div class="controls">
-<<<<<<< HEAD
+
 													<input class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nama_nms" value="<?php echo $port->nama_lokasi; ?>" type="text" required="required">
 													
-=======
-													<input  name="nama_lokasi" value="<?php echo $port->nama_lokasi; ?>" type="text" class="col-md-6 col-sm-6 col-xs-12" id="firstname" required="required">
->>>>>>> origin/master
+
 												</div> <!-- /controls -->				
 										</div> <!-- /control-group -->
 										

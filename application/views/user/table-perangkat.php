@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
 	<!-- Tell the browser to be responsive to screen width -->
-
+   <link rel="icon" type="image/png" href="<?php echo base_url('asset/img/logo.png');?>">
 	<link rel="stylesheet" href="<?php echo base_url('css/ionicons.min.css');?>">
 	<!-- DataTables -->
 	<link rel="stylesheet" href="<?php echo base_url('plugins/datatables/dataTables.bootstrap.css');?>">

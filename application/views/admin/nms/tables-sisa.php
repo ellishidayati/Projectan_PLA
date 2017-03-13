@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
   <!-- Tell the browser to be responsive to screen width -->
-
+ <link rel="icon" type="image/png" href="<?php echo base_url('asset/img/logo.png');?>">
   <link rel="stylesheet" href="<?php echo base_url('css/ionicons.min.css');?>">
   <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo base_url('plugins/datatables/dataTables.bootstrap.css');?>">
@@ -116,7 +116,7 @@
                        <table id="example1" class="table table-bordered table-striped" style="background-color: none;">
                  <thead>
                         <tr>
-                          <th><input type="checkbox" class="cek-all"></th>
+                          
                           <th>No</th>
                           <th>NMS</th>
                           <th>Lokasi</th>
@@ -131,9 +131,6 @@
                           <th>Frekuensi</th>
                           <th>User</th>
                           <th>Deskripsi</th>
-                         
-                        <!--   <th>Deskripsi</th> -->
-                          <th>Edit data</th>
                         </tr>
                       </thead>
                 <tbody>
@@ -145,7 +142,7 @@
                 
               ?>
                         <tr>
-                          <td><input type="checkbox" name="del[]" class="cekmultipel" value="<?php echo $portt->id_port;?>"></td>
+                         
                           <td><?php echo $no?></td>
                           <td><?php echo $portt->nama_nms?></td>
                           <td><?php echo $portt->nama_lokasi?></td>
@@ -161,26 +158,13 @@
                           <td><?php echo $portt->frekuensi?></td>
                           <td><?php echo $portt->user?></td>
                          <td><?php echo wordwrap($portt->deskripsi,15,"<br>\n")?></td>
-                          
 
-
-                          <td>
-                          <a href="<?php echo site_url('Home/edit_nms/'.$portt->id_port);?>" class="btn btn-info btn-xs"><i class="btn-icon-only icon-pencil"></i></a>
-                          </td>
-                         <!--  <td>
-                          <a href="<?php echo site_url('Home/delete_nms/'.$portt->id_port);?>" class="btn btn-danger btn-xs" onclick="return doconfirm();"><i class="btn-icon-only icon-trash"></i></a>
-                          </td> -->
-                          <!-- Trigger the modal with a button -->
-                         <!--  <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Details<?php echo $portt->id_port?></button> -->
-                          <!-- Modal -->
-                        
-                     
                       
                         </tr>
                 <?php }?>  
                       </tbody>
                   
-                      <input name="do" type="submit" class="btn btn-danger btn-xs" value="Delete"></input>
+
                       <br>
                       <br>
                      
