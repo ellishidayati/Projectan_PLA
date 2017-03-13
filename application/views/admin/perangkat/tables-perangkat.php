@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
   <!-- Tell the browser to be responsive to screen width -->
-   <link rel="icon" type="image/png" href="<?php echo base_url('asset/img/logo.png');?>">
+   <link rel="icon" type="image/png" href="<?php echo base_url('asset/img/4.png');?>">
   <link rel="stylesheet" href="<?php echo base_url('css/ionicons.min.css');?>">
   <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo base_url('plugins/datatables/dataTables.bootstrap.css');?>">
@@ -135,7 +135,7 @@
             <div class="x_content">
                 <fieldset>
                      <form method="post" action="<?php echo site_url('Excel/link')?>" enctype="multipart/form-data">
-                    <input type="file" name="userfile" ><br><br>
+                    <input type="file" name="userfile" ><br>
                     <input type="submit" name="submit" value="Upload" class="btn btn-primary">
                    </form>
                   </div>
