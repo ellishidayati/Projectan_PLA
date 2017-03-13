@@ -45,6 +45,7 @@ div.tab button.active {
 
 <meta charset="utf-8">
 <title>Dashboard - Bootstrap Admin Template</title>
+<link rel="icon" type="image/png" href="<?php echo base_url('asset/img/4.png');?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link href="<?php echo base_url('asset/admin2/css/bootstrap.min.css');?>" rel="stylesheet">

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>SINDANISTRA</title>
-     <link rel="icon" type="image/png" href="<?php echo base_url('asset/img/logo.png');?>">
+     <link rel="icon" type="image/png" href="<?php echo base_url('asset/img/4.png');?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">    
     
