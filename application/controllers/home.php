@@ -305,6 +305,11 @@ class Home extends CI_Controller {
 	public function edit_perangkat(){
 		$this->load->view('admin/perangkat/edit_perangkat');
 	}
+
+	public function manual_book(){
+	
+		$this->load->view('admin/manual book/manual_book');
+	}
 	
 	
         
