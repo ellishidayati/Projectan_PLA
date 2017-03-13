@@ -102,7 +102,7 @@
         <div class="main-inner">
             <div class="container">
             <div class="row">
-            <div class="span6">
+            <div class="span5">
               <div class="widget">
             
                   <div class="widget-header">
@@ -139,7 +139,7 @@
             <div class="x_content">
                 <fieldset>
                      <form method="post" action="<?php echo site_url('Excel/link')?>" enctype="multipart/form-data">
-                    <input type="file" name="userfile" ><br><br>
+                    <input type="file" name="userfile" ><br>
                     <input type="submit" name="submit" value="Upload" class="btn btn-primary">
                    </form>
                   </div>
