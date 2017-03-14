@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php if(isset($_SESSION['logged_in'])){ ?>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -363,3 +365,7 @@ var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpLItGaLzmoLdYdYu4FX0wzHu0yngX9xo&callback=myMap"></script>
 </body>
 </html>
+
+<?php }else{
+	redirect(site_url('home/index'));
+}?>

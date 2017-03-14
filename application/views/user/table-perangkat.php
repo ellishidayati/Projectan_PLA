@@ -250,10 +250,10 @@
     $("#example1").DataTable();
     $("#example2").DataTable({
       "paging": true,
-      "lengthChange": false,
+      "lengthChange": true,
       "searching": true,
       "ordering": false,
-      "info": false,
+      "info": true,
       "autoWidth": false
     });
   });

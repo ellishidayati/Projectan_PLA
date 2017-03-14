@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<?php if(isset($_SESSION['logged_in'])){ ?>
+
 <html lang="en">
 <head>
 <style>
@@ -391,3 +394,7 @@
 </script>
 </body>
 </html>
+
+<?php }else{
+	redirect(site_url('home/index'));
+}?>
