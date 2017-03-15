@@ -174,18 +174,78 @@ div.tab button.active {
             <div id="Inventory" class="tabcontent">
             <p>SINDANISTRA (Sistem Inventory Data Teknis Transport) merupakan fasilitas yang disediakan untuk mempermudah pengolahan data/website konten.</p>
             <h3>2. Inventory</h3>
-            <p>London is the capital city of England.</p>
+            <p>Data yang dikelola pada menu ini adalah data informasi umum dari wesite yang terdiri dari:</p>
+             <table class="table table-bordered table-striped" style="background-color: none;">
+            <thead>
+            <tr>
+            <th>Nama</th>
+            <th>keterangan</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Tabel</td>
+            <td>Isi pada tabel tersebut adalah data inventory pada NMS, pada tabel tersebut terdapat button delete dan edit. Admin atau super admin dapat mencari data sesuai data yang ingin dicari</td>
+            </tr>
+            <tr>
+            <td>Insert Single Data</td>
+            <td>Admin atau super admin dapat menambahkan data inventory secara manual</td>
+            </tr>
+            <tr>
+            <td>Insert Multiple Data</td>
+            <td>Admin atau super admin dapat menambahkan data inventory berupa format CVS atau Excel.</td>
+            </tr>
+            </tbody>
+            </table>
             </div>
 
 
             <div id="Sisa_jalur" class="tabcontent">
+            <p>SINDANISTRA (Sistem Inventory Data Teknis Transport) merupakan fasilitas yang disediakan untuk mempermudah pengolahan data/website konten.</p>
             <h3>3. Sisa Jalur</h3>
-            <p>London is the capital city of England.</p>
+            <p>Data yang dikelola pada menu ini adalah data informasi umum dari wesite yang terdiri dari:</p>
+            <table class="table table-bordered table-striped" style="background-color: none;">
+            <thead>
+            <tr>
+            <th>Nama</th>
+            <th>keterangan</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Tabel</td>
+            <td>Isi pada tabel tersebut adalah data dari inventory yang belum terpakai</td>
+            </tr>
+            </tbody>
+            </table>
             </div>
 
             <div id="Data_link" class="tabcontent">
+             <p>SINDANISTRA (Sistem Inventory Data Teknis Transport) merupakan fasilitas yang disediakan untuk mempermudah pengolahan data/website konten.</p>
             <h3>4. Data Link</h3>
-            <p>London is the capital city of England.</p>
+            <p>Data yang dikelola pada menu ini adalah data informasi umum dari wesite yang terdiri dari:</p>
+             <table class="table table-bordered table-striped" style="background-color: none;">
+            <thead>
+            <tr>
+            <th>Nama</th>
+            <th>keterangan</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Insert Single Data Link</td>
+            <td>Admin atau super admin dapat menambahkan data link sesuai banyaknya jalur pada data yang akan di input</td>
+            </tr>
+             <tr>
+            <td>Insert Multiple Data Link</td>
+            <td>Admin atau super admin dapat memasukan data berupa format CVS atau Excel.</td>
+            </tr>
+            <tr>
+            <td>Tabel</td>
+            <td>Isi pada tabel tersebut adalah data link, pada tabel tersebut terdapat button delete dan edit. Admin atau super admin dapat mencari data sesuai data yang ingin dicari</td>
+            </tr>
+            </tbody>
+            </table>
             </div>
 
             <div id="Report" class="tabcontent">
