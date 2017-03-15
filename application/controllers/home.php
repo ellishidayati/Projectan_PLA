@@ -52,7 +52,7 @@ class Home extends CI_Controller {
 	//logout
 	public function logout(){
 		$this->session->sess_destroy(); //untuk mencatat akan dihapus
-		redirect(site_url('home'));
+		redirect(site_url('user'));
     }
 	
 	

@@ -190,12 +190,50 @@ div.tab button.active {
 
             <div id="Report" class="tabcontent">
             <h3>5. Report</h3>
-            <p>London is the capital city of England.</p>
+            <p>Report merupakan laporan dari hasil pengolahan datalink</p>
+			<p>Terdapat beberapa fungsi yang dapat digunakan pada halaman report diantaranya :</p>
+			<table class="table table-bordered table-striped" style="background-color: none;">
+            <thead>
+            <tr>
+            <th>Nama</th>
+            <th>keterangan</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Download File</td>
+            <td>Download file ditujukan untuk mendownload data secara keseluruhan, data dapat di dowload dalam format csv,excel,dan pdf</td>
+            </tr>
+            <tr>
+			<td>Download berdasarkan user</td>
+            <td>Download berdasarkan user ditujukan untuk mendownload data berdasarkan user yang dicari, data dapat di dowload dalam format excel,dan pdf</td>
+            </tr>
+			</tbody>
+            </table>
             </div>
 
             <div id="Setting_account" class="tabcontent">
             <h3>6. Setting Account</h3>
-            <p>London is the capital city of England.</p>
+            <p>Setting Account bertujuan untuk pengelolaan Admin. Setting Account hanya dapat diakses oleh Super Admin</p>
+			<p>Terdapat beberapa fungsi yang dapat digunakan pada halaman Setting Account diantaranya :</p>
+			<table class="table table-bordered table-striped" style="background-color: none;">
+            <thead>
+            <tr>
+            <th>Nama</th>
+            <th>keterangan</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Insert New Account </td>
+            <td>Insert New Account ditujukan untuk menambah super admin dan admin baru untuk dapat mengakses sistem</td>
+            </tr>
+            <tr>
+			<td>Delete</td>
+            <td>Delete ditujukan untuk menghapus Account yang sudah tidak digunakan</td>
+            </tr>
+			</tbody>
+            </table>
             </div>
 
             </div>
