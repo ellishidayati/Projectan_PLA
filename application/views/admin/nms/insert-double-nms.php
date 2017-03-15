@@ -121,7 +121,7 @@
                 <div class="x_content" >
                 <fieldset>
                      <form method="post" action="<?php echo site_url('Excel/nms')?>" enctype="multipart/form-data">
-                    <input type="file" name="userfile" ><br><br>
+                    <input type="file" name="userfile" ><br><h6>*File Harus berformat .xls atau .xlxs</h6>
                     <input type="submit" name="submit" value="Upload" class="btn btn-primary">
                    </form>
 

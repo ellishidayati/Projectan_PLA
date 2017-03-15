@@ -21,6 +21,8 @@ class Excel extends CI_Controller {
         
         if ( ! $this->upload->do_upload()){
             $error = array('error' => $this->upload->display_errors());
+            echo '<script type="text/javascript">alert("format File yang anda masukan salah!!");</script>';
+            redirect('Home/table_nms','refresh');
         }
         else{
             $data = array('upload_data' => $this->upload->data());
@@ -28,6 +30,7 @@ class Excel extends CI_Controller {
             $filename = $upload_data['file_name'];//Nama File
             $this->phpexcel_model->upload_data($filename);
             unlink('./uploads/'.$filename);
+           echo '<script type="text/javascript">alert("File berhasil di Upload.");</script>';
             redirect('Home/table_nms','refresh');
         }
     }
@@ -40,6 +43,11 @@ class Excel extends CI_Controller {
         
         if ( ! $this->upload->do_upload()){
             $error = array('error' => $this->upload->display_errors());
+           echo '<script type="text/javascript">alert("format File yang anda masukan salah!!");</script>';
+           //alert("file yang anda masukan salah");
+            redirect('Link','refresh');
+
+
         }
         else{
             $data = array('upload_data' => $this->upload->data());
@@ -47,6 +55,7 @@ class Excel extends CI_Controller {
             $filename = $upload_data['file_name'];//Nama File
             $this->phpexcel_model->upload_data_link($filename);
             unlink('./uploads/'.$filename);
+           echo '<script type="text/javascript">alert("File berhasil di Upload.");</script>';
             redirect('Link','refresh');
         }
     }

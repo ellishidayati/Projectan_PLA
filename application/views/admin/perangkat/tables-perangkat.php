@@ -138,7 +138,8 @@
             <div class="x_content">
                 <fieldset>
                      <form method="post" action="<?php echo site_url('Excel/link')?>" enctype="multipart/form-data">
-                    <input type="file" name="userfile" ><br>
+                    <input type="file" name="userfile" >
+                    <h6>*File Harus berformat .xls atau .xlxs</h6>
                     <input type="submit" name="submit" value="Upload" class="btn btn-primary">
                    </form>
                   </div>
@@ -158,7 +159,7 @@
                      <div class="table-responsive" id="myDIV">
                  <form action="<?php echo site_url('link/delete_multiple'); ?>" method="post">
 
-                       <table id="example1" class="table table-bordered table-striped" style="background-color: none;">
+                       <table id="example2" class="table table-bordered table-striped" style="background-color: none;">
                   <thead>
                         <tr>
                          <th><input type="checkbox" class="cek-all"></th>
@@ -368,11 +369,11 @@
     $("#example1").DataTable();
     $('#example2').DataTable({
       "paging": true,
-      "lengthChange": false,
+      "lengthChange": true,
       "searching": false,
       "ordering": false,
       "info": true,
-      "autoWidth": false
+      "autoWidth": true
     });
   });
 </script>
