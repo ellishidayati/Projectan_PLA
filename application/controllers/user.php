@@ -16,6 +16,7 @@ class User extends CI_Controller {
         $data['link'] = $this->tn_model->jumlah_link()->result();
         $data['lala'] = $this->tn_model->get_nms_link()->result();
         $data['user'] = $this->tn_model->get_user()->result();
+             $data['sisa'] = $this->tn_model->jumlah_sisa_port()->result();
      
 
         $config['center'] = '0.7893,113.9213';

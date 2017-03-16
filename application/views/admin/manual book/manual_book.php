@@ -124,7 +124,7 @@ div.tab button.active {
         <div class="span12">
           <div class="widget">
             <div class="widget-header"> <i class="icon-bookmark"></i>
-              <h3>Important Shortcuts</h3>
+              <h3>Penjelasan Sistem</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
@@ -174,18 +174,89 @@ div.tab button.active {
             <div id="Inventory" class="tabcontent">
             <p>SINDANISTRA (Sistem Inventory Data Teknis Transport) merupakan fasilitas yang disediakan untuk mempermudah pengolahan data/website konten.</p>
             <h3>2. Inventory</h3>
-            <p>London is the capital city of England.</p>
+            <p>Pada Halaman Inventory terdapat table Inventory dari database, dapat melakukan CRUD</p>
+             <table class="table table-bordered table-striped" style="background-color: none;">
+            <thead>
+            <tr>
+            <th>Nama Fungsi</th>
+            <th>keterangan</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Search</td>
+            <td>Dapat mencari data berdasarkan semua kolom yang ada di table</td>
+            </tr>
+            <tr>
+            <td>Pagination</td>
+            <td>Berfungsi sebagai merapihkan data</td>
+            </tr>
+            <tr>
+            <td>Sorting</td>
+            <td>Berfungsi sebagai mengurutkan data dari A-Z atau Z-A</td>
+            </tr>
+             <tr>
+            <td>Delete</td>
+            <td>Dapat menghapus data, baik satu atau banyak</td>
+            </tr>
+            <tr>
+            <td>Edit</td>
+            <td>Dapat Mengedit data, sesui baris yang diinginkan</td>
+            </tr>
+            </tr>
+            <tr>
+            <td>Insert Single Data</td>
+            <td>Dapat Menambahkan 1 data</td>
+            </tr>
+            <tr>
+            <td>Insert Multiple Data</td>
+            <td>Dapat Menambahkan banyak data data, berupa Upload File berformat .xlsx</td>
+            </tr>
+            </tbody>
+            </table>
+
             </div>
 
 
             <div id="Sisa_jalur" class="tabcontent">
             <h3>3. Sisa Jalur</h3>
-            <p>London is the capital city of England.</p>
+            <p>Halaman Sisa Jalur hanya bisa melihat, tidak bisa mengedit, menghapus maupun menambahkan</p>
             </div>
 
             <div id="Data_link" class="tabcontent">
             <h3>4. Data Link</h3>
-            <p>London is the capital city of England.</p>
+           <p>Pada Halaman Data Link terdapat table Data Link dari database, dapat melakukan CRUD</p>
+             <table class="table table-bordered table-striped" style="background-color: none;">
+            <thead>
+            <tr>
+            <th>Nama Fungsi</th>
+            <th>keterangan</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Pagination</td>
+            <td>Berfungsi sebagai merapihkan data</td>
+
+             <tr>
+            <td>Delete</td>
+            <td>Dapat menghapus data, baik satu atau banyak</td>
+            </tr>
+            <tr>
+            <td>Edit</td>
+            <td>Dapat Mengedit data, sesui baris yang diinginkan</td>
+            </tr>
+            </tr>
+            <tr>
+            <td>Insert Single Data</td>
+            <td>Dapat Menambahkan jalur sesuai banyaknya jalur yang diinginkan. terdapat dropdown berantai sesuai sisa jalur</td>
+            </tr>
+            <tr>
+            <td>Insert Multiple Data</td>
+            <td>Dapat Menambahkan banyak data data, berupa Upload File berformat .xlsx</td>
+            </tr>
+            </tbody>
+            </table>
             </div>
 
             <div id="Report" class="tabcontent">

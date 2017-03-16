@@ -218,6 +218,10 @@
         data: [<?php foreach ($jumlah as $jml) {
               echo "".$jml->total.",";
             }?>]
+    },{name: 'Inventory tidak terpakai',
+        data: [<?php foreach ($sisa as $jml) {
+              echo "".$jml->total.",";
+            }?>]
     }]
 });
 </script>
