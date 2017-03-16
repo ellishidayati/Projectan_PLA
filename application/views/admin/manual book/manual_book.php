@@ -174,11 +174,12 @@ div.tab button.active {
             <div id="Inventory" class="tabcontent">
             <p>SINDANISTRA (Sistem Inventory Data Teknis Transport) merupakan fasilitas yang disediakan untuk mempermudah pengolahan data/website konten.</p>
             <h3>2. Inventory</h3>
-            <p>Pada Halaman Inventory terdapat table Inventory dari database, dapat melakukan CRUD</p>
+            <p>Isi pada tabel tersebut adalah data inventory pada NMS, pada tabel tersebut terdapat button delete dan edit. Admin atau super admin dapat mencari data sesuai data yang ingin dicari</p>
+            <p>Data yang dikelola pada menu ini adalah data informasi umum dari wesite yang terdiri dari:</p>
              <table class="table table-bordered table-striped" style="background-color: none;">
             <thead>
             <tr>
-            <th>Nama Fungsi</th>
+            <th>Nama</th>
             <th>keterangan</th>
             </tr>
             </thead>
@@ -206,30 +207,50 @@ div.tab button.active {
             </tr>
             <tr>
             <td>Insert Single Data</td>
-            <td>Dapat Menambahkan 1 data</td>
+            <td>Admin atau super admin Dapat Menambahkan 1 data</td>
             </tr>
             <tr>
             <td>Insert Multiple Data</td>
-            <td>Dapat Menambahkan banyak data data, berupa Upload File berformat .xlsx</td>
+            <td>Admin atau super admin Dapat Menambahkan banyak data data, berupa Upload File berformat .xlsx</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+
+            <div id="Sisa_jalur" class="tabcontent">
+            <p>SINDANISTRA (Sistem Inventory Data Teknis Transport) merupakan fasilitas yang disediakan untuk mempermudah pengolahan data/website konten.</p>
+            <h3>3. Sisa Jalur</h3>
+
+            <p>Halaman Sisa Jalur hanya bisa melihat, tidak bisa mengedit, menghapus maupun menambahkan</p>
+
+            <p>Data yang dikelola pada menu ini adalah data informasi umum dari wesite yang terdiri dari:</p>
+            <table class="table table-bordered table-striped" style="background-color: none;">
+            <thead>
+            <tr>
+            <th>Nama</th>
+            <th>keterangan</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Tabel</td>
+            <td>Isi pada tabel tersebut adalah data dari inventory yang belum terpakai</td>
             </tr>
             </tbody>
             </table>
 
             </div>
 
-
-            <div id="Sisa_jalur" class="tabcontent">
-            <h3>3. Sisa Jalur</h3>
-            <p>Halaman Sisa Jalur hanya bisa melihat, tidak bisa mengedit, menghapus maupun menambahkan</p>
-            </div>
-
             <div id="Data_link" class="tabcontent">
+             <p>SINDANISTRA (Sistem Inventory Data Teknis Transport) merupakan fasilitas yang disediakan untuk mempermudah pengolahan data/website konten.</p>
             <h3>4. Data Link</h3>
+
            <p>Pada Halaman Data Link terdapat table Data Link dari database, dapat melakukan CRUD</p>
+            <p>Data yang dikelola pada menu ini adalah data informasi umum dari wesite yang terdiri dari:</p>
              <table class="table table-bordered table-striped" style="background-color: none;">
             <thead>
             <tr>
-            <th>Nama Fungsi</th>
+            <th>Nama</th>
             <th>keterangan</th>
             </tr>
             </thead>
@@ -237,7 +258,7 @@ div.tab button.active {
             <tr>
             <td>Pagination</td>
             <td>Berfungsi sebagai merapihkan data</td>
-
+            </tr>
              <tr>
             <td>Delete</td>
             <td>Dapat menghapus data, baik satu atau banyak</td>
@@ -249,11 +270,11 @@ div.tab button.active {
             </tr>
             <tr>
             <td>Insert Single Data</td>
-            <td>Dapat Menambahkan jalur sesuai banyaknya jalur yang diinginkan. terdapat dropdown berantai sesuai sisa jalur</td>
+            <td>Admin atau super adminDapat Menambahkan jalur sesuai banyaknya jalur yang diinginkan. terdapat dropdown berantai sesuai sisa jalur</td>
             </tr>
             <tr>
             <td>Insert Multiple Data</td>
-            <td>Dapat Menambahkan banyak data data, berupa Upload File berformat .xlsx</td>
+            <td>Admin atau super admin Dapat Menambahkan banyak data data, berupa Upload File berformat .xlsx</td>
             </tr>
             </tbody>
             </table>
